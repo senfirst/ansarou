@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AN'SAROUD DINE BAMBILOR - Institut Islamique</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(90deg, #0f5e2b, #1c8c43);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #0f5e2b;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #0f5e2b;
+}
+
+.btn {
+    background-color: #1c8c43;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0f5e2b;
+}
+
+.carte {
+    background: #f4f4f4;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: #0f5e2b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.planning {
+    background: #e8f5ec;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🕌 AN'SAROUD DINE BAMBILOR</h1>
+<p>Cours en ligne Ramadan 2026</p>
+</header>
+
+<nav>
+<a href="#formations">Formations</a>
+<a href="#planning">Planning</a>
+<a href="#connexion">Espace Élève</a>
+</nav>
+
+<section id="formations" class="section">
+<h2>Nos Formations</h2>
+
+<div class="carte">
+<h3>📖 Al Qur'an</h3>
+<p>5 000 FCFA / mois</p>
+</div>
+
+<div class="carte">
+<h3>📜 Hadith</h3>
+<p>5 000 FCFA / mois</p>
+</div>
+
+<div class="carte">
+<h3>⚖️ Charia</h3>
+<p>7 500 FCFA / mois</p>
+</div>
+</section>
+
+<section id="planning" class="section">
+<h2>📅 Planning Automatique</h2>
+
+<div class="planning">
+<p><strong>Lundi :</strong> 📖 Qur'an - 16h00</p>
+<p><strong>Mercredi :</strong> 📜 Hadith - 17h00</p>
+<p><strong>Vendredi :</strong> ⚖️ Charia - 22h30</p>
+</div>
+
+</section>
+
+<section id="connexion" class="section">
+<h2>🔒 Espace Élève</h2>
+<p>Entrez votre mot de passe :</p>
+
+<input type="password" id="password" placeholder="Mot de passe">
+<br>
+<button class="btn" onclick="verifier()">Se connecter</button>
+
+<div id="accesCours" class="hidden">
+
+<h3>🎥 Accès aux Cours</h3>
+
+<a href="https://meet.google.com/quran123" target="_blank" class="btn">
+📖 Accéder au Qur'an
+</a>
+
+<a href="https://zoom.us/j/hadith123" target="_blank" class="btn">
+📜 Accéder au Hadith
+</a>
+
+<a href="https://meet.google.com/charia123" target="_blank" class="btn">
+⚖️ Accéder à la Charia
+</a>
+
+</div>
+</section>$
+$$$
+
+<footer>
+© 2026 AN'SAROUD DINE BAMBILOR
+</footer>
+
+<script>
+
+function verifier() {
+    var mdp = document.getElementById("password").value;
+
+    if(mdp === "ansar2026") {
+        document.getElementById("accesCours").classList.remove("hidden");
+        alert("Connexion réussie !");
+    } else {
+        alert("Mot de passe incorrect !");
+    }
+}
+
+</script>
+
+</body>
+</html>
+
