@@ -115,13 +115,23 @@ text-align:left;
 <p>Cours islamiques en ligne</p>
 
 <p style="margin-top:20px;font-size:18px;">
-"Le meilleur d'entre vous est celui qui apprend le Coran et l'enseigne."
 <br>
-<em>(Hadith rapporté par Al-Bukhari)</em>
 </p>
 
 </header>
 
+
+
+<style>
+.dark{
+background:#111;
+color:white;
+}
+
+.dark .carte{
+background:#222;
+}
+</style>
 
 <nav>
 
@@ -135,7 +145,24 @@ text-align:left;
 
 </nav>
 
+<button class="btn" onclick="darkMode()">🌙 Mode sombre</button>
 
+<script>
+function darkMode(){
+document.body.classList.toggle("dark");
+}
+</script>
+
+<style>
+.dark{
+background:#111;
+color:white;
+}
+
+.dark .carte{
+background:#222;
+}
+</style>
 <section id="formations" class="section">
 
 <h2>📚 Nos formations</h2>
@@ -173,7 +200,100 @@ data-ad-client="ca-pub-7220960902615393"
 data-ad-slot="1234567890"
 data-ad-format="auto"
 data-full-width-responsive="true"></ins>
+<script>
 
+var eleves = JSON.parse(localStorage.getItem("eleves")) || [];
+
+afficherEleves();
+
+function inscrire(){
+
+var nom=document.getElementById("nom").value;
+var tel=document.getElementById("telephone").value;
+var cours=document.getElementById("cours").value;
+
+if(nom==="" || tel===""){
+alert("Veuillez remplir les informations");
+return;
+}
+
+var eleve={
+nom:nom,
+telephone:tel,
+cours:cours
+};
+
+eleves.push(eleve);
+
+// 🔥 Sauvegarde
+localStorage.setItem("eleves", JSON.stringify(eleves));
+
+afficherEleves();
+
+document.getElementById("nom").value="";
+document.getElementById("telephone").value="";
+
+alert("Inscription réussie");
+}
+
+function afficherEleves(){
+
+var liste=document.getElementById("listeEleves");
+liste.innerHTML="";
+
+eleves.forEach(function(e){
+var li=document.createElement("li");
+li.innerHTML=e.nom+" - "+e.telephone+" ("+e.cours+")";
+liste.appendChild(li);
+});
+
+}
+
+</script>
+<script>
+
+var tentatives = 0;
+
+function verifier(){
+
+var mdp=document.getElementById("password").value;
+
+if(tentatives >= 3){
+alert("Trop de tentatives !");
+return;
+}
+
+if(mdp==="ansar2026"){
+document.getElementById("accesCours").classList.remove("hidden");
+verifierCours();
+alert("Bienvenue !");
+}
+
+else{
+tentatives++;
+alert("Mot de passe incorrect ("+tentatives+"/3)");
+}
+
+}
+
+</script>
+<a href="https://wa.me/221788626180" target="_blank" class="whatsapp">
+💬
+</a>
+
+<style>
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:30px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+</style>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -228,7 +348,7 @@ data-full-width-responsive="true"></ins>
 </ul>
 
 </div>
-
+<p id="totalEleves"></p>
 </section>
 
 
@@ -400,6 +520,134 @@ Aucune information personnelle n'est vendue ou partagée.
 
 </section>
 
+<section id="inscription" class="section">
+
+<h2>📝 Inscription des élèves</h2>
+
+<div class="carte">
+
+<input type="text" id="nom" placeholder="Nom complet">
+<br>
+
+<input type="text" id="telephone" placeholder="Téléphone">
+<br>
+
+<select id="cours">
+
+<option value="Coran">Cours de Coran</option>
+<option value="Hadith">Cours de Hadith</option>
+<option value="Charia">Cours de Charia</option>
+
+</select>
+
+<br>
+
+<button class="btn" onclick="inscrire()">
+S'inscrire
+</button>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>👨‍🎓 Liste des élèves inscrits</h2>
+
+<div class="carte">
+
+<ul id="listeEleves"></ul>
+
+<button class="btn" onclick="telechargerListe()">
+Télécharger la liste
+</button>
+
+</div>
+
+</section>
+<section id="paiement" class="section">
+
+<h2>💳 Paiement des cours</h2>
+
+<div class="carte">
+
+<p>Vous pouvez payer vos cours via :</p>
+
+<p><strong>📱 Wave / Orange Money</strong></p>
+
+<p>Numéro : 78 862 61 80</p>
+
+<a class="btn" href="https://wa.me/221788626180">
+Envoyer preuve de paiement
+</a>
+
+</div>
+
+</section>
+<section class="section">
+
+<h2>🎥 Vidéos de cours</h2>
+
+<div class="carte">
+
+<h3>Cours Tajwid</h3>
+
+<iframe width="100%" height="315"
+src="https://www.youtube.com/embed/2X0Y4JcX4m8"
+frameborder="0" allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="carte">
+
+<h3>Apprendre la prière</h3>
+
+<iframe width="100%" height="315"
+src="https://www.youtube.com/embed/8UQYk0X3T8k"
+frameborder="0" allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+<section id="articles" class="section">
+
+<h2>🕌 Articles Islamiques</h2>
+
+<div class="carte">
+<h3>📖 L’importance de la prière (Salat)</h3>
+<p>
+La prière est le pilier central de l’Islam après la foi. Elle permet au croyant de rester en lien constant avec Allah.
+</p>
+<p>
+Le Prophète (ﷺ) a dit : <br>
+<em>"La prière est la lumière du croyant."</em>
+</p>
+<button class="btn" onclick="lireArticle(1)">Lire plus</button>
+</div>
+
+<div class="carte">
+<h3>🌙 Le jeûne du Ramadan</h3>
+<p>
+Le Ramadan est un mois de purification, de patience et de rapprochement avec Allah.
+</p>
+<button class="btn" onclick="lireArticle(2)">Lire plus</button>
+</div>
+
+<div class="carte">
+<h3>🤲 Le respect des parents</h3>
+<p>
+L’Islam insiste fortement sur le respect et l’obéissance envers les parents.
+</p>
+<button class="btn" onclick="lireArticle(3)">Lire plus</button>
+</div>
+
+<div id="contenuArticle" class="carte hidden"></div>
+
+</section>
+
 
 <footer>
 
@@ -410,6 +658,76 @@ Institut Islamique – Bambilor
 
 
 <script>
+function lireArticle(id){
+
+var contenu=document.getElementById("contenuArticle");
+
+contenu.classList.remove("hidden");
+
+if(id===1){
+contenu.innerHTML = `
+<h3>📖 L’importance de la prière</h3>
+<p>
+La prière (Salat) est le deuxième pilier de l’Islam. Elle est obligatoire pour chaque musulman adulte.
+</p>
+<p>
+Allah dit dans le Coran : <br>
+<em>"Accomplissez la prière et acquittez la zakat."</em>
+</p>
+<p>
+La prière protège contre les mauvaises actions et purifie le cœur.
+</p>
+`;
+}
+
+if(id===2){
+contenu.innerHTML = `
+<h3>🌙 Le jeûne du Ramadan</h3>
+<p>
+Le jeûne est une obligation pour tout musulman capable.
+</p>
+<p>
+Allah dit : <br>
+<em>"Ô vous qui avez cru, le jeûne vous a été prescrit."</em>
+</p>
+<p>
+Le Ramadan est aussi un mois de pardon et de miséricorde.
+</p>
+`;
+}
+
+if(id===3){
+contenu.innerHTML = `
+<h3>🤲 Le respect des parents</h3>
+<p>
+Respecter ses parents est une obligation en Islam.
+</p>
+<p>
+Allah dit : <br>
+<em>"Sois bon envers tes parents."</em>
+</p>
+<p>
+Le Paradis se trouve sous les pieds de la mère.
+</p>
+`;
+}
+
+}
+function afficherEleves(){
+
+var liste=document.getElementById("listeEleves");
+liste.innerHTML="";
+
+eleves.forEach(function(e){
+var li=document.createElement("li");
+li.innerHTML=e.nom+" - "+e.telephone+" ("+e.cours+")";
+liste.appendChild(li);
+});
+
+document.getElementById("totalEleves").innerHTML =
+"Total élèves : " + eleves.length;
+
+}
 
 function verifier(){
 
@@ -471,7 +789,107 @@ document.getElementById("btnCharia").classList.remove("hidden");
 
 }
 
+var eleves=[];
+
+function inscrire(){
+
+var nom=document.getElementById("nom").value;
+var tel=document.getElementById("telephone").value;
+var cours=document.getElementById("cours").value;
+
+if(nom==="" || tel===""){
+
+alert("Veuillez remplir les informations");
+
+return;
+
+}
+
+var eleve={
+nom:nom,
+telephone:tel,
+cours:cours
+};
+
+eleves.push(eleve);
+
+afficherEleves();
+
+document.getElementById("nom").value="";
+document.getElementById("telephone").value="";
+
+alert("Inscription réussie");
+
+}
+
+function afficherEleves(){
+
+var liste=document.getElementById("listeEleves");
+
+liste.innerHTML="";
+
+eleves.forEach(function(e){
+
+var li=document.createElement("li");
+
+li.innerHTML=e.nom+" - "+e.telephone+" ("+e.cours+")";
+
+liste.appendChild(li);
+
+});
+
+}
+
+function telechargerListe(){
+
+var texte="Liste des élèves\n\n";
+
+eleves.forEach(function(e){
+
+texte+=e.nom+" - "+e.telephone+" - "+e.cours+"\n";
+
+});
+
+var blob=new Blob([texte],{type:"text/plain"});
+
+var lien=document.createElement("a");
+
+lien.href=URL.createObjectURL(blob);
+
+lien.download="eleves.txt";
+
+lien.click();
+
+}
+
+function certificat(){
+
+var nom=prompt("Entrez votre nom pour le certificat");
+
+if(nom===null || nom===""){
+return;
+}
+
+var texte="CERTIFICAT DE FORMATION\n\n";
+texte+="Institut : AN'SAROUD DINE BAMBILOR\n\n";
+texte+="Ce certificat est décerné à : "+nom+"\n\n";
+texte+="Pour avoir suivi les cours islamiques.\n\n";
+texte+="Année : 2026";
+
+var blob=new Blob([texte],{type:"text/plain"});
+
+var lien=document.createElement("a");
+
+lien.href=URL.createObjectURL(blob);
+
+lien.download="certificat.txt";
+
+lien.click();
+
+}
+
 </script>
 
 </body>
 </html>
+
