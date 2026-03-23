@@ -2,139 +2,42 @@
 <html lang="fr">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AN'SAROUD DINE BAMBILOR - Institut Islamique</title>
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7220960902615393"
-crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7220960902615393" crossorigin="anonymous"></script>
 
 <style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#ffffff;
-color:#222;
-}
-
-header{
-background:linear-gradient(90deg,#0f5e2b,#1c8c43);
-color:white;
-padding:40px;
-text-align:center;
-}
-
-nav{
-background:#0f5e2b;
-padding:15px;
-text-align:center;
-}
-
-nav a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.section{
-padding:60px 20px;
-text-align:center;
-}
-
-h2{
-color:#0f5e2b;
-}
-
-.btn{
-background:#1c8c43;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:5px;
-display:inline-block;
-margin:10px;
-}
-
-.btn:hover{
-background:#0f5e2b;
-}
-
-.carte{
-background:#f4f4f4;
-margin:20px auto;
-padding:20px;
-border-radius:10px;
-max-width:600px;
-}
-
-footer{
-background:#0f5e2b;
-color:white;
-padding:20px;
-text-align:center;
-}
-
-.hidden{
-display:none;
-}
-
-input{
-padding:10px;
-width:250px;
-margin:10px;
-}
-
-.pub{
-margin:40px auto;
-text-align:center;
-}
-
-.planning{
-background:#e8f5ec;
-padding:20px;
-margin:20px auto;
-max-width:600px;
-border-radius:10px;
-text-align:left;
-}
-
+body{margin:0;font-family:Arial;background:#fff;color:#222;}
+header{background:linear-gradient(90deg,#0f5e2b,#1c8c43);color:white;padding:40px;text-align:center;}
+nav{background:#0f5e2b;padding:15px;text-align:center;}
+nav a{color:white;margin:15px;text-decoration:none;font-weight:bold;}
+.section{padding:60px 20px;text-align:center;}
+h2{color:#0f5e2b;}
+.btn{background:#1c8c43;color:white;padding:12px 25px;text-decoration:none;border-radius:5px;display:inline-block;margin:10px;}
+.btn:hover{background:#0f5e2b;}
+.carte{background:#f4f4f4;margin:20px auto;padding:20px;border-radius:10px;max-width:600px;}
+footer{background:#0f5e2b;color:white;padding:20px;text-align:center;}
+.hidden{display:none;}
+input{padding:10px;width:250px;margin:10px;}
+.pub{margin:40px auto;text-align:center;}
+.planning{background:#e8f5ec;padding:20px;margin:20px auto;max-width:600px;border-radius:10px;text-align:left;}
+.dark{background:#111;color:white;}
+.dark .carte{background:#222;}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;font-size:30px;padding:15px;border-radius:50%;text-decoration:none;}
 </style>
 </head>
 
 <body>
 
 <header>
-
 <h1>🕌 AN'SAROUD DINE BAMBILOR</h1>
-
 <p>Cours islamiques en ligne</p>
-
-<p style="margin-top:20px;font-size:18px;">
-<br>
-</p>
-
 </header>
 
-
-
-<style>
-.dark{
-background:#111;
-color:white;
-}
-
-.dark .carte{
-background:#222;
-}
-</style>
-
 <nav>
-
 <a href="#formations">Formations</a>
 <a href="#planning">Programme</a>
 <a href="#connexion">Espace Élève</a>
@@ -142,30 +45,13 @@ background:#222;
 <a href="#apropos">À propos</a>
 <a href="#contact">Contact</a>
 <a href="#politique">Confidentialité</a>
-<a class="btn" target="_blank" href="Al akhdari.pdf.pdf">📖 Lire le livre</a>
+<a class="btn" target="_blank" href="Al-akhdari.pdf">📖 Lire le livre</a>
 <a class="btn" href="Al-akhdari.pdf" download>⬇️ Télécharger</a>
 </nav>
 
 <button class="btn" onclick="darkMode()">🌙 Mode sombre</button>
 
-<script>
-function darkMode(){
-document.body.classList.toggle("dark");
-}
-</script>
-
-<style>
-.dark{
-background:#111;
-color:white;
-}
-
-.dark .carte{
-background:#222;
-}
-</style>
 <section id="formations" class="section">
-
 <h2>📚 Nos formations</h2>
 
 <div class="carte">
@@ -186,730 +72,151 @@ background:#222;
 <p>7 500 FCFA / mois</p>
 </div>
 
-<a href="https://wa.me/221788626180" class="btn">
-📲 S'inscrire via WhatsApp
-</a>
-
+<a href="https://wa.me/221788626180" class="btn">📲 S'inscrire via WhatsApp</a>
 </section>
 
-
 <div class="pub">
-
-<ins class="adsbygoogle"
-style="display:block"
+<ins class="adsbygoogle" style="display:block"
 data-ad-client="ca-pub-7220960902615393"
 data-ad-slot="1234567890"
 data-ad-format="auto"
 data-full-width-responsive="true"></ins>
-<script>
-
-var eleves = JSON.parse(localStorage.getItem("eleves")) || [];
-
-afficherEleves();
-
-function inscrire(){
-
-var nom=document.getElementById("nom").value;
-var tel=document.getElementById("telephone").value;
-var cours=document.getElementById("cours").value;
-
-if(nom==="" || tel===""){
-alert("Veuillez remplir les informations");
-return;
-}
-
-var eleve={
-nom:nom,
-telephone:tel,
-cours:cours
-};
-
-eleves.push(eleve);
-
-// 🔥 Sauvegarde
-localStorage.setItem("eleves", JSON.stringify(eleves));
-
-afficherEleves();
-
-document.getElementById("nom").value="";
-document.getElementById("telephone").value="";
-
-alert("Inscription réussie");
-}
-
-function afficherEleves(){
-
-var liste=document.getElementById("listeEleves");
-liste.innerHTML="";
-
-eleves.forEach(function(e){
-var li=document.createElement("li");
-li.innerHTML=e.nom+" - "+e.telephone+" ("+e.cours+")";
-liste.appendChild(li);
-});
-
-}
-
-</script>
-<script>
-
-var tentatives = 0;
-
-function verifier(){
-
-var mdp=document.getElementById("password").value;
-
-if(tentatives >= 3){
-alert("Trop de tentatives !");
-return;
-}
-
-if(mdp==="ansar2026"){
-document.getElementById("accesCours").classList.remove("hidden");
-verifierCours();
-alert("Bienvenue !");
-}
-
-else{
-tentatives++;
-alert("Mot de passe incorrect ("+tentatives+"/3)");
-}
-
-}
-
-</script>
-<a href="https://wa.me/221788626180" target="_blank" class="whatsapp">
-💬
-</a>
-
-<style>
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:30px;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-}
-</style>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 </div>
 
-
 <section id="planning" class="section">
-
 <h2>📅 Programme des Cours</h2>
 
 <div class="planning">
-
 <h3>📖 Cours Qur'an</h3>
 <p><strong>Lundi - 16h00</strong></p>
-
 <ul>
-<li>Alphabet arabe</li>
-<li>Tajwid</li>
-<li>Sourate Al Fatiha</li>
-<li>Sourate Al Ikhlas</li>
-<li>Sourate Al Falaq</li>
-<li>Sourate An Nas</li>
+<li>Alphabet arabe</li><li>Tajwid</li><li>Al Fatiha</li>
 </ul>
-
 </div>
 
 <div class="planning">
-
 <h3>📜 Cours Hadith</h3>
 <p><strong>Mercredi - 17h00</strong></p>
-
 <ul>
-<li>40 Hadiths An Nawawi</li>
-<li>Respect des parents</li>
-<li>Sincérité</li>
-<li>La prière</li>
+<li>40 Hadiths</li><li>Sincérité</li>
 </ul>
-
 </div>
 
 <div class="planning">
-
 <h3>⚖️ Cours Charia</h3>
 <p><strong>Vendredi - 22h30</strong></p>
-
 <ul>
-<li>5 piliers de l'Islam</li>
-<li>Les ablutions</li>
-<li>Comment prier</li>
-<li>Le jeûne du Ramadan</li>
+<li>5 piliers</li><li>Prière</li>
 </ul>
-
 </div>
+
 <p id="totalEleves"></p>
 </section>
 
-
 <section id="connexion" class="section">
-
 <h2>🔒 Espace Élève</h2>
 
-<p>Entrez votre mot de passe :</p>
-
-<input type="password" id="password" placeholder="Mot de passe">
-
-<br>
-
+<input type="password" id="password" placeholder="Mot de passe"><br>
 <button class="btn" onclick="verifier()">Se connecter</button>
 
-
 <div id="accesCours" class="hidden">
-
-<h3>🎓 Salle des cours en direct</h3>
-
+<h3>🎓 Salle des cours</h3>
 
 <div class="carte">
-
 <h3>📖 Qur'an</h3>
-
-<p id="etatQuran">🔴 Cours fermé</p>
-
-<a id="btnQuran" href="https://meet.google.com/rui-cbqt-tnh" target="_blank" class="btn hidden">
-Rejoindre le cours
-</a>
-
+<a href="https://meet.google.com/rui-cbqt-tnh" class="btn">Rejoindre</a>
 </div>
 
-
 <div class="carte">
-
 <h3>📜 Hadith</h3>
-
-<p id="etatHadith">🔴 Cours fermé</p>
-
-<a id="btnHadith" href="https://meet.google.com/pfs-nrad-ipn" target="_blank" class="btn hidden">
-Rejoindre le cours
-</a>
-
+<a href="https://meet.google.com/pfs-nrad-ipn" class="btn">Rejoindre</a>
 </div>
 
-
 <div class="carte">
-
 <h3>⚖️ Charia</h3>
-
-<p id="etatCharia">🔴 Cours fermé</p>
-
-<a id="btnCharia" href="https://meet.google.com/vuv-njei-rdj" target="_blank" class="btn hidden">
-Rejoindre le cours
-</a>
-
+<a href="https://meet.google.com/vuv-njei-rdj" class="btn">Rejoindre</a>
 </div>
 
 </div>
-
 </section>
 
-
-<section id="bibliotheque" class="section">
-
-<h2>📚 Bibliothèque Islamique</h2>
-
-<div class="carte">
-
-<h3>📖 Le Saint Coran</h3>
-
-<a class="btn" target="_blank" href="https://quran.com/fr">Lire le Coran</a>
-
-<a class="btn" target="_blank" href="https://quranicaudio.com">Écouter le Coran</a>
-
-</div>
-
-
-<div class="carte">
-
-<h3>📜 Sahih Al Boukhari</h3>
-
-<a class="btn" target="_blank" href="https://sunnah.com/bukhari">Lire les Hadiths</a>
-
-</div>
-
-
-<div class="carte">
-
-<h3>⚖️ Al Akhdari</h3>
-
-<a class="btn" target="_blank" href="https://archive.org/details/akhdari">Lire le livre</a>
-
-</div>
-
-</section>
 <section id="bibliotheque" class="section">
 <h2>📚 Bibliothèque Islamique</h2>
 
 <div class="carte">
-<h3>📖 Le Saint Coran</h3>
-<p>Disponible bientôt</p>
-</div>
-
-<div class="carte">
-<h3>📜 Sahih Al Boukhari</h3>
-<p>Disponible bientôt</p>
-</div>
-
-<div class="carte">
 <h3>⚖️ Al Akhdari</h3>
-<a class="btn" target="_blank" href="Al-akhdari.pdf">📖 Lire le livre</a>
+<a class="btn" href="Al-akhdari.pdf" target="_blank">📖 Lire</a>
 <a class="btn" href="Al-akhdari.pdf" download>⬇️ Télécharger</a>
 </div>
 
 </section>
 
-<section id="apropos" class="section">
-
-<h2>ℹ️ À propos</h2>
-
-<div class="carte">
-
-<p>
-
-AN'SAROUD DINE BAMBILOR est un institut islamique dédié à l'enseignement du Coran, des Hadiths et de la jurisprudence islamique.
-
-</p>
-
-<p>
-
-Notre objectif est de faciliter l'accès à la science islamique pour tous les musulmans à travers des cours accessibles en ligne.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section id="contact" class="section">
-
-<h2>📞 Contact</h2>
-
-<div class="carte">
-
-<p>Pour toute information :</p>
-
-<p>WhatsApp : 78 862 61 80</p>
-
-<a href="https://wa.me/221788626180" class="btn">
-
-Contacter sur WhatsApp
-
-</a>
-
-</div>
-
-</section>
-
-
-<section id="politique" class="section">
-
-<h2>🔒 Politique de confidentialité</h2>
-
-<div class="carte">
-
-<p>
-
-Ce site utilise des services tiers comme Google AdSense pour afficher des publicités.
-
-</p>
-
-<p>
-
-Google peut utiliser des cookies pour afficher des annonces adaptées aux utilisateurs.
-
-</p>
-
-<p>
-
-Aucune information personnelle n'est vendue ou partagée.
-
-</p>
-
-</div>
-
-</section>
-
 <section id="inscription" class="section">
+<h2>📝 Inscription</h2>
 
-<h2>📝 Inscription des élèves</h2>
-
-<div class="carte">
-
-<input type="text" id="nom" placeholder="Nom complet">
-<br>
-
-<input type="text" id="telephone" placeholder="Téléphone">
-<br>
+<input type="text" id="nom" placeholder="Nom"><br>
+<input type="text" id="telephone" placeholder="Téléphone"><br>
 
 <select id="cours">
+<option>Coran</option>
+<option>Hadith</option>
+<option>Charia</option>
+</select><br>
 
-<option value="Coran">Cours de Coran</option>
-<option value="Hadith">Cours de Hadith</option>
-<option value="Charia">Cours de Charia</option>
-
-</select>
-
-<br>
-
-<button class="btn" onclick="inscrire()">
-S'inscrire
-</button>
-
-</div>
-
+<button class="btn" onclick="inscrire()">S'inscrire</button>
 </section>
 
-
 <section class="section">
-
-<h2>👨‍🎓 Liste des élèves inscrits</h2>
-
-<div class="carte">
-
+<h2>👨‍🎓 Liste</h2>
 <ul id="listeEleves"></ul>
-
-<button class="btn" onclick="telechargerListe()">
-Télécharger la liste
-</button>
-
-</div>
-
 </section>
-<section id="paiement" class="section">
-
-<h2>💳 Paiement des cours</h2>
-
-<div class="carte">
-
-<p>Vous pouvez payer vos cours via :</p>
-
-<p><strong>📱 Wave / Orange Money</strong></p>
-
-<p>Numéro : 78 862 61 80</p>
-
-<a class="btn" href="https://wa.me/221788626180">
-Envoyer preuve de paiement
-</a>
-
-</div>
-
-</section>
-<section class="section">
-
-<h2>🎥 Vidéos de cours</h2>
-
-<div class="carte">
-
-<h3>Cours Tajwid</h3>
-
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/2X0Y4JcX4m8"
-frameborder="0" allowfullscreen>
-</iframe>
-
-</div>
-
-<div class="carte">
-
-<h3>Apprendre la prière</h3>
-
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/8UQYk0X3T8k"
-frameborder="0" allowfullscreen>
-</iframe>
-
-</div>
-
-</section>
-<section id="articles" class="section">
-
-<h2>🕌 Articles Islamiques</h2>
-
-<div class="carte">
-<h3>📖 L’importance de la prière (Salat)</h3>
-<p>
-La prière est le pilier central de l’Islam après la foi. Elle permet au croyant de rester en lien constant avec Allah.
-</p>
-<p>
-Le Prophète (ﷺ) a dit : <br>
-<em>"La prière est la lumière du croyant."</em>
-</p>
-<button class="btn" onclick="lireArticle(1)">Lire plus</button>
-</div>
-
-<div class="carte">
-<h3>🌙 Le jeûne du Ramadan</h3>
-<p>
-Le Ramadan est un mois de purification, de patience et de rapprochement avec Allah.
-</p>
-<button class="btn" onclick="lireArticle(2)">Lire plus</button>
-</div>
-
-<div class="carte">
-<h3>🤲 Le respect des parents</h3>
-<p>
-L’Islam insiste fortement sur le respect et l’obéissance envers les parents.
-</p>
-<button class="btn" onclick="lireArticle(3)">Lire plus</button>
-</div>
-
-<div id="contenuArticle" class="carte hidden"></div>
-
-</section>
-
 
 <footer>
-
-© 2026 AN'SAROUD DINE BAMBILOR  
-Institut Islamique – Bambilor
-
+© 2026 AN'SAROUD DINE BAMBILOR
 </footer>
 
+<a href="https://wa.me/221788626180" class="whatsapp">💬</a>
 
 <script>
-function lireArticle(id){
-
-var contenu=document.getElementById("contenuArticle");
-
-contenu.classList.remove("hidden");
-
-if(id===1){
-contenu.innerHTML = `
-<h3>📖 L’importance de la prière</h3>
-<p>
-La prière (Salat) est le deuxième pilier de l’Islam. Elle est obligatoire pour chaque musulman adulte.
-</p>
-<p>
-Allah dit dans le Coran : <br>
-<em>"Accomplissez la prière et acquittez la zakat."</em>
-</p>
-<p>
-La prière protège contre les mauvaises actions et purifie le cœur.
-</p>
-`;
+function darkMode(){
+document.body.classList.toggle("dark");
 }
 
-if(id===2){
-contenu.innerHTML = `
-<h3>🌙 Le jeûne du Ramadan</h3>
-<p>
-Le jeûne est une obligation pour tout musulman capable.
-</p>
-<p>
-Allah dit : <br>
-<em>"Ô vous qui avez cru, le jeûne vous a été prescrit."</em>
-</p>
-<p>
-Le Ramadan est aussi un mois de pardon et de miséricorde.
-</p>
-`;
-}
-
-if(id===3){
-contenu.innerHTML = `
-<h3>🤲 Le respect des parents</h3>
-<p>
-Respecter ses parents est une obligation en Islam.
-</p>
-<p>
-Allah dit : <br>
-<em>"Sois bon envers tes parents."</em>
-</p>
-<p>
-Le Paradis se trouve sous les pieds de la mère.
-</p>
-`;
-}
-
-}
-function afficherEleves(){
-
-var liste=document.getElementById("listeEleves");
-liste.innerHTML="";
-
-eleves.forEach(function(e){
-var li=document.createElement("li");
-li.innerHTML=e.nom+" - "+e.telephone+" ("+e.cours+")";
-liste.appendChild(li);
-});
-
-document.getElementById("totalEleves").innerHTML =
-"Total élèves : " + eleves.length;
-
-}
-
-function verifier(){
-
-var mdp=document.getElementById("password").value;
-
-if(mdp==="ansar2026"){
-
-document.getElementById("accesCours").classList.remove("hidden");
-
-verifierCours();
-
-alert("Bienvenue dans l'institut !");
-
-}
-
-else{
-
-alert("Mot de passe incorrect");
-
-}
-
-}
-
-
-function verifierCours(){
-
-var maintenant=new Date();
-
-var jour=maintenant.getDay();
-
-var heure=maintenant.getHours();
-
-
-if(jour===1 && heure===16){
-
-document.getElementById("etatQuran").innerHTML="🟢 Cours en direct";
-
-document.getElementById("btnQuran").classList.remove("hidden");
-
-}
-
-
-if(jour===3 && heure===17){
-
-document.getElementById("etatHadith").innerHTML="🟢 Cours en direct";
-
-document.getElementById("btnHadith").classList.remove("hidden");
-
-}
-
-
-if(jour===5 && heure===22){
-
-document.getElementById("etatCharia").innerHTML="🟢 Cours en direct";
-
-document.getElementById("btnCharia").classList.remove("hidden");
-
-}
-
-}
-
-var eleves=[];
+var eleves = JSON.parse(localStorage.getItem("eleves")) || [];
 
 function inscrire(){
-
 var nom=document.getElementById("nom").value;
 var tel=document.getElementById("telephone").value;
 var cours=document.getElementById("cours").value;
 
-if(nom==="" || tel===""){
+if(nom===""||tel===""){alert("Remplir les champs");return;}
 
-alert("Veuillez remplir les informations");
-
-return;
-
-}
-
-var eleve={
-nom:nom,
-telephone:tel,
-cours:cours
-};
-
-eleves.push(eleve);
-
+eleves.push({nom,telephone:tel,cours});
+localStorage.setItem("eleves", JSON.stringify(eleves));
 afficherEleves();
-
-document.getElementById("nom").value="";
-document.getElementById("telephone").value="";
-
-alert("Inscription réussie");
-
 }
 
 function afficherEleves(){
-
 var liste=document.getElementById("listeEleves");
-
 liste.innerHTML="";
-
-eleves.forEach(function(e){
-
+eleves.forEach(e=>{
 var li=document.createElement("li");
-
 li.innerHTML=e.nom+" - "+e.telephone+" ("+e.cours+")";
-
 liste.appendChild(li);
-
 });
-
+document.getElementById("totalEleves").innerHTML="Total élèves : "+eleves.length;
 }
 
-function telechargerListe(){
-
-var texte="Liste des élèves\n\n";
-
-eleves.forEach(function(e){
-
-texte+=e.nom+" - "+e.telephone+" - "+e.cours+"\n";
-
-});
-
-var blob=new Blob([texte],{type:"text/plain"});
-
-var lien=document.createElement("a");
-
-lien.href=URL.createObjectURL(blob);
-
-lien.download="eleves.txt";
-
-lien.click();
-
+function verifier(){
+if(document.getElementById("password").value==="ansar2026"){
+document.getElementById("accesCours").classList.remove("hidden");
+}
+else{alert("Mot de passe incorrect");}
 }
 
-function certificat(){
-
-var nom=prompt("Entrez votre nom pour le certificat");
-
-if(nom===null || nom===""){
-return;
-}
-
-var texte="CERTIFICAT DE FORMATION\n\n";
-texte+="Institut : AN'SAROUD DINE BAMBILOR\n\n";
-texte+="Ce certificat est décerné à : "+nom+"\n\n";
-texte+="Pour avoir suivi les cours islamiques.\n\n";
-texte+="Année : 2026";
-
-var blob=new Blob([texte],{type:"text/plain"});
-
-var lien=document.createElement("a");
-
-lien.href=URL.createObjectURL(blob);
-
-lien.download="certificat.txt";
-
-lien.click();
-
-}
-
+afficherEleves();
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
 </body>
 </html>
-
