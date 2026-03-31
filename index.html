@@ -2,41 +2,39 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AN'SAROUD DINE BAMBILOR - Institut Islamique</title>
-<meta name="keywords" content="Islam Sénégal, Coran Bambilor, cours islamique, apprendre Coran Sénégal">
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7220960902615393"
-crossorigin="anonymous"></script>
+<title>AN'SAROUD DINE BAMBILOR</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
-background:#f9f9f9;
-color:#222;
+background:#f5f5f5;
 }
 
 /* HEADER */
+
 header{
-background:#000;
-color: white ;
-padding:30px;
+background:#0b3d2e;
+color:white;
 text-align:center;
+padding:30px;
 }
 
 header img{
 width:90px;
 border-radius:50%;
-box-shadow:0 0 10px rgba(255,215,0,0.6);
 margin-bottom:10px;
 }
 
-/* NAV */
+/* MENU */
+
 nav{
-background:#111;
+background:black;
 padding:15px;
 text-align:center;
 }
@@ -45,357 +43,315 @@ nav a{
 color:#FFD700;
 margin:10px;
 text-decoration:none;
+cursor:pointer;
 font-weight:bold;
 }
 
-nav a:hover{
-color:white;
-}
-
-/* TITRES */
-h1,h2,h3{
-color:#111;
-}
-
-header h1{
-color:#FFD700;
-font-size:32px;
-letter-spacing:2px;
-}
-header h2{
-color:#FFD700;
-font-size:32px;
-letter-spacing:2px;
-}
-header p{
-color:#FFD700;
-opacity:0.9;
-}
-header{
-background: url("fond.jpeg") center/cover no-repeat;
-color:white;
-}
 /* SECTIONS */
+
 .section{
-padding:60px 20px;
+display:none;
+padding:40px 20px;
 text-align:center;
 }
 
-/* BOUTONS */
-.btn{
-background:#FFD700;
-color:#000;
-padding:12px 25px;
-text-decoration:none;
-border-radius:5px;
-display:inline-block;
-margin:10px;
-font-weight:bold;
-}
-
-.btn:hover{
-background:#e6c200;
+.active{
+display:block;
 }
 
 /* CARTES */
+
 .carte{
 background:white;
-margin:20px auto;
 padding:20px;
+margin:20px auto;
+max-width:800px;
 border-radius:10px;
-max-width:600px;
 box-shadow:0 5px 10px rgba(0,0,0,0.1);
 border-top:4px solid #FFD700;
 }
 
-/* INPUT */
+.arabe{
+direction:rtl;
+font-size:22px;
+line-height:1.8;
+}
+
+/* FORMULAIRE */
+
 input,select{
 padding:10px;
-width:260px;
+width:250px;
 margin:10px;
 border-radius:5px;
 border:1px solid #ccc;
 }
 
-/* PLANNING */
-.planning{
-background:white;
-padding:20px;
-margin:20px auto;
-max-width:600px;
-border-radius:10px;
-text-align:left;
-border-left:4px solid #FFD700;
-}
+/* BOUTON */
 
-/* FOOTER */
-footer{
-background:#000;
-color:#FFD700;
-padding:20px;
-text-align:center;
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:30px;
-padding:15px;
-border-radius:50%;
+.btn{
+background:#FFD700;
+padding:12px 25px;
+border-radius:5px;
 text-decoration:none;
+color:black;
+display:inline-block;
+margin-top:10px;
 }
+
+footer{
+background:black;
+color:#FFD700;
+text-align:center;
+padding:20px;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-<img src="logo.jpeg" alt="Logo Institut">
+
+<img src="logo.png">
+
 <h1>AN'SAROUD DINE BAMBILOR</h1>
-<p style="letter-spacing:2px;">INSTITUT ISLAMIQUE</p>
+<p>Institut Islamique</p>
+
 </header>
 
 <nav>
-<a href="#formations">Formations</a>
-<a href="#planning">Programme</a>
-<a href="#connexion">Espace Élève</a>
-<a href="#bibliotheque">Bibliothèque</a>
-<a href="#inscription">Inscription</a>
-<a class="btn" target="_blank" href="Al-akhdari.pdf">📖 Lire</a>
-<a class="btn" href="Al-akhdari.pdf" download>⬇️ Télécharger</a>
+
+<a onclick="showSection('formations')">Formations</a>
+<a onclick="showSection('programme')">Programme</a>
+<a onclick="showSection('coran')">Coran</a>
+<a onclick="showSection('hadiths')">Hadiths</a>
+<a onclick="showSection('douas')">Douas</a>
+<a onclick="showSection('prieres')">Prières</a>
+<a onclick="showSection('connexion')">Espace Élève</a>
+<a onclick="showSection('inscription')">Inscription</a>
+
 </nav>
 
-<section id="formations" class="section">
+<!-- FORMATIONS -->
+
+<section id="formations" class="section active">
+
 <h2>📚 Nos formations</h2>
 
 <div class="carte">
-<h3>📖 Al Qur'an</h3>
+<h3>📖 Coran</h3>
 <p>Apprentissage du Coran et Tajwid</p>
-<p><strong>5 000 FCFA / mois</strong></p>
 </div>
 
 <div class="carte">
 <h3>📜 Hadith</h3>
-<p>Étude des hadiths authentiques</p>
-<p><strong>5 000 FCFA / mois</strong></p>
+<p>Étude des hadiths</p>
 </div>
 
 <div class="carte">
 <h3>⚖️ Charia</h3>
-<p>Étude du fiqh et des règles islamiques</p>
-<p><strong>7 500 FCFA / mois</strong></p>
+<p>Étude du fiqh</p>
 </div>
 
-<a href="https://wa.me/221788626180" class="btn">📲 S'inscrire via WhatsApp</a>
 </section>
 
-<div class="pub">
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-7220960902615393"
-data-ad-slot="1234567890"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-</div>
+<!-- PROGRAMME -->
 
-<section id="planning" class="section">
+<section id="programme" class="section">
+
 <h2>📅 Programme</h2>
 
-<div class="planning">
-<strong>Lundi - 16h :</strong> Coran
-</div>
+<div class="carte">Lundi : Coran</div>
+<div class="carte">Mercredi : Hadith</div>
+<div class="carte">Vendredi : Charia</div>
 
-<div class="planning">
-<strong>Mercredi - 17h :</strong> Hadith
-</div>
-
-<div class="planning">
-<strong>Vendredi - 22h30 :</strong> Charia
-</div>
-
-<p id="totalEleves"></p>
 </section>
+
+<!-- CORAN COMPLET -->
+
+<section id="coran" class="section">
+
+<h2>📖 Coran complet</h2>
+
+<div id="listeCoran"></div>
+
+</section>
+
+<!-- HADITHS -->
+
+<section id="hadiths" class="section">
+
+<h2>📚 Hadiths</h2>
+
+<div id="listeHadiths"></div>
+
+</section>
+
+<!-- DOUAS -->
+
+<section id="douas" class="section">
+
+<h2>📿 Invocations</h2>
+
+<div class="carte">
+<p class="arabe">اللّهُمَّ اغْفِرْ لِي</p>
+<p>Ô Allah pardonne-moi.</p>
+</div>
+
+<div class="carte">
+<p class="arabe">اللّهُمَّ اهْدِنِي</p>
+<p>Ô Allah guide-moi.</p>
+</div>
+
+</section>
+
+<!-- PRIERES -->
+
+<section id="prieres" class="section">
+
+<h2>🌙 Horaires de prière Sénégal</h2>
+
+<div class="carte">Fajr : 05:45</div>
+<div class="carte">Dhuhr : 14:00</div>
+<div class="carte">Asr : 17:20</div>
+<div class="carte">Maghrib : 19:30</div>
+<div class="carte">Isha : 20:45</div>
+
+</section>
+
+<!-- ESPACE ELEVE -->
 
 <section id="connexion" class="section">
+
 <h2>🔒 Espace Élève</h2>
 
-<input type="password" id="password" placeholder="Mot de passe"><br>
-<button class="btn" onclick="verifier()">Se connecter</button>
+<input type="password" id="password" placeholder="Mot de passe">
 
-<div id="accesCours" class="hidden">
+<br>
 
-<div class="carte">
-<h3>📖 Coran</h3>
-<a href="https://meet.google.com/rui-cbqt-tnh" class="btn">Rejoindre</a>
-</div>
+<button class="btn" onclick="verifier()">Connexion</button>
+
+<div id="cours" style="display:none">
 
 <div class="carte">
-<h3>📜 Hadith</h3>
-<a href="https://meet.google.com/pfs-nrad-ipn" class="btn">Rejoindre</a>
+<a href="#" class="btn">Cours Coran</a>
 </div>
 
 <div class="carte">
-<h3>⚖️ Charia</h3>
-<a href="https://meet.google.com/vuv-njei-rdj" class="btn">Rejoindre</a>
+<a href="#" class="btn">Cours Hadith</a>
 </div>
 
-</div>
-</section>
-
-<section id="connexion" class="section">
-<h2>🔒 Espace Élève</h2>
-
-<input type="password" id="password" placeholder="Mot de passe"><br>
-<button class="btn" onclick="verifier()">Se connecter</button>
-
-<div id="accesCours" class="hidden">
-<h3>🎓 Salle des cours</h3>
-
-<div class="carte">
-<h3>📖 Qur'an</h3>
-<a href="https://meet.google.com/rui-cbqt-tnh" class="btn">Rejoindre</a>
-</div>
-
-<div class="carte">
-<h3>📜 Hadith</h3>
-<a href="https://meet.google.com/pfs-nrad-ipn" class="btn">Rejoindre</a>
-</div>
-
-<div class="carte">
-<h3>⚖️ Charia</h3>
-<a href="https://meet.google.com/vuv-njei-rdj" class="btn">Rejoindre</a>
-</div>
-
-</div>
-</section>
-
-<section id="bibliotheque" class="section">
-<h2>📚 Bibliothèque Islamique</h2>
-
-<div class="carte">
-<h3>⚖️ Al Akhdari</h3>
-<a class="btn" href="Al-akhdari.pdf" target="_blank">📖 Lire</a>
-<a class="btn" href="Al-akhdari.pdf" download>⬇️ Télécharger</a>
 </div>
 
 </section>
+
+<!-- INSCRIPTION -->
 
 <section id="inscription" class="section">
+
 <h2>📝 Inscription</h2>
 
-<input type="text" id="nom" placeholder="Nom"><br>
-<input type="text" id="telephone" placeholder="Téléphone"><br>
+<input type="text" placeholder="Nom"><br>
+<input type="text" placeholder="Téléphone"><br>
 
-<select id="cours">
+<select>
 <option>Coran</option>
 <option>Hadith</option>
 <option>Charia</option>
-</select><br>
+</select>
 
-<button class="btn" onclick="inscrire()">S'inscrire</button>
-</section>
+<br>
 
-<section class="section">
-<h2>👨‍🎓 Liste des élèves</h2>
-<ul id="listeEleves"></ul>
-</section>
-section class="section">
-<h2>🕌 À propos</h2>
-<div class="carte">
-<p>
-L'institut AN'SAROUD DINE BAMBILOR est dédié à l’enseignement du Coran, des hadiths et de la Charia.
-Nous accompagnons les élèves dans leur apprentissage religieux avec rigueur et discipline.
-Notre mission est de transmettre les valeurs islamiques et de former une génération instruite.
-</p>
-</div>
-</section>
-
-<section class="section">
-<h2>🔒 Politique de confidentialité</h2>
-<div class="carte">
-<p>
-Ce site utilise Google AdSense pour afficher des publicités.
-Des cookies peuvent être utilisés pour améliorer votre expérience utilisateur.
-</p>
-</div>
-</section>
-  <section class="section">
-<h2>📰 Articles Islamiques</h2>
-
-<div class="carte">
-<h3>🕌 Importance de la prière en Islam</h3>
-<p>
-La prière est le pilier fondamental de l’Islam. Elle permet au croyant de rester en connexion permanente avec Allah...
-</p>
-<a href="#" class="btn">Lire plus</a>
-</div>
-
-<div class="carte">
-<h3>📖 Les 5 piliers de l’Islam</h3>
-<p>
-L’Islam repose sur cinq piliers essentiels : la foi, la prière, le jeûne, l’aumône et le pèlerinage...
-</p>
-<a href="#" class="btn">Lire plus</a>
-</div>
-
-<div class="carte">
-<h3>🌙 Les bienfaits du Ramadan</h3>
-<p>
-Le mois de Ramadan est une période de purification spirituelle, de discipline et de rapprochement avec Allah...
-</p>
-<a href="#" class="btn">Lire plus</a>
-</div>
+<button class="btn">S'inscrire</button>
 
 </section>
+
 <footer>
+
 © 2026 AN'SAROUD DINE BAMBILOR
+
 </footer>
 
-<a href="https://wa.me/221788626180" class="whatsapp">💬</a>
-
 <script>
-var eleves = JSON.parse(localStorage.getItem("eleves")) || [];
 
-function inscrire(){
-var nom=document.getElementById("nom").value;
-var tel=document.getElementById("telephone").value;
-var cours=document.getElementById("cours").value;
+/* navigation */
 
-if(nom===""||tel===""){alert("Remplir les champs");return;}
+function showSection(id){
 
-eleves.push({nom,telephone:tel,cours});
-localStorage.setItem("eleves", JSON.stringify(eleves));
-afficherEleves();
+document.querySelectorAll(".section").forEach(sec=>{
+sec.classList.remove("active")
+})
+
+document.getElementById(id).classList.add("active")
+
 }
 
-function afficherEleves(){
-var liste=document.getElementById("listeEleves");
-liste.innerHTML="";
-eleves.forEach(e=>{
-var li=document.createElement("li");
-li.innerHTML=e.nom+" - "+e.telephone+" ("+e.cours+")";
-liste.appendChild(li);
-});
-document.getElementById("totalEleves").innerHTML="Total élèves : "+eleves.length;
-}
+/* espace eleve */
 
 function verifier(){
-if(document.getElementById("password").value==="ansar2026"){
-document.getElementById("accesCours").classList.remove("hidden");
+
+if(document.getElementById("password").value=="1234"){
+
+document.getElementById("cours").style.display="block"
+
 }else{
-alert("Mot de passe incorrect");
-}
+
+alert("Mot de passe incorrect")
+
 }
 
-window.onload = function(){
-(adsbygoogle = window.adsbygoogle || []).push({});
-afficherEleves();
 }
+
+/* charger coran complet */
+
+fetch("https://api.alquran.cloud/v1/quran/ar.alafasy")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+let container=document.getElementById("listeCoran")
+
+data.data.surahs.forEach(s=>{
+
+let div=document.createElement("div")
+
+div.className="carte"
+
+let verses=""
+
+s.ayahs.forEach(v=>{
+verses += v.text + " "
+})
+
+div.innerHTML="<h3>"+s.number+". "+s.name+"</h3><p class='arabe'>"+verses+"</p>"
+
+container.appendChild(div)
+
+})
+
+})
+
+/* hadiths automatique */
+
+let hadithContainer=document.getElementById("listeHadiths")
+
+for(let i=1;i<=1000;i++){
+
+let div=document.createElement("div")
+
+div.className="carte"
+
+div.innerHTML="<p>Hadith numéro "+i+"</p>"
+
+hadithContainer.appendChild(div)
+
+}
+
 </script>
 
 </body>
 </html>
+```
