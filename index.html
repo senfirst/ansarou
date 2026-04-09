@@ -1,374 +1,198 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>AN'SAROUD DINE BAMBILOR</title>
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7220960902615393"
-crossorigin="anonymous"></script>
-
 <style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#f5f5f5;
-}
-
-/* HEADER */
-
-header{
-background:#0b3d2e;
-color:white;
-text-align:center;
-padding:30px;
-}
-
-header img{
-width:90px;
-border-radius:50%;
-margin-bottom:10px;
-}
-
-/* MENU */
-
-nav{
-background:black;
-padding:15px;
-text-align:center;
-}
-
-nav a{
-color:#FFD700;
-margin:10px;
-text-decoration:none;
-cursor:pointer;
-font-weight:bold;
-}
-
-/* SECTIONS */
-
-.section{
-display:none;
-padding:40px 20px;
-text-align:center;
-}
-
-.active{
-display:block;
-}
-
-/* CARTES */
-
-.carte{
-background:white;
-padding:20px;
-margin:20px auto;
-max-width:800px;
-border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
-border-top:4px solid #FFD700;
-}
-
-.arabe{
-direction:rtl;
-font-size:22px;
-line-height:1.8;
-}
-
-/* FORMULAIRE */
-
-input,select{
-padding:10px;
-width:250px;
-margin:10px;
-border-radius:5px;
-border:1px solid #ccc;
-}
-
-/* BOUTON */
-
-.btn{
-background:#FFD700;
-padding:12px 25px;
-border-radius:5px;
-text-decoration:none;
-color:black;
-display:inline-block;
-margin-top:10px;
-}
-
-footer{
-background:black;
-color:#FFD700;
-text-align:center;
-padding:20px;
-}
-
+body{margin:0;font-family:Arial,sans-serif;background:#fffbea;color:#000}
+header{background:linear-gradient(135deg,#000,#222);color:#FFD700;text-align:center;padding:30px}
+nav{background:#FFD700;padding:12px;text-align:center}
+nav a{color:#000;margin:10px;text-decoration:none;font-weight:bold;cursor:pointer;padding:8px 15px;border-radius:5px;transition:0.3s}
+nav a:hover{background:#000;color:#FFD700}
+.section{display:none;padding:25px;max-width:1000px;margin:auto}
+.active{display:block}
+.carte{background:#fff;color:#000;padding:20px;margin:15px 0;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.1);transition:0.3s;border-left:6px solid #FFD700}
+.carte:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,0.2)}
+img{width:100%;border-radius:10px;margin-top:10px}
+.btn{background:#FFD700;color:#000;padding:12px 20px;border:none;border-radius:8px;cursor:pointer;margin-top:10px;font-weight:bold;transition:0.3s}
+.btn:hover{background:#000;color:#FFD700}
+footer{background:#000;color:#FFD700;text-align:center;padding:20px;margin-top:40px}
+iframe{width:100%;height:300px;border-radius:10px;margin-top:10px}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.socials{text-align:center;margin-top:20px}
+.socials a{display:inline-block;margin:10px;padding:10px 15px;background:#FFD700;color:#000;border-radius:8px;text-decoration:none;font-weight:bold;transition:0.3s}
+.socials a:hover{background:#000;color:#FFD700}
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+.counter{font-size:28px;font-weight:bold;color:#FFD700;margin-top:10px}
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<img src="logo.jpeg">
-
+<img src="logo.jpeg" alt="Logo" style="width:90px;border-radius:50%;margin-bottom:10px;box-shadow:0 4px 10px rgba(0,0,0,0.3)">
 <h1>AN'SAROUD DINE BAMBILOR</h1>
-<p>Institut Islamique</p>
-
+<p>Association Islamique - Unité - Solidarité - Religion</p>
 </header>
 
 <nav>
-
-<a onclick="showSection('formations')">Formations</a>
-<a onclick="showSection('programme')">Programme</a>
-<a onclick="showSection('coran')">Coran</a>
-<a onclick="showSection('hadiths')">Hadiths</a>
-<a onclick="showSection('douas')">Douas</a>
-<a onclick="showSection('prieres')">Prières</a>
-<a onclick="showSection('connexion')">Espace Élève</a>
-<a onclick="showSection('inscription')">Inscription</a>
-
+<a onclick="showSection('accueil')">Accueil</a>
+<a onclick="showSection('apropos')">À propos</a>
+<a onclick="showSection('activites')">Activités</a>
+<a onclick="showSection('galerie')">Galerie</a>
+<a onclick="showSection('dons')">Dons</a>
+<a onclick="showSection('contact')">Contact</a>
 </nav>
 
-<!-- FORMATIONS -->
-
-<section id="formations" class="section active">
-
-<h2>📚 Nos formations</h2>
-
-<div class="carte">
-<h3>📖 Coran</h3>
-<p>Apprentissage du Coran et Tajwid</p>
+<section id="accueil" class="section active">
+<div class="carte reveal">
+<h2>Bienvenue</h2>
+<p>Bienvenue sur le site officiel de l'association AN'SAROUD DINE BAMBILOR.</p>
+<img src="zz.jpeg">
 </div>
 
-<div class="carte">
-<h3>📜 Hadith</h3>
-<p>Étude des hadiths</p>
+<div class="carte reveal">
+<h2>📱 Suivez-nous</h2>
+<div class="socials">
+<a href="https://www.facebook.com/profile.php?id=61559056886700">Facebook</a>
+<a href="https://www.instagram.com/ansarouddine">Instagram</a>
+<a href="https://whatsapp.com/channel/0029VaWNSE8BPzjW9kedWw1l">WhatsApp</a>
 </div>
-
-<div class="carte">
-<h3>⚖️ Charia</h3>
-<p>Étude du fiqh</p>
 </div>
-
-<!-- publicité -->
-
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-7220960902615393"
-data-ad-slot="1234567890"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 </section>
 
-<!-- PROGRAMME -->
-
-<section id="programme" class="section">
-
-<h2>📅 Programme</h2>
-
-<div class="carte">Lundi : Coran</div>
-<div class="carte">Mercredi : Hadith</div>
-<div class="carte">Vendredi : Charia</div>
-
+<section id="apropos" class="section">
+<div class="carte reveal">
+<h2>À propos</h2>
+<p>Association dédiée à l'éducation islamique et à la solidarité.</p>
+</div>
 </section>
 
-<!-- CORAN COMPLET -->
+<section id="activites" class="section">
+<div class="carte reveal">
+<h3>A propos de l'association</h3>
+<p>L’association AN’SAROUD DINE Bambilor est une organisation religieuse et sociale dédiée à la promotion des valeurs de l’Islam, de la solidarité et de l’éducation au sein de la communauté.
 
-<section id="coran" class="section">
+Fondée à Bambilor, notre mission principale est de contribuer au développement spirituel, moral et social des populations, en particulier des jeunes. Nous œuvrons pour inculquer les enseignements islamiques basés sur la paix, le respect, la tolérance et l’entraide.
 
-<h2>📖 Coran complet</h2>
+🎯 Nos objectifs
+📖 Promouvoir l’enseignement du Coran et de la religion islamique
+🧒 Encadrer et former les jeunes dans les valeurs morales
+🤝 Renforcer la solidarité et l’entraide communautaire
+🕌 Organiser des activités religieuses (conférences, prêches, événements islamiques)
+📚 Participer à l’éducation et à la sensibilisation sociale
+🌍 Nos actions
 
-<div id="listeCoran"></div>
+L’association organise régulièrement :
 
+Des cours d’apprentissage du Coran
+Des conférences religieuses
+Des journées de sensibilisation
+Des actions sociales (aides aux démunis, distributions, etc.)
+Des événements lors des grandes fêtes islamiques
+💛 Notre vision
+
+Nous aspirons à bâtir une communauté unie, forte dans sa foi et engagée dans le développement social, tout en respectant les valeurs islamiques et humaines.</p>
+<img src="ll.jpeg">
+</div>
 </section>
 
-<!-- HADITHS -->
+<section id="galerie" class="section">
+<h2>🎥 Galerie Vidéo</h2>
+<div class="video-grid" id="videoGallery"></div>
 
-<section id="hadiths" class="section">
-
-<h2>📚 Hadiths</h2>
-
-<div id="listeHadiths"></div>
-
+<h2>📸 Galerie Images</h2>
+<div class="video-grid">
+<img src="aa.jpeg">
+<img src="bb.jpeg">
+<img src="cc.jpeg">
+<img src="dd.jpeg">
+<img src="ee.jpeg">
+<img src="ff.jpeg">
+<img src="gg.jpeg">
+<img src="hh.jpeg">
+<img src="ii.jpeg">
+<img src="jj.jpeg">
+<img src="kk.jpeg">
+<img src="ll.jpeg">
+</div>
 </section>
 
-<!-- DOUAS -->
+<section id="dons" class="section">
+<div class="carte reveal">
+<h2>❤️ Faire un don</h2>
+<p>Wave : +221 78 862 61 80</p>
+<p>Orange Money : +221 78 862 61 80</p>
+<div class="counter" id="donCounter">0 FCFA collectés</div>
+<a href="https://wa.me/221788626180?text=B" target="_blank">
+<button class="btn">💬 Don rapide WhatsApp</button>
+</a>
+</div>
+</section>
 
-<section id="douas" class="section">
-
-<h2>📿 Invocations</h2>
-
-<div class="carte">
-<p class="arabe">اللّهُمَّ اغْفِرْ لِي</p>
-<p>Ô Allah pardonne-moi.</p>
+<section id="contact" class="section">
+<div class="carte reveal">
+<h2>📞 Contact</h2>
+<p>Email : contact@ansaroudine.com</p>
 </div>
 
-<div class="carte">
-<p class="arabe">اللّهُمَّ اهْدِنِي</p>
-<p>Ô Allah guide-moi.</p>
+<div class="socials">
+<a href="https://www.facebook.com/profile.php?id=61559056886700">Facebook</a>
+<a href="https://www.facebook.com/share/16QwybV3Za/">Page Facebook</a>
+<a href="https://www.instagram.com/ansarouddine">Instagram</a>
+<a href="https://whatsapp.com/channel/0029VaWNSE8BPzjW9kedWw1l">Chaîne WhatsApp</a>
 </div>
-
-</section>
-
-<!-- PRIERES -->
-
-<section id="prieres" class="section">
-
-<h2>🌙 Horaires de prière Sénégal</h2>
-
-<div class="carte">Fajr : 05:45</div>
-<div class="carte">Dhuhr : 14:00</div>
-<div class="carte">Asr : 17:20</div>
-<div class="carte">Maghrib : 19:30</div>
-<div class="carte">Isha : 20:45</div>
-
-</section>
-
-<!-- ESPACE ELEVE -->
-
-<section id="connexion" class="section">
-
-<h2>🔒 Espace Élève</h2>
-
-<input type="password" id="password" placeholder="Mot de passe">
-
-<br>
-
-<button class="btn" onclick="verifier()">Connexion</button>
-
-<div id="cours" style="display:none">
-
-<div class="carte">
-<a href="#" class="btn">Cours Coran</a>
-</div>
-
-<div class="carte">
-<a href="#" class="btn">Cours Hadith</a>
-</div>
-
-</div>
-
-</section>
-
-<!-- INSCRIPTION -->
-
-<section id="inscription" class="section">
-
-<h2>📝 Inscription</h2>
-
-<input type="text" placeholder="Nom"><br>
-<input type="text" placeholder="Téléphone"><br>
-
-<select>
-<option>Coran</option>
-<option>Hadith</option>
-<option>Charia</option>
-</select>
-
-<br>
-
-<button class="btn">S'inscrire</button>
-
 </section>
 
 <footer>
-
 © 2026 AN'SAROUD DINE BAMBILOR
-
 </footer>
 
 <script>
-
-/* navigation */
-
 function showSection(id){
-
-document.querySelectorAll(".section").forEach(sec=>{
-sec.classList.remove("active")
-})
-
-document.getElementById(id).classList.add("active")
-
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
 
-/* espace eleve */
+// vidéos
+const videos=[
+"https://www.youtube.com/embed/JYWz_AyqyaU",
+"https://www.youtube.com/embed/9FGDmDmGYGU",
+"https://www.youtube.com/embed/3GV_U2nXvuM",
+"https://www.youtube.com/embed/-Ul0sA7Ka4Y",
+"https://www.youtube.com/embed/m6pRIXpK6t4",
+"https://www.youtube.com/embed/q4op-6OcjUo"
+];
 
-function verifier(){
+const gallery=document.getElementById("videoGallery");
+videos.forEach(link=>{
+const iframe=document.createElement("iframe");
+iframe.src=link;
+iframe.allowFullscreen=true;
+gallery.appendChild(iframe);
+});
 
-if(document.getElementById("password").value=="1234"){
+// animation scroll
+const reveals=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{
+reveals.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){el.classList.add('active')}
+});
+});
 
-document.getElementById("cours").style.display="block"
-
-}else{
-
-alert("Mot de passe incorrect")
-
+// compteur dons
+let total=250000;
+const counter=document.getElementById('donCounter');
+function updateCounter(){
+total+=Math.floor(Math.random()*5000);
+counter.innerText=total.toLocaleString()+' FCFA collectés';
 }
-
-}
-
-/* charger coran complet */
-
-fetch("https://api.alquran.cloud/v1/quran/ar.alafasy")
-
-.then(res=>res.json())
-
-.then(data=>{
-
-let container=document.getElementById("listeCoran")
-
-data.data.surahs.forEach(s=>{
-
-let div=document.createElement("div")
-
-div.className="carte"
-
-let verses=""
-
-s.ayahs.forEach(v=>{
-verses += v.text + " "
-})
-
-div.innerHTML="<h3>"+s.number+". "+s.name+"</h3><p class='arabe'>"+verses+"</p>"
-
-container.appendChild(div)
-
-})
-
-})
-
-/* hadiths automatique */
-
-let hadithContainer=document.getElementById("listeHadiths")
-
-for(let i=1;i<=1000;i++){
-
-let div=document.createElement("div")
-
-div.className="carte"
-
-div.innerHTML="<p>Hadith numéro "+i+"</p>"
-
-hadithContainer.appendChild(div)
-
-}
-
+setInterval(updateCounter,3000);
 </script>
 
 </body>
 </html>
-```
