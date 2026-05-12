@@ -5,366 +5,558 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AN'SAROUD DINE BAMBILOR</title>
 <meta name="description" content="Association AN'SAROUD DINE BAMBILOR : Promotion de l'Islam, solidarité, éducation et actions sociales à Bambilor.">
-<meta name="keywords" content="AN'SAROUD DINE BAMBILOR, association islamique, dons, solidarité, éducation, communauté">
 <meta name="robots" content="index, follow">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7220960902615393"
-     crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-/* STYLE GENERAL */
+:root {
+  --gold: #B8860B;
+  --gold-light: #DAA520;
+  --gold-pale: #FFF8E7;
+  --gold-border: #E8D5A0;
+  --black: #1A1200;
+  --text: #2C2000;
+  --text-muted: #6B5C2E;
+  --bg: #FFFDF5;
+  --surface: #FFFFFF;
+  --surface2: #FDF8EE;
+  --border: #E8D5A0;
+  --radius: 12px;
+  --radius-lg: 18px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fffbea;
-  color: #000;
-  line-height: 1.6;
+  font-family:'Raleway',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
 }
-
-/* HEADER */
 header {
-  background: linear-gradient(135deg, #000, #222);
-  color: #FFD700;
-  text-align: center;
-  padding: 30px;
+  background:#fff;
+  border-bottom:2px solid var(--gold-border);
+  padding:48px 20px 36px;
+  text-align:center;
+  position:relative;
 }
-
-header img {
-  width: 90px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+header::before {
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,transparent,var(--gold-light),var(--gold),var(--gold-light),transparent);
 }
-
-/* NAVIGATION */
+.header-arabic {
+  font-family:'Amiri',serif;
+  font-size:16px;
+  color:var(--gold);
+  letter-spacing:4px;
+  margin-bottom:20px;
+}
+.logo-circle {
+  width:110px;height:110px;
+  border-radius:50%;
+  border:3px solid var(--gold-light);
+  padding:3px;
+  margin:0 auto 20px;
+  display:block;
+  overflow:hidden;
+}
+.logo-circle img { width:100%;height:100%;object-fit:cover;border-radius:50%; }
+header h1 {
+  font-family:'Amiri',serif;
+  font-size:clamp(22px,5vw,38px);
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+header p {
+  font-size:12px;
+  letter-spacing:4px;
+  color:var(--text-muted);
+  text-transform:uppercase;
+}
 nav {
-  background: #FFD700;
-  padding: 12px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  padding:0 16px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 8px rgba(184,134,11,0.08);
 }
-
 nav a {
-  color: #000;
-  margin: 5px 10px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: 0.3s;
+  color:var(--text-muted);
+  padding:16px 14px;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  transition:all 0.25s;
+  white-space:nowrap;
 }
-
-nav a:hover {
-  background: #000;
-  color: #FFD700;
+nav a:hover, nav a.active-link {
+  color:var(--gold);
+  border-bottom-color:var(--gold);
 }
-
-/* NAVIGATION MOBILE */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav a {
-    display: block;
-    width: 90%;
-    text-align: center;
-    margin: 5px 0;
-    padding: 12px 20px;
-  }
+.section { display:none; min-height:60vh; }
+.section.active { display:block; }
+.container { max-width:900px;margin:0 auto;padding:56px 24px; }
+.section-badge {
+  display:inline-block;
+  background:var(--gold-pale);
+  color:var(--gold);
+  font-size:11px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;
+  padding:6px 14px;
+  border-radius:20px;
+  border:1px solid var(--gold-border);
+  margin-bottom:14px;
 }
-
-/* SECTIONS */
-.section {
-  display: none;
-  padding: 25px;
-  max-width: 1000px;
-  margin: auto;
+h2 {
+  font-family:'Amiri',serif;
+  font-size:clamp(20px,4vw,30px);
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:14px;
+  line-height:1.3;
 }
-
-.active {
-  display: block;
+h3 {
+  font-family:'Amiri',serif;
+  font-size:19px;
+  color:var(--gold);
+  margin:28px 0 12px;
 }
-
-/* CARTES */
-.carte {
-  background: #fff;
-  color: #000;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
-  border-left: 6px solid #FFD700;
+p { color:var(--text-muted);margin-bottom:12px;font-size:15px; }
+.section-line { width:60px;height:3px;background:var(--gold-light);border-radius:2px;margin-bottom:36px; }
+.card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:36px;
+  margin-bottom:24px;
+  border-left:4px solid var(--gold-light);
+  transition:box-shadow 0.3s,transform 0.3s;
 }
-
-.carte:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+.card:hover { box-shadow:0 6px 24px rgba(184,134,11,0.12);transform:translateY(-2px); }
+.hero-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  margin-bottom:28px;
+  transition:box-shadow 0.3s;
 }
-
-/* IMAGES */
-img {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
+.hero-card:hover { box-shadow:0 6px 24px rgba(184,134,11,0.12); }
+.hero-body { padding:40px; }
+.hero-img { width:100%;height:280px;object-fit:cover;display:block;border-top:1px solid var(--border); }
+.socials { display:flex;flex-wrap:wrap;gap:12px;margin-top:12px; }
+.social-btn {
+  display:flex;align-items:center;gap:8px;
+  padding:11px 20px;border-radius:8px;
+  text-decoration:none;font-size:13px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;
+  transition:all 0.25s;border:1px solid;
 }
-
-/* BOUTONS */
-.btn {
-  background: #FFD700;
-  color: #000;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-weight: bold;
-  transition: 0.3s;
+.social-btn.fb { background:#EBF3FF;border-color:#BDD4F5;color:#1560C0; }
+.social-btn.fb:hover { background:#D5E8FF; }
+.social-btn.ig { background:#FFF0F4;border-color:#F5C0D0;color:#B52D56; }
+.social-btn.ig:hover { background:#FFE0EA; }
+.social-btn.wa { background:#EDFBF3;border-color:#B0E8C8;color:#0F8040; }
+.social-btn.wa:hover { background:#D8F5E8; }
+ul.custom-list { list-style:none;padding:0; }
+ul.custom-list li {
+  color:var(--text-muted);font-size:15px;
+  padding:10px 0;
+  border-bottom:1px solid var(--gold-pale);
+  display:flex;align-items:flex-start;gap:12px;
 }
-
-.btn:hover {
-  background: #000;
-  color: #FFD700;
+ul.custom-list li:last-child { border-bottom:none; }
+ul.custom-list li::before { content:'◆';color:var(--gold-light);font-size:8px;margin-top:7px;flex-shrink:0; }
+.obj-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0; }
+.obj-item {
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px 16px;
+  text-align:center;
+  transition:border-color 0.25s,box-shadow 0.25s;
 }
-
-/* FOOTER */
+.obj-item:hover { border-color:var(--gold-light);box-shadow:0 4px 12px rgba(184,134,11,0.1); }
+.obj-icon { font-size:26px;margin-bottom:10px;display:block; }
+.obj-item p { font-size:13px;margin:0;color:var(--text-muted); }
+.img-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px; }
+.img-grid img {
+  width:100%;height:200px;object-fit:cover;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  transition:all 0.3s;cursor:pointer;display:block;
+}
+.img-grid img:hover { border-color:var(--gold);transform:scale(1.02);box-shadow:0 4px 16px rgba(184,134,11,0.15); }
+.video-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px; }
+.video-wrap {
+  border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--border);
+  aspect-ratio:16/9;transition:border-color 0.25s;
+}
+.video-wrap:hover { border-color:var(--gold); }
+.video-wrap iframe { width:100%;height:100%;display:block;border:none; }
+.don-hero {
+  background:linear-gradient(135deg,#FFF8E7,#FFFDF5);
+  border:2px solid var(--gold-border);
+  border-radius:var(--radius-lg);
+  padding:48px 40px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  margin-bottom:24px;
+}
+.don-hero::before {
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,transparent,var(--gold-light),transparent);
+}
+.counter-val {
+  font-family:'Amiri',serif;
+  font-size:clamp(30px,6vw,50px);
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:2px;
+  margin:16px 0;
+}
+.progress-bar { height:8px;background:#EEE4C8;border-radius:4px;margin:16px auto;max-width:400px;overflow:hidden; }
+.progress-fill {
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light));
+  border-radius:4px;
+  animation:progfill 2s ease forwards;width:0;
+}
+@keyframes progfill { to { width:52%; } }
+.don-methods { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px; }
+.don-method {
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px;text-align:center;
+  transition:border-color 0.25s,box-shadow 0.25s;
+}
+.don-method:hover { border-color:var(--gold-light);box-shadow:0 4px 12px rgba(184,134,11,0.1); }
+.don-method .brand { font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px; }
+.don-method .num { font-size:17px;font-weight:700;color:var(--black);font-family:monospace;letter-spacing:1px; }
+.btn-gold {
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;
+  background:var(--gold);color:#fff;
+  border:none;border-radius:8px;
+  font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;
+  transition:all 0.25s;margin-top:20px;
+}
+.btn-gold:hover { background:var(--gold-light);box-shadow:0 6px 20px rgba(184,134,11,0.3);transform:translateY(-2px); }
+.contact-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:24px; }
+.contact-item {
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px 18px;text-align:center;
+  transition:border-color 0.25s,box-shadow 0.25s;
+}
+.contact-item:hover { border-color:var(--gold-light);box-shadow:0 4px 12px rgba(184,134,11,0.1); }
+.contact-item .ci-label { font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px; }
+.contact-item .ci-val { font-size:15px;font-weight:700;color:var(--black); }
+.quote-card {
+  background:var(--gold-pale);
+  border:1px solid var(--gold-border);
+  border-left:4px solid var(--gold);
+  border-radius:var(--radius);
+  padding:28px 32px;
+  text-align:center;margin-top:20px;
+}
+.reveal { opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease; }
+.reveal.shown { opacity:1;transform:translateY(0); }
 footer {
-  background: #000;
-  color: #FFD700;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 14px;
+  background:#fff;
+  border-top:2px solid var(--gold-border);
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
 }
-
-/* IFRAME VIDEOS */
-iframe {
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-/* VIDEO GRID */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 15px;
-}
-
-/* SOCIALS */
-.socials {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.socials a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 15px;
-  background: #FFD700;
-  color: #000;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  background: #000;
-  color: #FFD700;
-}
-
-/* ANIMATION REVEAL */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* COMPTEUR DONS */
-.counter {
-  font-size: 28px;
-  font-weight: bold;
-  color: #FFD700;
-  margin-top: 10px;
-}
-
-/* MOBILE RESPONSIVE */
-@media(max-width:600px){
-  .carte{padding:15px;margin:10px 0;}
-  .video-grid{grid-template-columns:1fr;}
+footer p { font-size:13px;color:var(--text-muted);margin:4px 0; }
+footer a { color:var(--gold);text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+.footer-ornament { font-family:'Amiri',serif;font-size:20px;color:var(--gold-light);margin-bottom:14px;letter-spacing:8px; }
+@media(max-width:640px){
+  nav a { padding:13px 8px;font-size:10px;letter-spacing:1px; }
+  .hero-body,.card,.don-hero { padding:24px 18px; }
+  .don-methods { grid-template-columns:1fr; }
+  .socials { flex-direction:column; }
+  .social-btn { justify-content:center; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<img src="logo.jpeg" alt="Logo">
-<h1>AN'SAROUD DINE BAMBILOR</h1>
-<p>Association Islamique - Unité - Solidarité - Religion</p>
+  <div class="header-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+  <div class="logo-circle">
+    <img src="logo.jpeg" alt="Logo AN'SAROUD DINE BAMBILOR" onerror="this.style.display='none'">
+  </div>
+  <h1>AN'SAROUD DINE BAMBILOR</h1>
+  <p>Association Islamique &nbsp;·&nbsp; Unité &nbsp;·&nbsp; Solidarité &nbsp;·&nbsp; Religion</p>
 </header>
 
 <nav>
-<a onclick="showSection('accueil')">Accueil</a>
-<a onclick="showSection('apropos')">À propos</a>
-<a onclick="showSection('activites')">Activités</a>
-<a onclick="showSection('galerie')">Galerie</a>
-<a onclick="showSection('dons')">Dons</a>
-<a onclick="showSection('contact')">Contact</a>
-<a onclick="showSection('confidentialite')">Politique de confidentialité</a>
+  <a onclick="showSection('accueil')">Accueil</a>
+  <a onclick="showSection('apropos')">À propos</a>
+  <a onclick="showSection('activites')">Activités</a>
+  <a onclick="showSection('galerie')">Galerie</a>
+  <a onclick="showSection('dons')">Dons</a>
+  <a onclick="showSection('contact')">Contact</a>
+  <a onclick="showSection('confidentialite')">Confidentialité</a>
 </nav>
 
 <!-- ACCUEIL -->
 <section id="accueil" class="section active">
-  <div class="carte reveal">
-    <h2>Bienvenue</h2>
-    <p>Bienvenue sur le site officiel de l'association <strong>AN'SAROUD DINE BAMBILOR</strong>. Nous travaillons pour le renforcement de la foi, la solidarité communautaire et l'éducation des jeunes.</p>
-    <p>Découvrez nos activités, notre vision et comment vous pouvez contribuer à nos projets pour le bien de la communauté.</p>
-    <img src="zz.jpeg" alt="Accueil">
-  </div>
-  <div class="carte reveal">
-    <h2>📱 Suivez-nous</h2>
-    <div class="socials">
-      <a href="https://www.facebook.com/profile.php?id=61559056886700" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com/ansarouddine" target="_blank">Instagram</a>
-      <a href="https://wa.me/221788626180" target="_blank">WhatsApp</a>
+  <div class="container">
+    <div class="hero-card reveal">
+      <div class="hero-body">
+        <span class="section-badge">Bienvenue</span>
+        <h2>Au service de la communauté de Bambilor</h2>
+        <p>Bienvenue sur le site officiel de l'association <strong style="color:var(--black)">AN'SAROUD DINE BAMBILOR</strong>. Nous œuvrons pour le renforcement de la foi, la solidarité communautaire et l'éducation des jeunes.</p>
+        <p>Découvrez nos activités, notre vision et comment vous pouvez contribuer à nos projets pour le bien de la communauté.</p>
+      </div>
+      <img src="zz.jpeg" alt="Communauté" class="hero-img" onerror="this.style.display='none'">
+    </div>
+
+    <div class="card reveal" style="text-align:center;border-left-color:var(--gold-light)">
+      <span class="section-badge">Retrouvez-nous</span>
+      <h2 style="margin-top:12px">Suivez nos activités</h2>
+      <p>Restez connecté et participez à la vie de notre association.</p>
+      <div class="socials" style="justify-content:center">
+        <a href="https://www.facebook.com/profile.php?id=61559056886700" target="_blank" class="social-btn fb">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.instagram.com/ansarouddine" target="_blank" class="social-btn ig">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a href="https://wa.me/221788626180" target="_blank" class="social-btn wa">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- A PROPOS -->
+<!-- À PROPOS -->
 <section id="apropos" class="section">
-  <div class="carte reveal">
-    <h2>🕌 À propos de notre association</h2>
-    <p>L’association <strong>AN’SAROUD DINE Bambilor</strong> est une organisation religieuse et sociale engagée à promouvoir les valeurs de l’Islam, la solidarité et l’éducation au sein de la communauté.</p>
+  <div class="container">
+    <span class="section-badge">Notre histoire</span>
+    <h2 style="margin-top:12px">À propos de notre association</h2>
+    <div class="section-line"></div>
 
-    <h3>🎯 Nos objectifs</h3>
-    <ul>
-      <li>📖 Enseignement du Coran et de la religion islamique</li>
-      <li>🧒 Encadrement et formation des jeunes</li>
-      <li>🤝 Solidarité et entraide communautaire</li>
-      <li>🕌 Organisation d’activités religieuses</li>
-      <li>📚 Participation à l’éducation sociale</li>
-    </ul>
+    <div class="card reveal">
+      <p><strong style="color:var(--black)">AN'SAROUD DINE Bambilor</strong> est une organisation religieuse et sociale engagée à promouvoir les valeurs de l'Islam, la solidarité et l'éducation au sein de la communauté de Bambilor.</p>
+      <h3>Nos objectifs</h3>
+      <div class="obj-grid">
+        <div class="obj-item"><span class="obj-icon">📖</span><p>Enseignement du Coran et de la religion</p></div>
+        <div class="obj-item"><span class="obj-icon">🧒</span><p>Encadrement et formation des jeunes</p></div>
+        <div class="obj-item"><span class="obj-icon">🤝</span><p>Solidarité et entraide communautaire</p></div>
+        <div class="obj-item"><span class="obj-icon">🕌</span><p>Organisation d'activités religieuses</p></div>
+        <div class="obj-item"><span class="obj-icon">📚</span><p>Participation à l'éducation sociale</p></div>
+      </div>
+    </div>
 
-    <h3>🌍 Nos actions</h3>
-    <ul>
-      <li>Cours d’apprentissage du Coran</li>
-      <li>Conférences religieuses</li>
-      <li>Journées de sensibilisation et actions sociales</li>
-      <li>Événements lors des fêtes islamiques</li>
-      <li>Collectes de dons et soutien aux familles démunies</li>
-    </ul>
+    <div class="card reveal">
+      <h3 style="margin-top:0">Nos actions concrètes</h3>
+      <ul class="custom-list">
+        <li>Cours d'apprentissage du Coran</li>
+        <li>Conférences et enseignements religieux</li>
+        <li>Journées de sensibilisation et actions sociales</li>
+        <li>Événements lors des fêtes islamiques</li>
+        <li>Collectes de dons et soutien aux familles démunies</li>
+      </ul>
+    </div>
 
-    <h3>💛 Notre vision</h3>
-    <p>Nous aspirons à bâtir une communauté unie, forte dans sa foi et engagée dans le développement social, tout en respectant les valeurs islamiques et humaines.</p>
-    <img src="ll.jpeg" alt="À propos">
+    <div class="card reveal">
+      <h3 style="margin-top:0">Notre vision</h3>
+      <p>Nous aspirons à bâtir une communauté unie, forte dans sa foi et engagée dans le développement social, tout en respectant les valeurs islamiques et humaines fondamentales.</p>
+      <img src="ll.jpeg" alt="À propos" style="width:100%;border-radius:10px;margin-top:16px;border:1px solid var(--border)" onerror="this.style.display='none'">
+    </div>
   </div>
 </section>
 
-<!-- ACTIVITES -->
+<!-- ACTIVITÉS -->
 <section id="activites" class="section">
-  <div class="carte reveal">
-    <h2>Nos activités</h2>
-    <p>Nos activités incluent :</p>
-    <ul>
-      <li>Cours et ateliers éducatifs pour les jeunes et adultes</li>
-      <li>Conférences et sensibilisations sur la religion et la société</li>
-      <li>Actions sociales et distribution de dons aux familles vulnérables</li>
-      <li>Organisation de fêtes islamiques et événements communautaires</li>
-    </ul>
-    <p>Chaque activité vise à renforcer la cohésion sociale et la pratique religieuse dans notre communauté.</p>
+  <div class="container">
+    <span class="section-badge">Ce que nous faisons</span>
+    <h2 style="margin-top:12px">Nos activités</h2>
+    <div class="section-line"></div>
+
+    <div class="card reveal">
+      <h3 style="margin-top:0">Éducation & Formation</h3>
+      <ul class="custom-list">
+        <li>Cours et ateliers éducatifs pour les jeunes et adultes</li>
+        <li>Apprentissage et mémorisation du Saint Coran</li>
+        <li>Formation en valeurs islamiques et citoyenneté</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <h3 style="margin-top:0">Sensibilisation & Conférences</h3>
+      <ul class="custom-list">
+        <li>Conférences religieuses avec des érudits</li>
+        <li>Sensibilisation sur des thèmes sociaux et religieux</li>
+        <li>Débats et échanges intercommunautaires</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <h3 style="margin-top:0">Actions sociales</h3>
+      <ul class="custom-list">
+        <li>Distribution de dons aux familles vulnérables</li>
+        <li>Organisation de fêtes islamiques et événements communautaires</li>
+        <li>Soutien aux personnes en difficulté</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <!-- GALERIE -->
 <section id="galerie" class="section">
-  <h2>🎥 Galerie Vidéo</h2>
-  <div class="video-grid" id="videoGallery"></div>
+  <div class="container">
+    <span class="section-badge">Nos moments</span>
+    <h2 style="margin-top:12px">Galerie</h2>
+    <div class="section-line"></div>
 
-  <h2>📸 Galerie Images</h2>
-  <div class="video-grid">
-    <img src="aa.jpeg" alt="Image 1">
-    <img src="bb.jpeg" alt="Image 2">
-    <img src="cc.jpeg" alt="Image 3">
-    <img src="dd.jpeg" alt="Image 4">
-    <img src="ee.jpeg" alt="Image 5">
-    <img src="ff.jpeg" alt="Image 6">
-    <img src="gg.jpeg" alt="Image 7">
-    <img src="hh.jpeg" alt="Image 8">
-    <img src="ii.jpeg" alt="Image 9">
-    <img src="jj.jpeg" alt="Image 10">
-    <img src="kk.jpeg" alt="Image 11">
-    <img src="ll.jpeg" alt="Image 12">
+    <p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:4px">Vidéos</p>
+    <div class="video-grid" id="videoGallery"></div>
+
+    <p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin:40px 0 4px">Photos</p>
+    <div class="img-grid">
+      <img src="aa.jpeg" alt="Photo 1" onerror="this.style.display='none'">
+      <img src="bb.jpeg" alt="Photo 2" onerror="this.style.display='none'">
+      <img src="cc.jpeg" alt="Photo 3" onerror="this.style.display='none'">
+      <img src="dd.jpeg" alt="Photo 4" onerror="this.style.display='none'">
+      <img src="ee.jpeg" alt="Photo 5" onerror="this.style.display='none'">
+      <img src="ff.jpeg" alt="Photo 6" onerror="this.style.display='none'">
+      <img src="gg.jpeg" alt="Photo 7" onerror="this.style.display='none'">
+      <img src="hh.jpeg" alt="Photo 8" onerror="this.style.display='none'">
+      <img src="ii.jpeg" alt="Photo 9" onerror="this.style.display='none'">
+      <img src="jj.jpeg" alt="Photo 10" onerror="this.style.display='none'">
+      <img src="kk.jpeg" alt="Photo 11" onerror="this.style.display='none'">
+      <img src="ll.jpeg" alt="Photo 12" onerror="this.style.display='none'">
+    </div>
   </div>
 </section>
 
 <!-- DONS -->
 <section id="dons" class="section">
-  <div class="carte reveal">
-    <h2>❤️ Faire un don</h2>
-    <p>Contribuez à nos projets pour la communauté :</p>
-    <ul>
-      <li>Wave : +221 78 862 61 80</li>
-      <li>Orange Money : +221 78 862 61 80</li>
-    </ul>
-    <div class="counter" id="donCounter">0 FCFA collectés</div>
-    <a href="https://wa.me/221788626180?text=Je+souhaite+faire+un+don" target="_blank">
-      <button class="btn">💬 Don rapide WhatsApp</button>
-    </a>
+  <div class="container">
+    <span class="section-badge">Soutenez-nous</span>
+    <h2 style="margin-top:12px">Faire un don</h2>
+    <div class="section-line"></div>
+
+    <div class="don-hero reveal">
+      <p style="font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted)">Total collecté</p>
+      <div class="counter-val" id="donCounter">250 000 FCFA</div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <p style="font-size:12px;color:var(--text-muted);margin:0">Objectif : 500 000 FCFA · Aidez-nous à y arriver</p>
+      <a href="https://wa.me/221788626180?text=Je+souhaite+faire+un+don" target="_blank" class="btn-gold">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Don rapide via WhatsApp
+      </a>
+    </div>
+
+    <div class="don-methods reveal">
+      <div class="don-method">
+        <div class="brand">Wave</div>
+        <div class="num">+221 78 862 61 80</div>
+        <p style="margin:8px 0 0;font-size:12px">Envoi instantané</p>
+      </div>
+      <div class="don-method">
+        <div class="brand">Orange Money</div>
+        <div class="num">+221 78 862 61 80</div>
+        <p style="margin:8px 0 0;font-size:12px">Envoi instantané</p>
+      </div>
+    </div>
+
+    <div class="quote-card reveal">
+      <p style="font-family:'Amiri',serif;font-size:19px;color:var(--gold);margin:0;font-style:italic">"Celui qui donne dans le chemin d'Allah, Allah lui accordera en retour au centuple."</p>
+      <p style="font-size:12px;color:var(--text-muted);margin:10px 0 0">Al-Baqarah : 261</p>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
-  <div class="carte reveal">
-    <h2>📞 Contact</h2>
-    <p>Téléphone : +221 78 862 61 80</p>
-  </div>
-  <div class="socials">
-    <a href="https://www.facebook.com/profile.php?id=61559056886700" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/ansarouddine" target="_blank">Instagram</a>
-    <a href="https://wa.me/221788626180" target="_blank">WhatsApp</a>
+  <div class="container">
+    <span class="section-badge">Nous joindre</span>
+    <h2 style="margin-top:12px">Contact</h2>
+    <div class="section-line"></div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-item">
+        <div class="ci-label">Téléphone</div>
+        <div class="ci-val">+221 78 862 61 80</div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-label">Localisation</div>
+        <div class="ci-val">Bambilor, Sénégal</div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-label">Facebook</div>
+        <div class="ci-val"><a href="https://www.facebook.com/profile.php?id=61559056886700" target="_blank" style="color:var(--gold);text-decoration:none">AN'SAROUD DINE</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-label">Instagram</div>
+        <div class="ci-val"><a href="https://www.instagram.com/ansarouddine" target="_blank" style="color:var(--gold);text-decoration:none">@ansarouddine</a></div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:24px;text-align:center">
+      <p>Pour tout renseignement ou pour rejoindre notre communauté, contactez-nous directement via WhatsApp.</p>
+      <a href="https://wa.me/221788626180" target="_blank" class="btn-gold" style="margin-top:12px">Nous écrire sur WhatsApp</a>
+    </div>
   </div>
 </section>
 
-<!-- POLITIQUE DE CONFIDENTIALITE -->
+<!-- CONFIDENTIALITÉ -->
 <section id="confidentialite" class="section">
-  <div class="carte reveal">
-    <h2>🔒 Politique de confidentialité</h2>
-    <p>Nous respectons votre vie privée. Les informations collectées sur ce site sont uniquement utilisées pour :</p>
-    <ul>
-      <li>Vous contacter en réponse à vos messages</li>
-      <li>Améliorer nos services et communications</li>
-      <li>Gérer les dons reçus via WhatsApp ou services financiers</li>
-    </ul>
-    <p>Nous ne partageons aucune information avec des tiers à des fins publicitaires.</p>
-    <p>Ce site utilise des cookies strictement nécessaires au fonctionnement du site.</p>
+  <div class="container">
+    <span class="section-badge">Vos données</span>
+    <h2 style="margin-top:12px">Politique de confidentialité</h2>
+    <div class="section-line"></div>
+
+    <div class="card reveal">
+      <p>Nous respectons votre vie privée. Les informations collectées sur ce site sont uniquement utilisées pour :</p>
+      <ul class="custom-list">
+        <li>Vous contacter en réponse à vos messages</li>
+        <li>Améliorer nos services et communications</li>
+        <li>Gérer les dons reçus via WhatsApp ou services financiers</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <h3 style="margin-top:0">Engagement de confidentialité</h3>
+      <ul class="custom-list">
+        <li>Nous ne partageons aucune information avec des tiers à des fins publicitaires</li>
+        <li>Ce site utilise des cookies strictement nécessaires à son fonctionnement</li>
+        <li>Vos données ne sont jamais vendues ou louées</li>
+        <li>Vous pouvez nous contacter à tout moment pour toute question relative à vos données</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <footer>
-© 2026 AN'SAROUD DINE BAMBILOR | <a href="#confidentialite" style="color:#FFD700;text-decoration:underline;">Politique de confidentialité</a>
+  <div class="footer-ornament">✦ ✦ ✦</div>
+  <p>© 2026 AN'SAROUD DINE BAMBILOR — Tous droits réservés</p>
+  <p style="margin-top:8px"><a onclick="showSection('confidentialite')" style="cursor:pointer">Politique de confidentialité</a></p>
 </footer>
 
 <script>
-// Changement de section
-function showSection(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-
-// Vidéos
 const videos = [
   "https://www.youtube.com/embed/JYWz_AyqyaU",
   "https://www.youtube.com/embed/9FGDmDmGYGU",
@@ -373,34 +565,45 @@ const videos = [
   "https://www.youtube.com/embed/m6pRIXpK6t4",
   "https://www.youtube.com/embed/q4op-6OcjUo"
 ];
-
 const gallery = document.getElementById("videoGallery");
-videos.forEach(link=>{
+videos.forEach(link => {
+  const wrap = document.createElement("div");
+  wrap.className = "video-wrap";
   const iframe = document.createElement("iframe");
   iframe.src = link;
   iframe.allowFullscreen = true;
-  gallery.appendChild(iframe);
+  iframe.loading = "lazy";
+  wrap.appendChild(iframe);
+  gallery.appendChild(wrap);
 });
 
-// Animation scroll
-const reveals = document.querySelectorAll('.reveal');
-window.addEventListener('scroll', () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100) el.classList.add('active');
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active-link'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('nav a').forEach(a => {
+    if(a.getAttribute('onclick') && a.getAttribute('onclick').includes(id)) a.classList.add('active-link');
   });
-});
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(triggerReveal, 80);
+}
 
-     
-// Compteur dons
+function triggerReveal() {
+  document.querySelectorAll('.section.active .reveal').forEach((el,i) => {
+    setTimeout(() => el.classList.add('shown'), i * 110);
+  });
+}
+
 let total = 250000;
 const counter = document.getElementById('donCounter');
-function updateCounter(){
-  total += Math.floor(Math.random()*5000);
-  counter.innerText = total.toLocaleString() + ' FCFA collectés';
+function updateCounter() {
+  total += Math.floor(Math.random()*2000+300);
+  counter.innerText = total.toLocaleString('fr-FR') + ' FCFA';
 }
-setInterval(updateCounter,3000);
-</script>
+setInterval(updateCounter, 4000);
 
+triggerReveal();
+document.querySelectorAll('nav a')[0].classList.add('active-link');
+</script>
 </body>
 </html>
