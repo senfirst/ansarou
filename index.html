@@ -592,7 +592,7 @@ function triggerReveal() {
   document.querySelectorAll('.section.active .reveal').forEach((el,i) => {
     setTimeout(() => el.classList.add('shown'), i * 110);
   });
-}
+
 
 let total = 250000;
 const counter = document.getElementById('donCounter');
