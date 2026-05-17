@@ -3,582 +3,1070 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AN'SAROUD DINE BAMBILOR</title>
-<meta name="description" content="Association AN'SAROUD DINE BAMBILOR : Promotion de l'Islam, solidarité, éducation et actions sociales à Bambilor.">
-<meta name="robots" content="index, follow">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<meta name="description" content="Association islamique AN'SAROUD DINE BAMBILOR : unité, solidarité, religion, éducation et actions sociales à Bambilor.">
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --gold: #B8860B;
-  --gold-light: #DAA520;
-  --gold-bright: #F0C040;
-  --gold-pale: #FFF8E7;
-  --gold-border: #E2CC88;
-  --black: #0D0A00;
-  --text: #1E1600;
-  --text-muted: #5C4D22;
-  --bg: #FDFBF3;
-  --surface: #FFFFFF;
-  --surface2: #FAF6EA;
-  --border: #E8D9A8;
-  --radius: 4px;
-  --radius-lg: 8px;
-  --shadow: 0 2px 20px rgba(140,100,0,0.08);
-  --shadow-lg: 0 8px 40px rgba(140,100,0,0.14);
+
+:root{
+--gold:#B8860B;
+--gold-light:#DAA520;
+--black:#0D0A00;
+--bg:#FDFBF3;
+--surface:#ffffff;
+--border:#E8D9A8;
+--text:#1E1600;
+--text-muted:#5C4D22;
+--radius:8px;
+--shadow:0 8px 30px rgba(0,0,0,0.08);
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-  font-family:'Jost',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-  overflow-x:hidden;
+font-family:'Jost',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.7;
+overflow-x:hidden;
 }
 
-/* ── HEADER ── */
+/* HEADER */
+
 header{
-  background:var(--black);
-  padding:0;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
+background:linear-gradient(135deg,#000,#1b1400);
+padding:70px 20px;
+text-align:center;
+position:relative;
+overflow:hidden;
 }
-.header-bg-pattern{
-  position:absolute;inset:0;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,134,11,0.18) 0%,transparent 70%),
-    repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(184,134,11,0.04) 40px),
-    repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(184,134,11,0.04) 40px);
-  pointer-events:none;
+
+header::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top,rgba(218,165,32,0.2),transparent 60%);
 }
+
 .header-inner{
-  position:relative;z-index:1;
-  padding:60px 24px 52px;
+position:relative;
+z-index:2;
 }
+
 .header-arabic{
-  font-family:'Amiri',serif;
-  font-size:22px;
-  color:var(--gold-light);
-  letter-spacing:6px;
-  margin-bottom:28px;
-  opacity:0.9;
+font-family:'Amiri',serif;
+font-size:24px;
+color:var(--gold-light);
+margin-bottom:25px;
+letter-spacing:5px;
 }
+
 .logo-ring{
-  width:120px;height:120px;
-  border-radius:50%;
-  border:1px solid rgba(218,165,32,0.4);
-  padding:4px;
-  margin:0 auto 24px;
-  position:relative;
-  display:block;
+width:120px;
+height:120px;
+border-radius:50%;
+overflow:hidden;
+border:3px solid rgba(218,165,32,0.5);
+margin:auto;
+margin-bottom:25px;
+box-shadow:0 0 25px rgba(218,165,32,0.2);
 }
-.logo-ring::before{
-  content:'';
-  position:absolute;inset:-6px;
-  border-radius:50%;
-  border:1px solid rgba(218,165,32,0.15);
-}
+
 .logo-ring img{
-  width:100%;height:100%;object-fit:cover;border-radius:50%;
-  display:block;
+width:100%;
+height:100%;
+object-fit:cover;
 }
-.logo-placeholder{
-  width:100%;height:100%;border-radius:50%;
-  background:linear-gradient(135deg,rgba(184,134,11,0.3),rgba(218,165,32,0.15));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Amiri',serif;font-size:28px;color:var(--gold-light);
-}
+
 header h1{
-  font-family:'Amiri',serif;
-  font-size:clamp(20px,4.5vw,36px);
-  font-weight:400;
-  color:#FFFFFF;
-  letter-spacing:3px;
-  margin-bottom:10px;
-  line-height:1.2;
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(28px,5vw,52px);
+color:#fff;
+font-weight:400;
+letter-spacing:2px;
+margin-bottom:10px;
 }
+
 .header-tagline{
-  font-size:10px;
-  letter-spacing:5px;
-  color:rgba(218,165,32,0.7);
-  text-transform:uppercase;
-  font-weight:500;
+font-size:12px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:rgba(255,255,255,0.7);
 }
-.header-divider{
-  display:flex;align-items:center;justify-content:center;gap:16px;
-  margin:28px auto 0;max-width:400px;
-}
-.header-divider span{color:rgba(218,165,32,0.5);font-size:10px;letter-spacing:3px;}
-.header-divider::before,.header-divider::after{content:'';flex:1;height:1px;background:rgba(218,165,32,0.25);}
 
-/* ── NAV ── */
+/* NAV */
+
 nav{
-  background:rgba(13,10,0,0.97);
-  border-bottom:1px solid rgba(218,165,32,0.2);
-  padding:0 16px;
-  display:flex;justify-content:center;flex-wrap:wrap;
-  position:sticky;top:0;z-index:100;
-  backdrop-filter:blur(12px);
+position:sticky;
+top:0;
+z-index:100;
+background:#0d0a00f0;
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+border-bottom:1px solid rgba(218,165,32,0.2);
 }
+
 nav a{
-  color:rgba(255,255,255,0.5);
-  padding:18px 14px;
-  text-decoration:none;
-  font-size:10px;font-weight:500;
-  letter-spacing:2.5px;text-transform:uppercase;
-  cursor:pointer;
-  border-bottom:2px solid transparent;
-  transition:all 0.3s;white-space:nowrap;
+padding:18px 15px;
+text-decoration:none;
+color:#ddd;
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:2px;
+cursor:pointer;
+transition:0.3s;
+border-bottom:2px solid transparent;
 }
-nav a:hover{color:var(--gold-light);border-bottom-color:rgba(218,165,32,0.4);}
-nav a.active-link{color:var(--gold-bright);border-bottom-color:var(--gold-light);}
 
-/* ── SECTIONS ── */
-.section{display:none;min-height:60vh;}
-.section.active{display:block;}
-.container{max-width:880px;margin:0 auto;padding:72px 24px;}
+nav a:hover,
+nav a.active-link{
+color:var(--gold-light);
+border-bottom-color:var(--gold-light);
+}
 
-/* ── SECTION HEADER ── */
+/* SECTION */
+
+.section{
+display:none;
+padding:70px 20px;
+min-height:70vh;
+}
+
+.section.active{
+display:block;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
 .sec-label{
-  font-size:9px;font-weight:600;
-  letter-spacing:5px;text-transform:uppercase;
-  color:var(--gold-light);
-  display:block;margin-bottom:10px;
+font-size:10px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:10px;
+display:block;
 }
+
 .sec-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(26px,5vw,44px);
-  font-weight:300;
-  color:var(--black);
-  line-height:1.15;
-  margin-bottom:8px;
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(32px,5vw,50px);
+font-weight:300;
+margin-bottom:20px;
+line-height:1.2;
 }
+
 .sec-rule{
-  width:48px;height:1px;
-  background:var(--gold-light);
-  margin:20px 0 48px;
+width:70px;
+height:2px;
+background:var(--gold);
+margin-bottom:45px;
 }
 
-/* ── CARDS ── */
+/* CARD */
+
 .card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius-lg);
-  padding:40px;
-  margin-bottom:20px;
-  transition:box-shadow 0.4s,transform 0.4s;
-  position:relative;
-  overflow:hidden;
+background:var(--surface);
+padding:40px;
+border-radius:var(--radius);
+border:1px solid var(--border);
+margin-bottom:25px;
+box-shadow:var(--shadow);
+transition:0.3s;
 }
-.card::before{
-  content:'';
-  position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:linear-gradient(to bottom,transparent,var(--gold-light),transparent);
-  opacity:0;transition:opacity 0.3s;
+
+.card:hover{
+transform:translateY(-3px);
 }
-.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
-.card:hover::before{opacity:1;}
+
 .card-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:21px;font-weight:400;
-  color:var(--black);
-  margin-bottom:16px;letter-spacing:0.5px;
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+margin-bottom:18px;
 }
 
-/* ── HERO CARD ── */
+/* HERO */
+
 .hero-card{
-  background:var(--black);
-  border-radius:var(--radius-lg);
-  overflow:hidden;margin-bottom:24px;
-  position:relative;
+background:#000;
+border-radius:var(--radius);
+overflow:hidden;
+margin-bottom:30px;
+box-shadow:var(--shadow);
 }
-.hero-card-body{padding:52px 48px;position:relative;z-index:1;}
+
+.hero-card-body{
+padding:50px;
+}
+
 .hero-card-body h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(24px,5vw,42px);
-  font-weight:300;color:#FFFFFF;
-  line-height:1.2;margin-bottom:16px;
-}
-.hero-card-body p{color:rgba(255,255,255,0.6);font-size:15px;margin-bottom:10px;}
-.hero-card-body strong{color:var(--gold-bright);}
-.hero-img{width:100%;height:300px;object-fit:cover;display:block;opacity:0.7;}
-.hero-img-overlay{
-  position:absolute;bottom:0;left:0;right:0;height:160px;
-  background:linear-gradient(transparent,var(--black));
-  pointer-events:none;
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(30px,5vw,48px);
+font-weight:300;
+color:#fff;
+margin-bottom:18px;
+line-height:1.2;
 }
 
-/* ── SOCIAL BUTTONS ── */
-.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.hero-card-body p{
+color:rgba(255,255,255,0.75);
+margin-bottom:15px;
+}
+
+.hero-img{
+width:100%;
+height:300px;
+object-fit:cover;
+display:block;
+}
+
+/* SOCIALS */
+
+.socials{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
 .social-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:11px 22px;border-radius:3px;
-  text-decoration:none;font-size:11px;font-weight:600;
-  letter-spacing:2px;text-transform:uppercase;
-  transition:all 0.25s;border:1px solid;
-}
-.social-btn.fb{background:transparent;border-color:rgba(21,96,192,0.3);color:#4A90D9;}
-.social-btn.fb:hover{background:rgba(21,96,192,0.08);border-color:#4A90D9;}
-.social-btn.ig{background:transparent;border-color:rgba(181,45,86,0.3);color:#D44E7A;}
-.social-btn.ig:hover{background:rgba(181,45,86,0.08);border-color:#D44E7A;}
-.social-btn.wa{background:transparent;border-color:rgba(37,211,102,0.3);color:#25D366;}
-.social-btn.wa:hover{background:rgba(37,211,102,0.08);border-color:#25D366;}
-
-/* ── LISTS ── */
-ul.custom-list{list-style:none;padding:0;}
-ul.custom-list li{
-  color:var(--text-muted);font-size:14.5px;
-  padding:12px 0;
-  border-bottom:1px solid var(--gold-pale);
-  display:flex;align-items:flex-start;gap:14px;
-}
-ul.custom-list li:last-child{border-bottom:none;}
-ul.custom-list li::before{
-  content:'';
-  width:4px;height:4px;border-radius:50%;
-  background:var(--gold-light);
-  margin-top:9px;flex-shrink:0;
+padding:12px 20px;
+border-radius:5px;
+text-decoration:none;
+font-size:12px;
+font-weight:600;
+letter-spacing:1px;
+transition:0.3s;
+border:1px solid;
 }
 
-/* ── OBJ GRID ── */
-.obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0;}
+.fb{
+color:#4c8bf5;
+border-color:#4c8bf5;
+}
+
+.ig{
+color:#e1306c;
+border-color:#e1306c;
+}
+
+.wa{
+color:#25d366;
+border-color:#25d366;
+}
+
+.social-btn:hover{
+transform:translateY(-2px);
+background:rgba(255,255,255,0.05);
+}
+
+/* STATS */
+
+.stats-bar{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+margin-top:30px;
+}
+
+.stat-item{
+background:#fff;
+padding:30px;
+text-align:center;
+border-radius:var(--radius);
+border:1px solid var(--border);
+}
+
+.stat-num{
+font-size:38px;
+font-family:'Cormorant Garamond',serif;
+color:var(--gold);
+display:block;
+margin-bottom:5px;
+}
+
+.stat-label{
+font-size:11px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--text-muted);
+}
+
+/* OBJECTIFS */
+
+.obj-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
 .obj-item{
-  background:var(--surface2);
-  border:1px solid var(--border);
-  border-radius:var(--radius-lg);
-  padding:28px 16px;text-align:center;
-  transition:all 0.3s;
-  position:relative;overflow:hidden;
+background:#faf6ea;
+padding:30px 20px;
+border-radius:var(--radius);
+text-align:center;
+border:1px solid var(--border);
+transition:0.3s;
 }
-.obj-item::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(218,165,32,0.05),transparent);
-  opacity:0;transition:opacity 0.3s;
-}
-.obj-item:hover{border-color:var(--gold-light);box-shadow:0 4px 20px rgba(184,134,11,0.1);}
-.obj-item:hover::after{opacity:1;}
-.obj-icon{font-size:28px;margin-bottom:12px;display:block;}
-.obj-item p{font-size:12px;margin:0;color:var(--text-muted);letter-spacing:0.3px;}
 
-/* ── GALLERY ── */
-.img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:24px;}
+.obj-item:hover{
+transform:translateY(-3px);
+border-color:var(--gold-light);
+}
+
+.obj-icon{
+font-size:35px;
+margin-bottom:15px;
+display:block;
+}
+
+.obj-item p{
+font-size:14px;
+}
+
+/* LIST */
+
+.custom-list{
+list-style:none;
+}
+
+.custom-list li{
+padding:14px 0;
+border-bottom:1px solid #eee;
+position:relative;
+padding-left:20px;
+}
+
+.custom-list li::before{
+content:'•';
+position:absolute;
+left:0;
+color:var(--gold);
+}
+
+/* GALLERY */
+
+.img-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
 .img-grid img{
-  width:100%;height:200px;object-fit:cover;
-  border-radius:var(--radius);
-  border:1px solid var(--border);
-  transition:all 0.4s;cursor:pointer;display:block;
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:var(--radius);
+border:1px solid var(--border);
+transition:0.3s;
 }
-.img-grid img:hover{border-color:var(--gold);transform:scale(1.03);box-shadow:0 8px 24px rgba(184,134,11,0.2);}
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px;}
-.video-wrap{
-  border-radius:var(--radius-lg);overflow:hidden;
-  border:1px solid var(--border);
-  aspect-ratio:16/9;transition:all 0.3s;
-  box-shadow:var(--shadow);
-}
-.video-wrap:hover{border-color:var(--gold-light);box-shadow:var(--shadow-lg);}
-.video-wrap iframe{width:100%;height:100%;display:block;border:none;}
 
-/* ── DONS ── */
+.img-grid img:hover{
+transform:scale(1.03);
+}
+
+/* DONS */
+
 .don-hero{
-  background:var(--black);
-  border-radius:var(--radius-lg);
-  padding:60px 48px;
-  text-align:center;
-  position:relative;overflow:hidden;margin-bottom:20px;
+background:#000;
+padding:60px 30px;
+border-radius:var(--radius);
+text-align:center;
+margin-bottom:25px;
 }
-.don-hero-pattern{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(184,134,11,0.2),transparent 70%);
-  pointer-events:none;
-}
+
 .don-label{
-  font-size:9px;font-weight:600;letter-spacing:5px;text-transform:uppercase;
-  color:rgba(218,165,32,0.6);margin-bottom:16px;display:block;
+font-size:11px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:rgba(218,165,32,0.7);
+display:block;
+margin-bottom:15px;
 }
+
 .counter-val{
-  font-family:'Amiri',serif;
-  font-size:clamp(32px,6vw,56px);
-  font-weight:400;color:var(--gold-bright);
-  letter-spacing:2px;margin:8px 0 20px;
+font-size:55px;
+font-family:'Cormorant Garamond',serif;
+color:var(--gold-light);
+margin-bottom:20px;
 }
+
 .progress-track{
-  height:2px;background:rgba(255,255,255,0.1);
-  border-radius:1px;margin:0 auto 8px;max-width:360px;overflow:hidden;
+width:100%;
+max-width:400px;
+height:8px;
+background:#333;
+margin:auto;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:10px;
 }
+
 .progress-fill{
-  height:100%;
-  background:linear-gradient(90deg,var(--gold),var(--gold-bright));
-  border-radius:1px;
-  animation:progfill 2.4s cubic-bezier(0.4,0,0.2,1) forwards;width:0;
+width:52%;
+height:100%;
+background:linear-gradient(90deg,var(--gold),var(--gold-light));
 }
-@keyframes progfill{to{width:52%;}}
-.don-pct{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:32px;}
+
+.don-pct{
+font-size:12px;
+color:#aaa;
+margin-bottom:30px;
+}
 
 .btn-gold{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:14px 32px;
-  background:var(--gold);color:#fff;
-  border:none;border-radius:3px;
-  font-family:'Jost',sans-serif;font-size:11px;font-weight:600;
-  letter-spacing:3px;text-transform:uppercase;
-  text-decoration:none;cursor:pointer;
-  transition:all 0.3s;
+display:inline-block;
+padding:14px 30px;
+background:var(--gold);
+color:#fff;
+text-decoration:none;
+border-radius:5px;
+font-size:12px;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:0.3s;
 }
+
 .btn-gold:hover{
-  background:var(--gold-light);
-  box-shadow:0 6px 28px rgba(184,134,11,0.4);
-  transform:translateY(-2px);
+background:var(--gold-light);
 }
 
-.don-methods{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;}
+.don-methods{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
 .don-method{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius-lg);
-  padding:28px 24px;text-align:center;
-  transition:all 0.3s;
+background:#fff;
+padding:30px;
+border-radius:var(--radius);
+border:1px solid var(--border);
+text-align:center;
 }
-.don-method:hover{border-color:var(--gold-light);box-shadow:var(--shadow);}
-.don-method .brand{
-  font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:10px;
-}
-.don-method .num{
-  font-family:'Cormorant Garamond',serif;
-  font-size:22px;font-weight:400;color:var(--black);letter-spacing:1px;
-}
-.don-method p{margin:6px 0 0;font-size:11px;color:var(--text-muted);letter-spacing:1px;}
 
-.quote-card{
-  background:var(--black);
-  border-radius:var(--radius-lg);
-  padding:40px;text-align:center;margin-top:20px;
-  position:relative;overflow:hidden;
+.brand{
+font-size:12px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:10px;
 }
-.quote-card::before{
-  content:'"';
-  position:absolute;top:-20px;left:24px;
-  font-family:'Amiri',serif;font-size:120px;
-  color:rgba(218,165,32,0.08);line-height:1;
-}
-.quote-text{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(17px,3vw,22px);
-  font-style:italic;
-  color:rgba(218,165,32,0.85);
-  line-height:1.6;
-  margin:0 0 14px;
-  position:relative;
-}
-.quote-ref{font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:3px;}
 
-/* ── CONTACT ── */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:32px;}
+.num{
+font-size:28px;
+font-family:'Cormorant Garamond',serif;
+}
+
+/* CONTACT */
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
 .contact-item{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius-lg);
-  padding:28px 20px;text-align:center;
-  transition:all 0.3s;
+background:#fff;
+padding:30px;
+border-radius:var(--radius);
+border:1px solid var(--border);
+text-align:center;
 }
-.contact-item:hover{border-color:var(--gold-light);box-shadow:var(--shadow);}
+
 .ci-label{
-  font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
-  color:var(--gold-light);margin-bottom:10px;display:block;
+font-size:11px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--gold);
+display:block;
+margin-bottom:12px;
 }
-.ci-val{font-size:14px;font-weight:500;color:var(--black);}
-.ci-val a{color:var(--gold);text-decoration:none;}
-.ci-val a:hover{text-decoration:underline;}
 
-/* ── STATS BAR ── */
-.stats-bar{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);
-  border-radius:var(--radius-lg);
-  overflow:hidden;margin-top:28px;
+.ci-val a{
+color:var(--black);
+text-decoration:none;
 }
-.stat-item{
-  background:var(--surface);
-  padding:28px 20px;text-align:center;
-}
-.stat-num{
-  font-family:'Cormorant Garamond',serif;
-  font-size:32px;font-weight:300;color:var(--gold);
-  display:block;margin-bottom:4px;
-}
-.stat-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-muted);}
 
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.reveal.shown{opacity:1;transform:translateY(0);}
+.ci-val a:hover{
+color:var(--gold);
+}
 
-/* ── FOOTER ── */
+/* FOOTER */
+
 footer{
-  background:var(--black);
-  border-top:1px solid rgba(218,165,32,0.15);
-  text-align:center;
-  padding:48px 20px;
-  margin-top:80px;
+background:#000;
+padding:50px 20px;
+text-align:center;
+margin-top:50px;
 }
+
 .footer-arabic{
-  font-family:'Amiri',serif;
-  font-size:20px;color:rgba(218,165,32,0.4);
-  letter-spacing:8px;margin-bottom:20px;
+font-family:'Amiri',serif;
+font-size:24px;
+color:rgba(218,165,32,0.5);
+margin-bottom:15px;
 }
-footer p{font-size:12px;color:rgba(255,255,255,0.25);margin:4px 0;letter-spacing:1px;}
-footer a{color:rgba(218,165,32,0.5);text-decoration:none;cursor:pointer;}
-footer a:hover{color:var(--gold-light);}
 
-/* ── SCROLL TO TOP ── */
+footer p{
+color:#999;
+font-size:13px;
+margin:5px 0;
+}
+
+/* SCROLL */
+
 #scrollTop{
-  position:fixed;bottom:28px;right:28px;
-  width:40px;height:40px;
-  background:var(--black);border:1px solid rgba(218,165,32,0.3);
-  color:var(--gold-light);
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;
-  opacity:0;pointer-events:none;
-  transition:all 0.3s;z-index:200;
-  font-size:14px;
+position:fixed;
+right:20px;
+bottom:20px;
+width:45px;
+height:45px;
+border-radius:50%;
+background:#000;
+color:var(--gold-light);
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+z-index:999;
 }
-#scrollTop.visible{opacity:1;pointer-events:all;}
-#scrollTop:hover{background:rgba(218,165,32,0.1);border-color:var(--gold-light);}
 
-/* ── RESPONSIVE ── */
-@media(max-width:640px){
-  nav a{padding:15px 8px;font-size:9px;letter-spacing:1.5px;}
-  .hero-card-body,.card,.don-hero{padding:28px 20px;}
-  .don-methods{grid-template-columns:1fr;}
-  .socials{flex-direction:column;}
-  .social-btn{justify-content:center;}
-  .sec-title{font-size:28px;}
+#scrollTop.visible{
+opacity:1;
+pointer-events:auto;
 }
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero-card-body{
+padding:30px 20px;
+}
+
+.card{
+padding:25px;
+}
+
+nav a{
+font-size:10px;
+padding:15px 10px;
+}
+
+.socials{
+flex-direction:column;
+}
+
+.social-btn{
+text-align:center;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
-<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="scrollTop">↑</div>
 
 <!-- HEADER -->
+
 <header>
-  <div class="header-bg-pattern"></div>
-  <div class="header-inner">
-    <div class="header-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-    <div class="logo-ring">
-      <img src="logo.jpeg" alt="Logo AN'SAROUD DINE" onerror="this.outerHTML='<div class=\'logo-placeholder\'>✦</div>'">
-    </div>
-    <h1>AN'SAROUD DINE BAMBILOR</h1>
-    <p class="header-tagline">Association Islamique &nbsp;·&nbsp; Unité &nbsp;·&nbsp; Solidarité &nbsp;·&nbsp; Religion</p>
-    <div class="header-divider"><span>✦</span></div>
-  </div>
+
+<div class="header-inner">
+
+<div class="header-arabic">
+بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+</div>
+
+<div class="logo-ring">
+<img src="logo.jpeg" alt="Logo">
+</div>
+
+<h1>AN'SAROUD DINE BAMBILOR</h1>
+
+<p class="header-tagline">
+Association Islamique • Unité • Solidarité • Religion
+</p>
+
+</div>
+
 </header>
 
 <!-- NAV -->
+
 <nav>
-  <a onclick="showSection('accueil')">Accueil</a>
-  <a onclick="showSection('apropos')">À propos</a>
-  <a onclick="showSection('activites')">Activités</a>
-  <a onclick="showSection('galerie')">Galerie</a>
-  <a onclick="showSection('dons')">Dons</a>
-  <a onclick="showSection('contact')">Contact</a>
-  <a onclick="showSection('confidentialite')">Confidentialité</a>
+
+<a onclick="showSection('accueil')" class="active-link">Accueil</a>
+
+<a onclick="showSection('apropos')">À propos</a>
+
+<a onclick="showSection('activites')">Activités</a>
+
+<a onclick="showSection('galerie')">Galerie</a>
+
+<a onclick="showSection('dons')">Dons</a>
+
+<a onclick="showSection('contact')">Contact</a>
+
 </nav>
 
 <!-- ACCUEIL -->
+
 <section id="accueil" class="section active">
-  <div class="container">
-    <div class="hero-card reveal">
-      <div class="hero-card-body">
-        <span class="sec-label">Bienvenue</span>
-        <h2>Au service de la<br>communauté de Bambilor</h2>
-        <p>Bienvenue sur le site officiel de l'association <strong>AN'SAROUD DINE BAMBILOR</strong>. Nous œuvrons pour le renforcement de la foi, la solidarité communautaire et l'éducation des jeunes.</p>
-        <p>Découvrez nos activités, notre vision et comment contribuer à nos projets pour le bien commun.</p>
-      </div>
-      <div style="position:relative;">
-        <img src="zz.jpeg" alt="Communauté" class="hero-img" onerror="this.style.display='none'">
-        <div class="hero-img-overlay"></div>
-      </div>
-    </div>
 
-    <div class="stats-bar reveal">
-      <div class="stat-item">
-        <span class="stat-num">5+</span>
-        <span class="stat-label">Années</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">200+</span>
-        <span class="stat-label">Membres</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">50+</span>
-        <span class="stat-label">Événements</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">1</span>
-        <span class="stat-label">Communauté</span>
-      </div>
-    </div>
+<div class="container">
 
-    <div class="card reveal" style="margin-top:20px;background:var(--black);">
-      <span class="sec-label">Retrouvez-nous</span>
-      <p class="card-title" style="color:#fff;">Suivez nos activités en ligne</p>
-      <p style="color:rgba(255,255,255,0.5);font-size:14px;">Restez connecté et participez à la vie de notre association.</p>
-      <div class="socials">
-        <a href="https://www.facebook.com/profile.php?id=61559056886700" target="_blank" class="social-btn fb">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/ansarouddine" target="_blank" class="social-btn ig">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Instagram
-        </a>
-        <a href="https://wa.me/221788626180" target="_blank" class="social-btn wa">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-          WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
+<div class="hero-card">
+
+<div class="hero-card-body">
+
+<span class="sec-label">Bienvenue</span>
+
+<h2>
+Au service de la communauté de Bambilor
+</h2>
+
+<p>
+Bienvenue sur le site officiel de
+<strong>AN'SAROUD DINE BAMBILOR</strong>.
+</p>
+
+<p>
+Nous œuvrons pour la foi, la solidarité et l’éducation.
+</p>
+
+</div>
+
+<img src="zz.jpeg" class="hero-img" alt="Communauté">
+
+</div>
+
+<div class="stats-bar">
+
+<div class="stat-item">
+<span class="stat-num">5+</span>
+<span class="stat-label">Années</span>
+</div>
+
+<div class="stat-item">
+<span class="stat-num">200+</span>
+<span class="stat-label">Membres</span>
+</div>
+
+<div class="stat-item">
+<span class="stat-num">50+</span>
+<span class="stat-label">Événements</span>
+</div>
+
+<div class="stat-item">
+<span class="stat-num">1</span>
+<span class="stat-label">Communauté</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<p class="card-title">
+Suivez-nous
+</p>
+
+<div class="socials">
+
+<a href="https://facebook.com" target="_blank" class="social-btn fb">
+Facebook
+</a>
+
+<a href="https://instagram.com" target="_blank" class="social-btn ig">
+Instagram
+</a>
+
+<a href="https://wa.me/221788626180" target="_blank" class="social-btn wa">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- À PROPOS -->
+<!-- APROPOS -->
+
 <section id="apropos" class="section">
-  <div class="container">
-    <span class="sec-label">Notre histoire</span>
-    <h2 class="sec-title">À propos de<br>notre association</h2>
-    <div class="sec-rule"></div>
 
-    <div class="card reveal">
-      <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:var(--text);line-height:1.7;margin-bottom:0;">
-        <strong style="color:var(--black);font-weight:600;">AN'SAROUD DINE Bambilor</strong> est une organisation religieuse et sociale engagée à promouvoir les valeurs de l'Islam, la solidarité et l'éducation au sein de la communauté de Bambilor.
-      </p>
-    </div>
+<div class="container">
 
-    <div class="card reveal">
-      <p class="card-title">Nos objectifs</p>
-      <div class="obj-grid">
-        <div class="obj-item"><span class="obj-icon">📖</span><p>Enseignement du Coran et de la religion</p></div>
-        <div class="obj-item"><span class="obj-icon">🧒</span><p>Encadrement et formation des jeunes</p></div>
-        <div class="obj-item"><span class="obj-icon">🤝</span><p>Solidarité et entraide communautaire</p></div>
-        <div class="obj-item"><span class="obj-icon">🕌</span><p>Organisation d'activités religieuses</p></div>
-        <div class="obj-item"><span class="obj-icon">📚</span><p>Participation à l'éducation sociale</p></div>
-      </div>
-    </div>
+<span class="sec-label">
+Notre histoire
+</span>
 
-    <div class="card reveal">
-      <p class="card-title">Nos actions concrètes</p>
-      <ul class="custom-list">
-        <li>Cours d'apprentissage du Coran</li>
-        <li>Conférences et enseignements religieux</li>
-        <li>Journées de sensibilisation et actions sociales</li>
-        <li>Événements lors des fêtes islamiques</li>
-        <li>Collectes de dons et soutien aux familles démunies</li>
-      </ul>
-    </div>
+<h2 class="sec-title">
+À propos de notre association
+</h2>
 
-    <div class="card reveal">
-      <p class="card-title">Notre visio
+<div class="sec-rule"></div>
+
+<div class="card">
+
+<p>
+AN'SAROUD DINE BAMBILOR est une organisation religieuse et sociale engagée pour la promotion des valeurs islamiques, de l’éducation et de la solidarité communautaire.
+</p>
+
+</div>
+
+<div class="card">
+
+<p class="card-title">
+Nos objectifs
+</p>
+
+<div class="obj-grid">
+
+<div class="obj-item">
+<span class="obj-icon">📖</span>
+<p>Enseignement religieux</p>
+</div>
+
+<div class="obj-item">
+<span class="obj-icon">🤝</span>
+<p>Solidarité sociale</p>
+</div>
+
+<div class="obj-item">
+<span class="obj-icon">🧒</span>
+<p>Encadrement des jeunes</p>
+</div>
+
+<div class="obj-item">
+<span class="obj-icon">🕌</span>
+<p>Activités islamiques</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<p class="card-title">
+Nos actions
+</p>
+
+<ul class="custom-list">
+
+<li>Conférences religieuses</li>
+
+<li>Apprentissage du Coran</li>
+
+<li>Journées de solidarité</li>
+
+<li>Aides aux familles démunies</li>
+
+<li>Événements islamiques</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ACTIVITES -->
+
+<section id="activites" class="section">
+
+<div class="container">
+
+<span class="sec-label">
+Activités
+</span>
+
+<h2 class="sec-title">
+Nos événements
+</h2>
+
+<div class="sec-rule"></div>
+
+<div class="card">
+
+<ul class="custom-list">
+
+<li>Magal et Gamou</li>
+
+<li>Conférences islamiques</li>
+
+<li>Actions sociales</li>
+
+<li>Collectes de dons</li>
+
+<li>Rencontres communautaires</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERIE -->
+
+<section id="galerie" class="section">
+
+<div class="container">
+
+<span class="sec-label">
+Galerie
+</span>
+
+<h2 class="sec-title">
+Photos & vidéos
+</h2>
+
+<div class="sec-rule"></div>
+
+<div class="img-grid">
+
+<img src="1.jpeg" alt="Galerie">
+
+<img src="2.jpeg" alt="Galerie">
+
+<img src="3.jpeg" alt="Galerie">
+
+<img src="4.jpeg" alt="Galerie">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DONS -->
+
+<section id="dons" class="section">
+
+<div class="container">
+
+<div class="don-hero">
+
+<span class="don-label">
+Soutenez nos projets
+</span>
+
+<div class="counter-val">
+250 000 FCFA
+</div>
+
+<div class="progress-track">
+<div class="progress-fill"></div>
+</div>
+
+<div class="don-pct">
+52% de l’objectif atteint
+</div>
+
+<a href="https://wa.me/221788626180" class="btn-gold">
+Faire un don
+</a>
+
+</div>
+
+<div class="don-methods">
+
+<div class="don-method">
+
+<div class="brand">
+Wave
+</div>
+
+<div class="num">
+78 862 61 80
+</div>
+
+</div>
+
+<div class="don-method">
+
+<div class="brand">
+Orange Money
+</div>
+
+<div class="num">
+78 862 61 80
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="section">
+
+<div class="container">
+
+<span class="sec-label">
+Contact
+</span>
+
+<h2 class="sec-title">
+Nous contacter
+</h2>
+
+<div class="sec-rule"></div>
+
+<div class="contact-grid">
+
+<div class="contact-item">
+
+<span class="ci-label">
+Téléphone
+</span>
+
+<div class="ci-val">
+<a href="tel:+221788626180">
++221 78 862 61 80
+</a>
+</div>
+
+</div>
+
+<div class="contact-item">
+
+<span class="ci-label">
+WhatsApp
+</span>
+
+<div class="ci-val">
+<a href="https://wa.me/221788626180">
+Envoyer un message
+</a>
+</div>
+
+</div>
+
+<div class="contact-item">
+
+<span class="ci-label">
+Facebook
+</span>
+
+<div class="ci-val">
+<a href="https://facebook.com">
+Notre page
+</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-arabic">
+الحمد لله
+</div>
+
+<p>
+© 2026 AN'SAROUD DINE BAMBILOR
+</p>
+
+<p>
+Unité • Solidarité • Religion
+</p>
+
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('nav a');
+
+function showSection(id){
+
+sections.forEach(section=>{
+section.classList.remove('active');
+});
+
+document.getElementById(id).classList.add('active');
+
+navLinks.forEach(link=>{
+link.classList.remove('active-link');
+});
+
+event.target.classList.add('active-link');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+/* SCROLL TOP */
+
+const scrollBtn = document.getElementById('scrollTop');
+
+window.addEventListener('scroll',()=>{
+
+if(window.scrollY > 300){
+scrollBtn.classList.add('visible');
+}else{
+scrollBtn.classList.remove('visible');
+}
+
+});
+
+scrollBtn.addEventListener('click',()=>{
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+});
+
+</script>
+
+</body>
+</html>
