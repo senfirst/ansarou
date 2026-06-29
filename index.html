@@ -1,609 +1,1410 @@
-
-.logo-ph {
-  width:56px; height:56px; border-radius:50%;
-  border:2px solid rgba(184,134,11,0.35);
-  background:var(--dark3); display:flex; align-items:center; justify-content:center;
-  font-family:'Amiri',serif; font-size:22px; color:var(--gold2);
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ansaroud Dine Bambilor — Foi, Solidarité, Développement</title>
+<meta name="description" content="Association islamique Ansaroud Dine Bambilor — Enseignement coranique, solidarité communautaire et développement à Bambilor, Sénégal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Ansaroud Dine Bambilor">
+<meta property="og:description" content="Servir notre communauté, renforcer notre foi et construire un avenir meilleur ensemble.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:        #F4B400;
+  --gold-deep:   #C68F00;
+  --gold-soft:   #FFD466;
+  --gold-04:     rgba(244,180,0,.04);
+  --gold-08:     rgba(244,180,0,.08);
+  --gold-14:     rgba(244,180,0,.14);
+  --black:       #121212;
+  --black-soft:  #1B1B1B;
+  --black-rais:  #232323;
+  --white:       #FFFFFF;
+  --gray-light:  #F5F5F5;
+  --gray-mid:    #E7E5E1;
+  --ink:         #1C1C1C;
+  --ink-muted:   #6B6964;
+  --ink-faint:   #9A988F;
+  --border:      #E9E7E1;
+  --font-display:'Fraunces', Georgia, serif;
+  --font-body:   'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-kufi:   'Reem Kufi', sans-serif;
+  --r-sm: 3px;
+  --r-md: 10px;
+  --r-lg: 20px;
+  --r-full: 999px;
+  --shadow-sm: 0 1px 3px rgba(18,18,18,.06), 0 4px 14px rgba(18,18,18,.05);
+  --shadow-md: 0 8px 30px rgba(18,18,18,.10);
+  --shadow-gold: 0 10px 30px rgba(244,180,0,.30);
+  --ease: cubic-bezier(.22,.9,.28,1);
 }
 
-.hdr-text { text-align:left; min-width:0; }
-header h1 {
-  font-family:'Cormorant Garamond', serif; font-weight:300;
-  font-size:clamp(19px, 5vw, 34px);
-  color:var(--white); letter-spacing:3px; line-height:1.2; margin-bottom:4px;
-  animation:fadeUp 1s ease .4s both;
+*,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.001ms!important; transition-duration:.001ms!important; }
 }
-.hdr-sub {
-  font-size:9px; letter-spacing:3px; text-transform:uppercase;
-  color:rgba(255,255,255,0.35); margin-bottom:0;
-  animation:fadeUp 1s ease .55s both; display:block;
+body{
+  font-family:var(--font-body);
+  background:var(--white);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
-.hdr-cta { display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap; animation:fadeUp 1s ease .65s both; margin-top:12px; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; }
+ul{ list-style:none; }
+::selection{ background:var(--gold-soft); color:var(--black); }
+:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; }
 
-@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+.container{ max-width:1240px; margin:0 auto; padding:0 32px; }
+.section{ padding:120px 0; position:relative; }
+.section--tight{ padding:90px 0; }
+.section--black{ background:var(--black); color:rgba(255,255,255,.86); }
+.section--gray{ background:var(--gray-light); }
 
-/* NAV */
-nav {
-  position:sticky; top:0; z-index:998;
-  background:rgba(13,12,9,0.96); backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(184,134,11,0.14);
-  display:flex; justify-content:center; flex-wrap:wrap;
-  overflow-x:auto; -webkit-overflow-scrolling:touch;
+/* Pattern textures */
+.tex-diamond{
+  background-image:
+    linear-gradient(45deg, var(--gold-04) 25%, transparent 25%, transparent 75%, var(--gold-04) 75%),
+    linear-gradient(45deg, var(--gold-04) 25%, transparent 25%, transparent 75%, var(--gold-04) 75%);
+  background-size:54px 54px;
+  background-position:0 0, 27px 27px;
 }
-nav a {
-  padding:16px 14px; color:rgba(255,255,255,0.5);
-  text-decoration:none; font-size:9.5px; letter-spacing:2px;
-  text-transform:uppercase; font-weight:500; transition:.3s;
-  position:relative; cursor:pointer; white-space:nowrap;
+.tex-diamond--dark{
+  background-image:
+    linear-gradient(45deg, rgba(244,180,0,.05) 25%, transparent 25%, transparent 75%, rgba(244,180,0,.05) 75%),
+    linear-gradient(45deg, rgba(244,180,0,.05) 25%, transparent 25%, transparent 75%, rgba(244,180,0,.05) 75%);
+  background-size:54px 54px;
+  background-position:0 0, 27px 27px;
 }
-nav a::after {
-  content:''; position:absolute; bottom:0; left:14px; right:14px;
-  height:1px; background:var(--gold2); transform:scaleX(0); transition:.3s;
+
+/* Khatim helpers */
+.khatim-mark{
+  width:30px; height:30px; color:var(--gold);
+  flex-shrink:0;
 }
-nav a:hover, nav a.active-link { color:var(--gold2); }
-nav a:hover::after, nav a.active-link::after { transform:scaleX(1); }
-
-.section { display:none; animation:sectionIn .45s ease; }
-.section.active { display:block; }
-@keyframes sectionIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-
-.page-hero { background:var(--dark); padding:56px 20px; text-align:center; }
-.page-hero .sec-label { color:var(--gold2); font-size:9.5px; letter-spacing:5px; text-transform:uppercase; display:block; margin-bottom:14px; }
-.page-hero h2 { font-family:'Cormorant Garamond', serif; font-size:clamp(28px, 8vw, 52px); font-weight:300; color:var(--white); line-height:1.2; }
-.page-hero-arabic { font-family:'Amiri', serif; font-size:20px; color:rgba(212,160,23,0.35); margin-top:14px; display:block; }
-.page-hero-line { width:36px; height:1px; background:var(--gold); margin:20px auto 0; }
-
-.container { max-width:1060px; margin:0 auto; padding:56px 20px; }
-
-.sec-label { font-size:9.5px; letter-spacing:5px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px; }
-.sec-title { font-family:'Cormorant Garamond', serif; font-size:clamp(24px, 6vw, 46px); font-weight:300; color:var(--text); line-height:1.2; margin-bottom:10px; }
-.sec-rule { width:36px; height:2px; background:var(--gold); margin-bottom:40px; }
-
-.btn-primary {
-  display:inline-flex; align-items:center; gap:8px; padding:11px 22px;
-  background:var(--gold); color:var(--dark); text-decoration:none;
-  font-size:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase;
-  border-radius:var(--radius); transition:.3s; border:none; cursor:pointer;
+.divider-khatim{
+  display:flex; align-items:center; gap:14px; margin-bottom:22px;
 }
-.btn-primary:hover { background:var(--gold2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(184,134,11,0.28); }
-.btn-outline {
-  display:inline-flex; align-items:center; gap:8px; padding:11px 22px;
-  background:transparent; color:rgba(255,255,255,0.65); text-decoration:none;
-  font-size:9px; font-weight:500; letter-spacing:3px; text-transform:uppercase;
-  border:1px solid rgba(255,255,255,0.18); border-radius:var(--radius); transition:.3s;
+.divider-khatim .line{ height:1px; width:44px; background:var(--ink-faint); opacity:.4; }
+.divider-khatim .khatim-mark{ width:18px; height:18px; }
+
+/* Typography */
+.eyebrow{
+  font-family:var(--font-kufi); font-size:13px; letter-spacing:3px; text-transform:uppercase;
+  color:var(--gold-deep); font-weight:500; display:inline-block; margin-bottom:14px;
 }
-.btn-outline:hover { border-color:var(--gold2); color:var(--gold2); transform:translateY(-2px); }
+.section--black .eyebrow{ color:var(--gold); }
+h1,h2,h3{ font-family:var(--font-display); font-weight:500; color:var(--black); letter-spacing:-.3px; }
+.section--black h2, .section--black h3{ color:var(--white); }
+.h-xl{ font-size:clamp(40px,5.5vw,68px); line-height:1.06; font-weight:500; }
+.h-lg{ font-size:clamp(32px,4vw,48px); line-height:1.12; }
+.h-md{ font-size:clamp(22px,2.6vw,28px); line-height:1.25; }
+.lede{ font-size:17px; color:var(--ink-muted); line-height:1.85; max-width:560px; }
+.section--black .lede{ color:rgba(255,255,255,.62); }
+em.accent{ font-style:italic; color:var(--gold-deep); }
+.section--black em.accent{ color:var(--gold); }
 
-.ticker-bar {
-  background:var(--dark4); border-bottom:1px solid rgba(184,134,11,0.1);
-  padding:10px 0; overflow:hidden; white-space:nowrap;
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:16px 32px; border-radius:var(--r-full);
+  font-size:13.5px; font-weight:600; letter-spacing:.4px;
+  border:1.5px solid transparent;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+  white-space:nowrap;
 }
-.ticker-inner { display:inline-flex; gap:0; animation:ticker 30s linear infinite; }
-.ticker-item { padding:0 36px; font-size:11px; letter-spacing:2px; color:rgba(255,255,255,0.35); text-transform:uppercase; }
-.ticker-dot { color:var(--gold2); }
-@keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+.btn:hover{ transform:translateY(-2px); }
+.btn-gold{ background:var(--gold); color:var(--black); box-shadow:0 6px 22px rgba(244,180,0,.35); }
+.btn-gold:hover{ background:var(--gold-deep); box-shadow:0 10px 30px rgba(244,180,0,.45); }
+.btn-black{ background:var(--black); color:var(--white); }
+.btn-black:hover{ background:var(--black-rais); }
+.btn-outline{ background:transparent; color:var(--black); border-color:var(--black); }
+.btn-outline:hover{ background:var(--black); color:var(--white); }
+.btn-outline-light{ background:transparent; color:var(--white); border-color:rgba(255,255,255,.34); }
+.btn-outline-light:hover{ border-color:var(--gold); color:var(--gold); }
+.btn-sm{ padding:11px 24px; font-size:12px; }
 
-.stats-row {
-  display:grid; grid-template-columns:repeat(4,1fr);
-  gap:1px; background:rgba(184,134,11,0.08);
-  border:1px solid rgba(184,134,11,0.08); border-radius:var(--radius-lg); overflow:hidden;
-  margin-bottom:56px;
+/* ===================== TOPBAR ===================== */
+.topbar{ background:var(--black); font-size:12.5px; color:rgba(255,255,255,.55); }
+.topbar-inner{
+  max-width:1240px; margin:0 auto; padding:0 32px; height:40px;
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
 }
-.stat-cell { background:var(--white); padding:30px 12px; text-align:center; }
-.stat-num { font-family:'Cormorant Garamond', serif; font-size:clamp(32px, 8vw, 54px); font-weight:300; color:var(--gold); line-height:1; display:block; margin-bottom:8px; }
-.stat-label { font-size:8.5px; letter-spacing:3px; text-transform:uppercase; color:var(--text3); }
-.stat-sub { font-size:10px; color:var(--text3); margin-top:4px; }
+.topbar-left{ display:flex; gap:26px; align-items:center; white-space:nowrap; }
+.topbar-left a{ display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.55); transition:color .2s; }
+.topbar-left a:hover{ color:var(--gold); }
+.topbar-social{ display:flex; gap:14px; }
+.topbar-social a{ color:rgba(255,255,255,.45); transition:color .2s; }
+.topbar-social a:hover{ color:var(--gold); }
 
-.welcome-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-bottom:64px; align-items:center; }
-.welcome-img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--radius-lg); display:block; }
-.welcome-img-ph { width:100%; aspect-ratio:4/5; border-radius:var(--radius-lg); background:linear-gradient(145deg, var(--dark2), var(--dark3)); display:flex; align-items:center; justify-content:center; font-family:'Amiri',serif; font-size:72px; color:rgba(184,134,11,0.25); }
-.welcome-content { padding:0; }
-.welcome-content h3 { font-family:'Cormorant Garamond', serif; font-size:clamp(24px, 5vw, 38px); font-weight:300; color:var(--text); line-height:1.3; margin-bottom:20px; }
-.welcome-content p { font-size:15px; line-height:1.8; color:var(--text2); margin-bottom:14px; }
-.welcome-content .divider { width:28px; height:1px; background:var(--gold); margin:24px 0; }
-.lead-quote { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px; color:var(--gold); border-left:2px solid var(--gold); padding-left:18px; margin-bottom:22px; line-height:1.6; }
-.socials-row { display:flex; gap:10px; flex-wrap:wrap; }
-.social-pill { display:inline-flex; align-items:center; gap:9px; padding:10px 18px; border:1px solid rgba(0,0,0,0.09); border-radius:40px; text-decoration:none; font-size:11px; font-weight:500; letter-spacing:.5px; color:var(--text); transition:.3s; background:var(--white); }
-.social-pill:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); box-shadow:var(--shadow); }
-.social-dot { width:7px; height:7px; border-radius:50%; background:currentColor; }
-
-.news-band { background:var(--cream2); border-top:1px solid var(--cream3); border-bottom:1px solid var(--cream3); padding:48px 0; }
-.news-band .container { padding-top:0; padding-bottom:0; }
-.news-band-header { display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:baseline; margin-bottom:28px; }
-.news-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.news-card { background:var(--white); border-radius:var(--radius-lg); padding:24px; border:1px solid rgba(0,0,0,0.05); transition:.3s; }
-.news-card:hover { box-shadow:var(--shadow); transform:translateY(-3px); }
-.news-date { font-size:9.5px; letter-spacing:3px; text-transform:uppercase; color:var(--text3); display:block; margin-bottom:10px; }
-.news-title { font-family:'Cormorant Garamond', serif; font-size:18px; font-weight:400; color:var(--text); margin-bottom:10px; line-height:1.35; }
-.news-excerpt { font-size:13px; line-height:1.65; color:var(--text2); }
-
-.about-lead { display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-bottom:64px; align-items:start; }
-.big-quote { font-family:'Amiri', serif; font-size:clamp(20px, 5vw, 28px); color:var(--gold); line-height:1.65; border-left:2px solid var(--gold); padding-left:18px; margin-bottom:22px; }
-.big-quote-trans { font-size:13px; color:var(--text3); font-style:italic; padding-left:18px; margin-bottom:20px; }
-.about-text { font-size:15px; line-height:1.8; color:var(--text2); margin-bottom:16px; }
-
-.timeline-section { margin-bottom:64px; }
-.timeline { position:relative; padding-left:28px; }
-.timeline::before { content:''; position:absolute; left:7px; top:6px; bottom:6px; width:1px; background:rgba(184,134,11,0.2); }
-.tl-item { position:relative; padding-bottom:32px; }
-.tl-item:last-child { padding-bottom:0; }
-.tl-dot { position:absolute; left:-25px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--cream); border:2px solid var(--gold); box-sizing:border-box; }
-.tl-year { font-size:10px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; margin-bottom:6px; }
-.tl-title { font-family:'Cormorant Garamond', serif; font-size:18px; font-weight:400; color:var(--text); margin-bottom:8px; }
-.tl-desc { font-size:13.5px; line-height:1.7; color:var(--text2); }
-
-.values-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-bottom:64px; }
-.value-card { background:var(--white); border:1px solid rgba(0,0,0,0.05); border-radius:var(--radius-lg); padding:28px; transition:.3s; }
-.value-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); border-color:rgba(184,134,11,0.18); }
-.value-icon { font-size:24px; margin-bottom:16px; display:block; }
-.value-title { font-family:'Cormorant Garamond', serif; font-size:19px; font-weight:400; margin-bottom:10px; color:var(--text); }
-.value-desc { font-size:13.5px; line-height:1.7; color:var(--text2); }
-
-.actions-list { background:var(--dark); border-radius:var(--radius-lg); overflow:hidden; }
-.action-item { display:flex; align-items:flex-start; gap:16px; padding:22px 24px; border-bottom:1px solid rgba(255,255,255,0.04); color:rgba(255,255,255,0.7); font-size:14px; transition:.3s; }
-.action-item:last-child { border-bottom:none; }
-.action-item:hover { background:rgba(184,134,11,0.05); color:var(--white); }
-.action-num { font-family:'Cormorant Garamond', serif; font-size:13px; color:var(--gold2); min-width:24px; padding-top:1px; }
-.action-detail { flex:1; min-width:0; }
-.action-detail strong { display:block; margin-bottom:4px; font-weight:500; }
-.action-detail span { font-size:12.5px; color:rgba(255,255,255,0.4); line-height:1.6; }
-
-.gov-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:48px; }
-.gov-card { background:var(--dark3); border-radius:var(--radius-lg); padding:24px; text-align:center; border:1px solid rgba(184,134,11,0.1); }
-.gov-initials { width:56px; height:56px; border-radius:50%; margin:0 auto 14px; background:rgba(184,134,11,0.12); border:1px solid rgba(184,134,11,0.2); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond', serif; font-size:19px; color:var(--gold2); }
-.gov-name { font-family:'Cormorant Garamond', serif; font-size:16px; font-weight:400; color:var(--white); margin-bottom:6px; }
-.gov-role { font-size:9.5px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); }
-
-.events-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-.event-card { background:var(--white); border:1px solid rgba(0,0,0,0.05); border-radius:var(--radius-lg); overflow:hidden; transition:.3s; }
-.event-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
-.event-card-top { background:var(--dark); padding:28px; position:relative; overflow:hidden; }
-.event-card-top::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 85% 55%, rgba(184,134,11,0.12), transparent 60%); }
-.event-arabic { font-family:'Amiri', serif; font-size:32px; color:rgba(212,160,23,0.15); position:absolute; right:18px; bottom:10px; }
-.event-tag { font-size:9px; letter-spacing:3px; text-transform:uppercase; background:rgba(184,134,11,0.14); color:var(--gold2); padding:5px 12px; border-radius:40px; display:inline-block; margin-bottom:12px; position:relative; z-index:1; }
-.event-name { font-family:'Cormorant Garamond', serif; font-size:21px; font-weight:300; color:var(--white); position:relative; z-index:1; margin-bottom:6px; }
-.event-date { font-size:11px; color:rgba(255,255,255,0.35); position:relative; z-index:1; letter-spacing:1px; }
-.event-body { padding:24px 26px; }
-.event-desc { font-size:13.5px; line-height:1.72; color:var(--text2); margin-bottom:16px; }
-.event-meta { display:flex; flex-wrap:wrap; gap:10px; }
-.event-badge { font-size:10px; letter-spacing:1.5px; padding:5px 12px; border-radius:4px; background:var(--cream2); color:var(--text3); text-transform:uppercase; }
-
-.hebdo-section { margin-top:64px; }
-.hebdo-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:var(--radius-lg); border:1px solid rgba(0,0,0,0.05); }
-.hebdo-table { width:100%; border-collapse:collapse; min-width:560px; }
-.hebdo-table th { font-size:9.5px; letter-spacing:3px; text-transform:uppercase; color:var(--text3); padding:14px 18px; text-align:left; border-bottom:1px solid rgba(0,0,0,0.07); background:var(--white); }
-.hebdo-table td { padding:16px 18px; border-bottom:1px solid rgba(0,0,0,0.05); font-size:14px; color:var(--text2); vertical-align:top; }
-.hebdo-table tr:last-child td { border-bottom:none; }
-.hebdo-table tr:hover td { background:var(--cream2); }
-.day-tag { font-size:9px; letter-spacing:2px; text-transform:uppercase; display:inline-block; padding:3px 10px; border-radius:3px; background:var(--gold-light); color:var(--gold); margin-bottom:4px; }
-.activity-name { font-weight:500; color:var(--text); }
-.activity-detail { font-size:12px; color:var(--text3); margin-top:2px; }
-
-.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.gallery-item { border-radius:var(--radius-lg); overflow:hidden; position:relative; cursor:pointer; }
-.gallery-item img { width:100%; height:240px; object-fit:cover; display:block; transition:.55s; }
-.gallery-item:first-child { grid-column:span 2; }
-.gallery-item:first-child img { height:340px; }
-.gallery-item:hover img { transform:scale(1.05); }
-.gallery-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(13,12,9,0.82) 0%, transparent 55%); opacity:0; transition:.35s; display:flex; align-items:flex-end; padding:18px; }
-.gallery-item:hover .gallery-overlay { opacity:1; }
-.gallery-overlay span { font-size:11px; letter-spacing:2.5px; color:rgba(255,255,255,0.85); text-transform:uppercase; }
-.gallery-ph { width:100%; height:240px; background:linear-gradient(135deg, var(--dark2), var(--dark3)); display:flex; align-items:center; justify-content:center; font-family:'Amiri',serif; font-size:40px; color:rgba(184,134,11,0.25); }
-.gallery-item:first-child .gallery-ph { height:340px; }
-
-.gallery-info { margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.ginfo-card { padding:22px; border:1px solid rgba(0,0,0,0.06); border-radius:var(--radius-lg); background:var(--white); text-align:center; }
-.ginfo-year { font-family:'Cormorant Garamond', serif; font-size:clamp(28px, 7vw, 38px); font-weight:300; color:var(--gold); line-height:1; margin-bottom:8px; }
-.ginfo-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); }
-
-.donation-layout { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
-.donation-text { font-size:15px; line-height:1.8; color:var(--text2); margin-bottom:28px; }
-.ayah-block { background:var(--dark); border-radius:var(--radius-lg); padding:24px 26px; margin-bottom:32px; border-left:3px solid var(--gold); }
-.ayah-ar { font-family:'Amiri', serif; font-size:18px; color:var(--gold3); line-height:1.8; text-align:right; margin-bottom:10px; }
-.ayah-fr { font-size:12.5px; color:rgba(255,255,255,0.45); font-style:italic; line-height:1.65; }
-.ayah-ref { font-size:10px; color:rgba(184,134,11,0.4); margin-top:8px; letter-spacing:2px; }
-.progress-section { margin-bottom:32px; }
-.progress-meta { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
-.progress-raised { font-family:'Cormorant Garamond', serif; font-size:28px; font-weight:300; color:var(--text); }
-.progress-pct { font-size:13px; color:var(--text3); letter-spacing:1px; }
-.progress-bar { height:3px; background:rgba(0,0,0,0.08); border-radius:2px; overflow:hidden; }
-.progress-fill { height:100%; width:52%; background:linear-gradient(90deg, var(--gold), var(--gold2)); border-radius:2px; animation:fillBar 1.5s ease .5s both; }
-@keyframes fillBar { from { width:0; } to { width:52%; } }
-.progress-goal { font-size:11.5px; color:var(--text3); margin-top:6px; }
-.projects-list { margin-bottom:32px; }
-.project-item { display:flex; gap:14px; padding:14px 0; border-bottom:1px solid rgba(0,0,0,0.06); }
-.project-item:last-child { border-bottom:none; }
-.project-check { width:22px; height:22px; border-radius:50%; background:var(--gold-light); border:1px solid rgba(184,134,11,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; color:var(--gold); margin-top:2px; }
-.project-text { min-width:0; }
-.project-text strong { display:block; font-size:14px; font-weight:500; color:var(--text); margin-bottom:3px; }
-.project-text span { font-size:12.5px; color:var(--text3); line-height:1.5; }
-.methods-stack { display:flex; flex-direction:column; gap:14px; margin-bottom:20px; }
-.method-card { background:var(--dark); border-radius:var(--radius-lg); padding:24px 26px; display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:center; }
-.method-brand { font-family:'Cormorant Garamond', serif; font-size:19px; color:var(--white); font-weight:400; }
-.method-num { font-size:15px; color:var(--gold2); letter-spacing:1px; }
-.method-badge { font-size:9.5px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-top:3px; }
-.donation-note { font-size:12px; color:var(--text3); line-height:1.7; }
-
-.contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
-.contact-intro { font-size:15px; line-height:1.8; color:var(--text2); margin-bottom:40px; }
-.contact-items { display:flex; flex-direction:column; gap:24px; }
-.ci-label { font-size:9.5px; letter-spacing:4px; text-transform:uppercase; color:var(--text3); display:block; margin-bottom:7px; }
-.ci-val { font-size:18px; font-family:'Cormorant Garamond', serif; font-weight:300; word-break:break-word; }
-.ci-val a { color:var(--text); text-decoration:none; transition:.2s; }
-.ci-val a:hover { color:var(--gold); }
-.ci-sub { font-size:12px; color:var(--text3); margin-top:4px; line-height:1.5; }
-.contact-map { background:var(--dark); border-radius:var(--radius-lg); overflow:hidden; }
-.map-header { padding:24px 26px; border-bottom:1px solid rgba(255,255,255,0.05); display:flex; align-items:center; gap:16px; }
-.map-pin { width:40px; height:40px; border-radius:50%; background:rgba(184,134,11,0.12); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
-.map-title { font-family:'Cormorant Garamond', serif; font-size:19px; color:var(--white); }
-.map-sub { font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:2px; text-transform:uppercase; margin-top:2px; }
-.map-body { padding:24px 26px; }
-.map-info-row { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
-.map-info-row:last-child { border-bottom:none; }
-.map-info-key { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.3); }
-.map-info-val { font-size:14px; color:rgba(255,255,255,0.7); }
-.map-arabic-big { font-family:'Amiri', serif; font-size:36px; color:rgba(184,134,11,0.15); text-align:center; padding:22px; display:block; }
-.join-band { background:var(--dark3); border-radius:var(--radius-lg); padding:26px; margin-top:28px; }
-.join-band h4 { font-family:'Cormorant Garamond', serif; font-size:21px; font-weight:300; color:var(--white); margin-bottom:12px; }
-.join-band p { font-size:13.5px; color:rgba(255,255,255,0.45); line-height:1.7; margin-bottom:18px; }
-.join-steps { display:flex; flex-direction:column; gap:10px; }
-.join-step { display:flex; align-items:center; gap:14px; font-size:13px; color:rgba(255,255,255,0.55); }
-.join-num { width:26px; height:26px; border-radius:50%; background:rgba(184,134,11,0.12); border:1px solid rgba(184,134,11,0.2); display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--gold2); flex-shrink:0; }
-
-footer { background:var(--dark2); border-top:1px solid rgba(184,134,11,0.08); padding:56px 20px 32px; }
-.footer-inner { max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr 1fr; gap:36px; margin-bottom:48px; }
-.footer-col-title { font-size:9.5px; letter-spacing:4px; text-transform:uppercase; color:var(--gold2); margin-bottom:20px; display:block; }
-.footer-arabic-big { font-family:'Amiri', serif; font-size:24px; color:rgba(184,134,11,0.35); line-height:1.65; margin-bottom:14px; }
-.footer-desc { font-size:12.5px; line-height:1.8; color:rgba(255,255,255,0.3); }
-.footer-links { list-style:none; }
-.footer-links li { margin-bottom:10px; }
-.footer-links a { font-size:12.5px; color:rgba(255,255,255,0.4); text-decoration:none; cursor:pointer; transition:.2s; letter-spacing:.3px; }
-.footer-links a:hover { color:var(--gold2); }
-.footer-contact-item { font-size:12.5px; color:rgba(255,255,255,0.4); margin-bottom:10px; letter-spacing:.3px; }
-.footer-contact-item a { color:rgba(255,255,255,0.4); text-decoration:none; }
-.footer-contact-item a:hover { color:var(--gold2); }
-.footer-bottom { max-width:1060px; margin:0 auto; border-top:1px solid rgba(255,255,255,0.05); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; }
-.footer-copy { font-size:11px; color:rgba(255,255,255,0.2); letter-spacing:.8px; }
-.footer-motto { font-size:10.5px; color:rgba(184,134,11,0.45); letter-spacing:2.5px; text-transform:uppercase; }
-
-@media (max-width:768px) {
-  .stats-row { grid-template-columns:repeat(2,1fr); }
-  .welcome-grid,.about-lead,.donation-layout,.contact-layout { grid-template-columns:1fr; gap:32px; }
-  .events-grid,.values-grid,.news-cards,.gov-grid { grid-template-columns:1fr; }
-  .gallery-grid { grid-template-columns:1fr 1fr; }
-  .gallery-item:first-child { grid-column:span 2; }
-  .footer-inner { grid-template-columns:1fr; gap:28px; }
-  .footer-bottom { flex-direction:column; text-align:center; }
-  header { padding:24px 16px 20px; }
-  .hdr-inner { gap:14px; }
-  .hdr-text { text-align:center; }
-  .hdr-cta { justify-content:center; }
-  nav { justify-content:flex-start; }
-  nav a { padding:14px 12px; font-size:9px; }
-  .container { padding:44px 18px; }
-  .page-hero { padding:44px 18px; }
+/* ===================== HEADER ===================== */
+header{
+  position:sticky; top:0; z-index:600;
+  background:rgba(255,255,255,.96); backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .25s;
 }
-@media (max-width:480px) {
-  .gallery-grid { grid-template-columns:1fr; }
-  .gallery-item:first-child { grid-column:span 1; }
-  .gallery-item:first-child img, .gallery-item:first-child .gallery-ph { height:240px; }
-  .stats-row { grid-template-columns:1fr 1fr; }
-  .gallery-info { grid-template-columns:1fr; }
-  .gov-grid { grid-template-columns:1fr; }
-  .method-card { flex-direction:column; align-items:flex-start; gap:8px; }
+header.scrolled{ box-shadow:var(--shadow-sm); }
+.nav-wrap{
+  max-width:1240px; margin:0 auto; padding:0 32px; height:84px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.brand{ display:flex; align-items:center; gap:13px; flex-shrink:0; }
+.brand-emblem{
+  width:48px; height:48px; border-radius:50%;
+  background:var(--black); display:flex; align-items:center; justify-content:center;
+  color:var(--gold); flex-shrink:0;
+}
+.brand-emblem svg{ width:24px; height:24px; }
+.brand-name{ font-family:var(--font-display); font-size:18px; font-weight:600; color:var(--black); letter-spacing:-.2px; line-height:1.2; }
+.brand-tag{ font-family:var(--font-kufi); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--ink-faint); margin-top:1px; }
+.main-nav{ display:flex; align-items:center; gap:3px; }
+.main-nav a{
+  padding:9px 16px; color:var(--ink-muted); font-size:14px; font-weight:500;
+  border-radius:var(--r-full); transition:.2s; white-space:nowrap;
+}
+.main-nav a:hover, .main-nav a.active{ color:var(--black); background:var(--gray-light); }
+.nav-actions{ display:flex; gap:10px; align-items:center; flex-shrink:0; }
+.burger{
+  display:none; width:44px; height:44px; border-radius:var(--r-md);
+  border:1.5px solid var(--border); align-items:center; justify-content:center;
+  color:var(--black); background:none;
+}
+
+/* ===================== HERO ===================== */
+.hero{
+  position:relative;
+  min-height:92vh;
+  display:flex;
+  align-items:center;
+  background:var(--black);
+  overflow:hidden;
+  isolation:isolate;
+  padding:120px 0 80px;
+}
+
+/* Fond géométrique décoratif ('images/laga.jpeg' */
+.hero-bg-pattern{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(45deg, rgba(244,180,0,.04) 25%, transparent 25%, transparent 75%, rgba(244,180,0,.04) 75%),
+    linear-gradient(45deg, rgba(244,180,0,.04) 25%, transparent 25%, transparent 75%, rgba(244,180,0,.04) 75%);
+  background-size:72px 72px;
+  background-position:0 0, 36px 36px;
+  z-index:0;
+}
+.hero-bg-pattern{
+  position:absolute;
+  inset:0;
+  background-image: url('images/laga.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index:0;
+}
+.hero-bg-pattern{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url('images/laga.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index:0;
+}
+/* Dégradé radial centré sur la gauche pour mettre en valeur le texte */
+.hero-bg-glow{
+  position:absolute;
+  inset:0;
+  background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(244,180,0,.08) 0%, transparent 70%);
+  z-index:0;
+}
+
+.hero .container{
+  position:relative;
+  z-index:2;
+  width:100%;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:56px;
+  align-items:center;
+}
+
+/* Texte côté gauche */
+.hero-eyebrow-row{ display:flex; align-items:center; gap:10px; margin-bottom:32px; }
+.hero-badge{
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(244,180,0,.10); border:1px solid rgba(244,180,0,.22);
+  border-radius:var(--r-full); padding:9px 20px 9px 14px;
+  font-size:11.5px; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--gold);
+}
+.hero-badge .khatim-mark{ width:14px; height:14px; }
+.hero h1{
+  font-size:clamp(44px,6vw,80px);
+  line-height:1.0;
+  letter-spacing:-2px;
+  font-weight:600;
+  color:var(--white);
+  margin-bottom:22px;
+}
+.hero h1 .line2{ display:block; color:var(--gold); }
+.hero-sub{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:clamp(16px,1.8vw,20px);
+  color:rgba(255,255,255,.6);
+  max-width:480px;
+  margin-bottom:24px;
+  line-height:1.6;
+}
+.hero-quote{
+  font-size:16px;
+  color:rgba(255,255,255,.8);
+  max-width:460px;
+  margin-bottom:44px;
+  padding-left:18px;
+  border-left:3px solid var(--gold);
+  line-height:1.7;
+}
+.hero-cta{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:60px; }
+.hero-stats{
+  display:flex; gap:44px; flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.12);
+  padding-top:32px;
+}
+.hero-stat-num{
+  font-family:var(--font-display);
+  font-size:clamp(26px,3vw,36px);
+  font-weight:600;
+  color:var(--white);
+  line-height:1;
+}
+.hero-stat-num .unit{ color:var(--gold); }
+.hero-stat-label{
+  font-size:11px; letter-spacing:1.6px; text-transform:uppercase;
+  color:rgba(255,255,255,.38); margin-top:6px; font-weight:600;
+}
+
+/* Illustration géométrique — côté droit */
+.hero-art{ position:relative; aspect-ratio:1/1; max-width:500px; margin:0 auto; }
+.hero-art svg{ width:100%; height:100%; }
+.hero-decor-ring{
+  position:absolute; inset:-5%;
+  border:1.5px dashed rgba(244,180,0,.2);
+  border-radius:50%;
+  animation:spin 60s linear infinite;
+}
+.hero-decor-ring-2{
+  position:absolute; inset:10%;
+  border:1px dashed rgba(244,180,0,.1);
+  border-radius:50%;
+  animation:spin 40s linear infinite reverse;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* ===================== MARQUEE STRIP ===================== */
+.marquee-strip{
+  background:var(--black);
+  padding:18px 0;
+  overflow:hidden;
+  border-top:1px solid rgba(244,180,0,.18);
+  border-bottom:1px solid rgba(244,180,0,.18);
+}
+.marquee-track{ display:flex; gap:56px; width:max-content; animation:marquee 32s linear infinite; }
+.marquee-track span{
+  font-family:var(--font-kufi); font-size:14px; letter-spacing:2.5px; text-transform:uppercase;
+  color:rgba(255,255,255,.45); display:flex; align-items:center; gap:16px; white-space:nowrap;
+}
+.marquee-track span em{ color:var(--gold); font-style:normal; }
+.marquee-track .sep{ color:var(--gold); opacity:.5; }
+@keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+/* ===================== À PROPOS ===================== */
+.about-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:72px; align-items:start; }
+.about-visual{ position:sticky; top:110px; }
+.about-frame{
+  position:relative; border-radius:var(--r-lg); overflow:hidden;
+  aspect-ratio:3/4; background:var(--black);
+  box-shadow:var(--shadow-md);
+}
+.about-frame-caption{
+  position:absolute; left:0; right:0; bottom:0; padding:26px;
+  background:linear-gradient(to top, rgba(18,18,18,.92), transparent);
+}
+.about-frame-caption .kufi{ font-family:var(--font-kufi); font-size:22px; color:var(--gold); margin-bottom:4px; }
+.about-frame-caption .sub{ font-size:11.5px; letter-spacing:1.6px; text-transform:uppercase; color:rgba(255,255,255,.6); }
+
+.about-blocks{ display:flex; flex-direction:column; gap:0; margin-top:36px; }
+.about-block{ padding:26px 0; border-bottom:1px solid var(--border); }
+.about-block:first-child{ padding-top:0; }
+.about-block:last-child{ border-bottom:none; }
+.about-block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:10px; }
+.about-block-num{ font-family:var(--font-display); font-size:13px; color:var(--gold-deep); font-weight:600; }
+.about-block h3{ font-size:21px; }
+.about-block p{ color:var(--ink-muted); font-size:15px; line-height:1.8; max-width:600px; }
+
+.values-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
+.value-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--gray-light); border:1px solid var(--border);
+  border-radius:var(--r-full); padding:9px 18px 9px 12px; font-size:13px; font-weight:600; color:var(--black);
+}
+.value-chip .khatim-mark{ width:14px; height:14px; }
+
+/* ===================== ACTIVITÉS ===================== */
+.section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:56px; flex-wrap:wrap; }
+.activities-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+  background:var(--border); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden;
+}
+.activity-card{
+  background:var(--white); padding:36px 28px; position:relative;
+  transition:background .3s var(--ease);
+  min-height:230px; display:flex; flex-direction:column;
+}
+.activity-card:hover{ background:var(--black); }
+.activity-card:hover .activity-title,
+.activity-card:hover .activity-desc{ color:rgba(255,255,255,.85); }
+.activity-card:hover .activity-title{ color:var(--white); }
+.activity-card:hover .activity-num{ color:var(--gold); }
+.activity-card:hover .activity-icon{ background:var(--gold); color:var(--black); }
+.activity-num{ font-family:var(--font-display); font-size:12px; color:var(--ink-faint); letter-spacing:1px; margin-bottom:20px; transition:color .3s; }
+.activity-icon{
+  width:46px; height:46px; border-radius:50%; background:var(--gray-light);
+  display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+  color:var(--gold-deep); transition:.3s var(--ease); flex-shrink:0;
+}
+.activity-icon svg{ width:22px; height:22px; }
+.activity-title{ font-family:var(--font-display); font-size:18.5px; font-weight:600; color:var(--black); margin-bottom:8px; transition:color .3s; }
+.activity-desc{ font-size:13.5px; color:var(--ink-muted); line-height:1.7; transition:color .3s; flex:1; }
+
+/* ===================== RÉALISATIONS ===================== */
+.stats-section{ background:var(--black); position:relative; overflow:hidden; padding:80px 0; }
+.stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); position:relative; z-index:2; }
+.stat-item{ padding:64px 30px; text-align:center; border-right:1px solid rgba(244,180,0,.14); }
+.stat-item:last-child{ border-right:none; }
+.stat-khatim{ width:22px; height:22px; color:var(--gold); margin:0 auto 22px; opacity:.85; }
+.stat-number{ font-family:var(--font-display); font-size:clamp(42px,5.6vw,66px); font-weight:600; color:var(--white); line-height:1; }
+.stat-number .suffix{ color:var(--gold); }
+.stat-label{ font-family:var(--font-kufi); font-size:11.5px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.45); margin-top:12px; }
+
+/* ===================== GALERIE ===================== */
+.gallery-filter{ display:flex; gap:8px; flex-wrap:wrap; }
+.gf-btn{
+  padding:10px 22px; border-radius:var(--r-full); border:1.5px solid var(--border);
+  background:var(--white); font-size:12.5px; font-weight:600; color:var(--ink-muted); transition:.2s;
+}
+.gf-btn:hover, .gf-btn.active{ background:var(--black); color:var(--white); border-color:var(--black); }
+.masonry{ columns:3; column-gap:16px; margin-top:40px; }
+.masonry-item{
+  break-inside:avoid; margin-bottom:16px; border-radius:var(--r-md); overflow:hidden;
+  position:relative; cursor:zoom-in; aspect-ratio:4/5; background:var(--black);
+}
+.masonry-item img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.masonry-item:hover img{ transform:scale(1.06); }
+.masonry-overlay{
+  position:absolute; inset:0; opacity:0; transition:opacity .3s;
+  background:linear-gradient(to top, rgba(18,18,18,.86), transparent 55%);
+  display:flex; flex-direction:column; justify-content:flex-end; padding:18px;
+}
+.masonry-item:hover .masonry-overlay{ opacity:1; }
+.masonry-overlay span{ font-family:var(--font-kufi); font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--gold); }
+.masonry-overlay strong{ font-family:var(--font-display); font-size:17px; color:var(--white); font-weight:500; }
+.lightbox{ position:fixed; inset:0; background:rgba(10,10,10,.97); z-index:2000; display:none; align-items:center; justify-content:center; padding:24px; }
+.lightbox.open{ display:flex; }
+.lightbox img{ max-width:min(900px,92vw); max-height:86vh; border-radius:var(--r-md); box-shadow:0 20px 60px rgba(0,0,0,.5); }
+.lb-close,.lb-nav{ position:absolute; border-radius:50%; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); color:#fff; display:flex; align-items:center; justify-content:center; transition:.2s; }
+.lb-close{ top:22px; right:24px; width:46px; height:46px; font-size:18px; }
+.lb-nav{ top:50%; transform:translateY(-50%); width:50px; height:50px; font-size:24px; }
+.lb-close:hover,.lb-nav:hover{ background:var(--gold); color:var(--black); border-color:var(--gold); }
+.lb-prev{ left:20px; } .lb-next{ right:20px; }
+
+/* ===================== BUREAU ===================== */
+.bureau-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.bureau-card{ text-align:center; position:relative; }
+.bureau-photo{
+  position:relative; aspect-ratio:1/1; border-radius:var(--r-lg); overflow:hidden;
+  background:var(--black); margin-bottom:20px;
+}
+.bureau-photo::after{
+  content:''; position:absolute; inset:0; border-radius:var(--r-lg);
+  border:2px solid transparent; transition:border-color .3s;
+}
+.bureau-card:hover .bureau-photo::after{ border-color:var(--gold); }
+.bureau-name{ font-family:var(--font-display); font-size:19px; font-weight:600; color:var(--black); margin-bottom:4px; }
+.bureau-role{ font-family:var(--font-kufi); font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:var(--gold-deep); }
+
+/* ===================== TÉMOIGNAGES ===================== */
+.testi-wrap{ max-width:760px; margin:0 auto; position:relative; }
+.testi-track-outer{ overflow:hidden; border-radius:var(--r-lg); }
+.testi-track{ display:flex; transition:transform .55s var(--ease); }
+.testi-slide{ min-width:100%; padding:0 6px; }
+.testi-card{
+  background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg);
+  padding:48px 44px; text-align:center;
+}
+.testi-quote-mark{ width:30px; height:30px; color:var(--gold); margin:0 auto 22px; }
+.testi-text{ font-family:var(--font-display); font-style:italic; font-size:21px; line-height:1.6; color:var(--black); margin-bottom:28px; }
+.testi-author-name{ font-weight:700; font-size:14.5px; color:var(--black); }
+.testi-author-role{ font-size:12.5px; color:var(--ink-faint); margin-top:2px; }
+.testi-controls{ display:flex; justify-content:center; gap:10px; margin-top:30px; }
+.testi-dot{ width:9px; height:9px; border-radius:50%; background:var(--border); transition:.25s; border:none; cursor:pointer; }
+.testi-dot.active{ background:var(--gold); width:26px; border-radius:5px; }
+.testi-arrow{
+  position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%;
+  background:var(--white); border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center;
+  font-size:18px; color:var(--black); transition:.2s; box-shadow:var(--shadow-sm);
+}
+.testi-arrow:hover{ background:var(--black); color:var(--gold); border-color:var(--black); }
+.testi-prev{ left:-64px; } .testi-next{ right:-64px; }
+
+/* ===================== CONTACT ===================== */
+.contact-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:64px; align-items:start; }
+.contact-list{ display:flex; flex-direction:column; gap:0; }
+.contact-row{ display:flex; gap:18px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--border); }
+.contact-row:first-child{ padding-top:0; }
+.contact-row-icon{
+  width:48px; height:48px; border-radius:50%; background:var(--black); color:var(--gold);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.contact-row-icon svg{ width:20px; height:20px; }
+.contact-row-label{ font-family:var(--font-kufi); font-size:10.5px; letter-spacing:1.8px; text-transform:uppercase; color:var(--ink-faint); margin-bottom:3px; }
+.contact-row-value{ font-size:16px; font-weight:600; color:var(--black); }
+.contact-row-value a:hover{ color:var(--gold-deep); }
+.contact-row-sub{ font-size:13px; color:var(--ink-muted); margin-top:2px; }
+.contact-social-row{ display:flex; gap:10px; margin-top:28px; }
+.contact-social-row a{
+  width:42px; height:42px; border-radius:50%; border:1.5px solid var(--border);
+  display:flex; align-items:center; justify-content:center; color:var(--black); transition:.2s;
+}
+.contact-social-row a:hover{ background:var(--black); border-color:var(--black); color:var(--gold); transform:translateY(-3px); }
+
+.form-card{ background:var(--gray-light); border-radius:var(--r-lg); padding:44px; }
+.form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.form-field{ display:flex; flex-direction:column; gap:7px; }
+.form-field.full{ grid-column:1/-1; }
+.form-label{ font-family:var(--font-kufi); font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:500; color:var(--ink-muted); }
+.form-field input, .form-field select, .form-field textarea{
+  font-family:var(--font-body); font-size:15px; padding:14px 16px;
+  border-radius:var(--r-sm); border:1.5px solid var(--border); background:var(--white);
+  color:var(--ink); transition:border-color .2s; resize:vertical;
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus{
+  border-color:var(--gold-deep); outline:none;
+}
+.form-success{
+  display:none; background:var(--black); color:var(--white); border-radius:var(--r-md);
+  padding:18px 22px; font-size:14px; margin-top:20px; align-items:center; gap:12px;
+}
+.form-success.show{ display:flex; }
+.form-success .khatim-mark{ width:18px; height:18px; flex-shrink:0; }
+
+/* ===================== FOOTER ===================== */
+footer{ background:var(--black); color:rgba(255,255,255,.55); }
+.footer-top{ padding:80px 0 56px; border-bottom:1px solid rgba(255,255,255,.08); }
+.footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1.1fr; gap:48px; }
+.footer-brand-row{ display:flex; align-items:center; gap:13px; margin-bottom:20px; }
+.footer-emblem{
+  width:46px; height:46px; border-radius:50%;
+  background:var(--gold); display:flex; align-items:center; justify-content:center; color:var(--black);
+  flex-shrink:0;
+}
+.footer-emblem svg{ width:23px; height:23px; }
+.footer-brand-name{ font-family:var(--font-display); font-size:18px; font-weight:600; color:var(--white); }
+.footer-brand-tag{ font-family:var(--font-kufi); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.4); }
+.footer-desc{ font-size:14px; line-height:1.85; color:rgba(255,255,255,.42); max-width:280px; margin-bottom:26px; }
+.footer-social{ display:flex; gap:10px; }
+.footer-social a{
+  width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,.14);
+  display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.5); transition:.2s;
+}
+.footer-social a:hover{ border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+.footer-col-title{ font-family:var(--font-kufi); font-size:10.5px; letter-spacing:2.4px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; display:block; }
+.footer-links{ display:flex; flex-direction:column; gap:11px; }
+.footer-links a{ font-size:14px; color:rgba(255,255,255,.45); transition:.2s; }
+.footer-links a:hover{ color:var(--white); }
+.footer-coord p{ font-size:14px; color:rgba(255,255,255,.45); line-height:1.9; }
+.footer-coord a{ color:rgba(255,255,255,.45); }
+.footer-coord a:hover{ color:var(--gold); }
+.footer-quote{
+  text-align:center; padding:30px 32px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.footer-quote .kufi{ font-family:var(--font-kufi); font-size:20px; color:rgba(244,180,0,.5); margin-bottom:8px; }
+.footer-quote .fr{ font-family:var(--font-display); font-style:italic; font-size:15px; color:rgba(255,255,255,.35); }
+.footer-bottom{
+  max-width:1240px; margin:0 auto; padding:22px 32px;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-size:12px; color:rgba(255,255,255,.28);
+}
+.footer-motto{ font-family:var(--font-display); font-style:italic; color:var(--gold); opacity:.7; font-size:13.5px; }
+
+/* ===================== FAB ===================== */
+.fab-stack{ position:fixed; right:24px; bottom:24px; z-index:900; display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
+.fab{ width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:none; box-shadow:var(--shadow-md); transition:transform .2s; }
+.fab:hover{ transform:translateY(-3px) scale(1.05); }
+.fab-wa{ background:#25D366; color:#fff; }
+.fab-wa svg{ width:26px; height:26px; }
+.fab-top{ width:46px; height:46px; background:var(--black); color:var(--gold); opacity:0; pointer-events:none; transition:opacity .3s; font-size:18px; }
+.fab-top.show{ opacity:1; pointer-events:auto; }
+
+/* ===================== MOBILE NAV ===================== */
+.mobile-nav{
+  position:fixed; inset:0; z-index:1500; background:var(--black);
+  padding:104px 32px 32px; display:none; flex-direction:column; gap:2px; overflow-y:auto;
+}
+.mobile-nav.open{ display:flex; }
+.mobile-nav a{ color:rgba(255,255,255,.85); font-family:var(--font-display); font-size:24px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08); }
+.mobile-nav a:hover{ color:var(--gold); }
+.mobile-nav-close{
+  position:absolute; top:24px; right:24px; width:46px; height:46px; border-radius:50%;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+  color:#fff; display:flex; align-items:center; justify-content:center; font-size:18px;
+}
+.mobile-cta{ margin-top:24px; display:flex; gap:12px; }
+
+/* ===================== REVEAL ON SCROLL ===================== */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in{ opacity:1; transform:translateY(0); }
+.reveal[data-delay="1"]{ transition-delay:.08s; }
+.reveal[data-delay="2"]{ transition-delay:.16s; }
+.reveal[data-delay="3"]{ transition-delay:.24s; }
+.reveal[data-delay="4"]{ transition-delay:.32s; }
+
+/* Placeholder visuals */
+.ph-fallback{
+  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:10px; color:rgba(244,180,0,.5);
+  background:
+    linear-gradient(45deg, rgba(244,180,0,.07) 25%, transparent 25%, transparent 75%, rgba(244,180,0,.07) 75%),
+    linear-gradient(45deg, rgba(244,180,0,.07) 25%, transparent 25%, transparent 75%, rgba(244,180,0,.07) 75%), var(--black);
+  background-size:34px 34px; background-position:0 0, 17px 17px;
+}
+.ph-fallback svg{ width:34px; height:34px; opacity:.8; }
+.ph-fallback span{ font-family:var(--font-kufi); font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.4); }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width:1100px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-art{ max-width:340px; order:-1; margin-bottom:32px; }
+  .about-grid, .contact-grid{ grid-template-columns:1fr; gap:44px; }
+  .about-visual{ position:static; max-width:380px; }
+  .activities-grid{ grid-template-columns:repeat(2,1fr); }
+  .bureau-grid{ grid-template-columns:repeat(2,1fr); }
+  .footer-grid{ grid-template-columns:1fr 1fr; gap:36px; }
+  .masonry{ columns:2; }
+}
+@media (max-width:860px){
+  .main-nav, .nav-actions .btn-outline{ display:none; }
+  .burger{ display:flex; }
+  .topbar-left{ gap:16px; }
+  .sep-hide{ display:none; }
+  .stats-grid{ grid-template-columns:repeat(2,1fr); }
+  .stat-item:nth-child(2){ border-right:none; }
+  .stat-item:nth-child(3){ border-top:1px solid rgba(244,180,0,.14); }
+  .stat-item:nth-child(4){ border-top:1px solid rgba(244,180,0,.14); border-right:none; }
+  .testi-prev{ left:0; } .testi-next{ right:0; }
+  .testi-card{ padding:40px 26px; }
+}
+@media (max-width:680px){
+  .container{ padding:0 20px; }
+  .section{ padding:80px 0; }
+  .activities-grid, .bureau-grid, .form-grid{ grid-template-columns:1fr; }
+  .footer-grid{ grid-template-columns:1fr; gap:30px; }
+  .masonry{ columns:1; }
+  .form-card{ padding:28px 22px; }
+  .hero{ padding:100px 0 60px; min-height:auto; }
+  .hero-stats{ gap:28px; }
+  .testi-card{ padding:34px 22px; }
+  .hero h1{ letter-spacing:-1px; }
+  .stats-grid{ grid-template-columns:1fr 1fr; }
+}
+.brand-emblem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
 }
 </style>
 </head>
 <body>
 
-<button id="scrollTop" aria-label="Retour en haut">↑</button>
+<!-- SVG SYMBOLS -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-khatim" viewBox="0 0 100 100">
+  <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor" stroke-width="4"/>
+  <rect x="20" y="20" width="60" height="60" transform="rotate(45 50 50)" fill="none" stroke="currentColor" stroke-width="4"/>
+</symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v3a2 2 0 01-2 2C9.5 20 4 14.5 4 7a2 2 0 011-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M5 19l1.4-3.6A7.6 7.6 0 1112 19.6c-1.4 0-2.7-.4-3.8-1L5 19Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 21v-7h2.4l.4-3H14V9c0-.9.3-1.5 1.7-1.5H17V4.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V11H8v3h2.6v7H14Z" fill="currentColor"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="currentColor"/></symbol>
+<symbol id="i-yt" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 7l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-11.5A7 7 0 005 9.5C5 14.6 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5A1.5 1.5 0 014 18.5v-13Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5a1.5 1.5 0 001.5-1.5v-13Z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 11.5a6.5 6.5 0 0013 0M12 18v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M16 4a8.5 8.5 0 100 16 9 9 0 01-9-9 9 9 0 019-7Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 3v18M6 4h12l-3 4 3 4H6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a5 5 0 019-3 5 5 0 019 3c0 6-8 11-8 11Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-basket" viewBox="0 0 24 24"><path d="M4 9h16l-1.5 10a2 2 0 01-2 1.8H7.5a2 2 0 01-2-1.8L4 9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9l1.5-5h5L16 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-star2" viewBox="0 0 24 24"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="8.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M15 13.2c2.4.2 4.5 1.9 4.5 4.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+<symbol id="i-quote" viewBox="0 0 32 24"><path d="M3 14C3 7 7 3 13 2v4c-3 1-5 3-5 6h5v10H3V14Z" fill="currentColor"/><path d="M19 14c0-7 4-11 10-12v4c-3 1-5 3-5 6h5v10H19V14Z" fill="currentColor"/></symbol>
+</defs>
+</svg>
+
+<script>function ph(el){ el.style.display='none'; var sib=el.nextElementSibling; if(sib&&sib.classList.contains('ph-fallback'))sib.style.display='flex'; }</script>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a href="tel:+221788626180"><svg width="13" height="13"><use href="#i-phone"/></svg>+221 78 862 61 80</a>
+      <a href="https://wa.me/221788626180" target="_blank" rel="noopener"><svg width="13" height="13"><use href="#i-wa"/></svg>WhatsApp</a>
+      <span class="sep-hide">Bambilor, Sénégal</span>
+    </div>
+    <div class="topbar-social">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg width="14" height="14"><use href="#i-fb"/></svg></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg width="14" height="14"><use href="#i-ig"/></svg></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg width="14" height="14"><use href="#i-yt"/></svg></a>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
-<header>
-  <div class="hdr-geo"></div>
-  <div class="hdr-radial"></div>
-  <div class="hdr-inner">
-    <div class="logo-wrap">
-      <div class="ring-anim"></div>
-      <img src="logo.jpeg" alt="AN'SAROUD DINE BAMBILOR" class="logo-img"
-        onerror="this.outerHTML='<div class=\'logo-ph\'>ن</div>'">
-    </div>
-    <div class="hdr-text">
-      <h1>ANSAROUD DINE BAMBILOR</h1>
-      <span class="hdr-sub">Association Islamique &nbsp;•&nbsp; Bambilor, Sénégal</span>
-      <div class="hdr-cta">
-        <a href="#" class="btn-primary" onclick="showSection('dons',event)">Faire un don</a>
-        <a href="#" class="btn-outline" onclick="showSection('apropos',event)">Découvrir</a>
+<header id="mainHeader">
+  <div class="nav-wrap">
+    <a href="#accueil" class="brand">
+      <div class="brand-emblem">
+        <img src="images/logo.JPG" alt="Logo Ansaroud Dine" class="logo">
       </div>
+      <div>
+        <div class="brand-name">Ansaroud Dine</div>
+        <div class="brand-tag">Bambilor · Sénégal</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#activites">Activités</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#bureau">Bureau</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-outline btn-sm">Nous contacter</a>
+      <a href="#apropos" class="btn btn-gold btn-sm">Découvrir</a>
+      <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">
+        <svg width="20" height="14" viewBox="0 0 20 14">
+          <path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- TICKER -->
-<div class="ticker-bar">
-  <div class="ticker-inner">
-    <span class="ticker-item">Prochain Gamou <span class="ticker-dot">•</span> Bambilor 2025</span>
-    <span class="ticker-item">Cours coraniques <span class="ticker-dot">•</span> Chaque samedi & dimanche</span>
-    <span class="ticker-item">Collecte de dons <span class="ticker-dot">•</span> Objectif 480 000 FCFA</span>
-    <span class="ticker-item">+200 membres actifs <span class="ticker-dot">•</span> Rejoignez-nous</span>
-    <span class="ticker-item">Prochain Gamou <span class="ticker-dot">•</span> Bambilor 2025</span>
-    <span class="ticker-item">Cours coraniques <span class="ticker-dot">•</span> Chaque samedi & dimanche</span>
-    <span class="ticker-item">Collecte de dons <span class="ticker-dot">•</span> Objectif 480 000 FCFA</span>
-    <span class="ticker-item">+200 membres actifs <span class="ticker-dot">•</span> Rejoignez-nous</span>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer">✕</button>
+  <a href="#accueil">Accueil</a>
+  <a href="#apropos">À propos</a>
+  <a href="#activites">Activités</a>
+  <a href="#realisations">Réalisations</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#bureau">Bureau</a>
+  <a href="#contact">Contact</a>
+  <div class="mobile-cta">
+    <a href="#contact" class="btn btn-gold">Nous contacter</a>
   </div>
 </div>
 
-<!-- NAV -->
-<nav id="main-nav">
-  <a onclick="showSection('accueil',event)" class="active-link">Accueil</a>
-  <a onclick="showSection('apropos',event)">À propos</a>
-  <a onclick="showSection('activites',event)">Activités</a>
-  <a onclick="showSection('galerie',event)">Galerie</a>
-  <a onclick="showSection('dons',event)">Dons</a>
-  <a onclick="showSection('contact',event)">Contact</a>
-</nav>
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-bg-pattern" aria-hidden="true"></div>
+  <div class="hero-bg-glow" aria-hidden="true"></div>
 
-<!-- ACCUEIL -->
-<section id="accueil" class="section active">
   <div class="container">
-    <div class="stats-row">
-      <div class="stat-cell"><span class="stat-num">5+</span><span class="stat-label">Années</span><p class="stat-sub">d'existence</p></div>
-      <div class="stat-cell"><span class="stat-num">200+</span><span class="stat-label">Membres</span><p class="stat-sub">hommes, femmes & jeunes</p></div>
-      <div class="stat-cell"><span class="stat-num">50+</span><span class="stat-label">Événements</span><p class="stat-sub">organisés depuis la création</p></div>
-      <div class="stat-cell"><span class="stat-num">1</span><span class="stat-label">Communauté</span><p class="stat-sub">unie autour de la foi</p></div>
+    <div class="hero-grid">
+
+      <!-- Texte -->
+      <div class="hero-inner">
+        <div class="hero-eyebrow-row reveal in">
+          <span class="hero-badge">
+            <svg class="khatim-mark" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>
+            Association islamique — Bambilor
+          </span>
+        </div>
+
+        <h1 class="reveal in" data-delay="1">
+          ANSAROUD DINE
+          <span class="line2">BAMBILOR</span>
+        </h1>
+
+        <p class="hero-sub reveal in" data-delay="2">
+          Association Islamique pour la Foi, la Solidarité et le Développement Communautaire
+        </p>
+
+        <p class="hero-quote reveal in" data-delay="3">
+          « Servir notre communauté, renforcer notre foi et construire un avenir meilleur ensemble. »
+        </p>
+
+        <div class="hero-cta reveal in" data-delay="4">
+          <a href="#apropos" class="btn btn-gold">Découvrir l'association</a>
+          <a href="#contact" class="btn btn-outline-light">Nous contacter</a>
+        </div>
+
+        <div class="hero-stats reveal in" data-delay="4">
+          <div>
+            <div class="hero-stat-num"><span class="count" data-target="200">0</span><span class="unit">+</span></div>
+            <div class="hero-stat-label">Membres actifs</div>
+          </div>
+          <div>
+            <div class="hero-stat-num"><span class="count" data-target="120">0</span><span class="unit">+</span></div>
+            <div class="hero-stat-label">Familles aidées</div>
+          </div>
+          <div>
+            <div class="hero-stat-num"><span class="count" data-target="3">0</span><span class="unit">+</span></div>
+            <div class="hero-stat-label">Années d'existence</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Illustration géométrique -->
+      <div class="hero-art reveal in" data-delay="2" aria-hidden="true">
+        <div class="hero-decor-ring"></div>
+        <div class="hero-decor-ring-2"></div>
+        <svg viewBox="0 0 400 400">
+          <defs>
+            <g id="person">
+              <circle cx="0" cy="-58" r="13"/>
+              <path d="M-22 -8c0-20 10-32 22-32s22 12 22 32"/>
+            </g>
+          </defs>
+          <!-- Cercle pointillé extérieur -->
+          <circle cx="200" cy="200" r="175" fill="none" stroke="#F4B400" stroke-opacity=".08" stroke-width="1" stroke-dasharray="2 10"/>
+          <!-- Cercle pointillé intérieur -->
+          <circle cx="200" cy="200" r="140" fill="none" stroke="#F4B400" stroke-opacity=".12" stroke-width="1" stroke-dasharray="3 7"/>
+          <!-- Fond central -->
+          <circle cx="200" cy="200" r="80" fill="rgba(244,180,0,.05)" stroke="#F4B400" stroke-opacity=".2" stroke-width="1"/>
+          <!-- Khatim central -->
+          <g transform="translate(200,200)">
+            <rect x="-36" y="-36" width="72" height="72" fill="none" stroke="#F4B400" stroke-width="2" stroke-opacity=".7"/>
+            <rect x="-36" y="-36" width="72" height="72" transform="rotate(45)" fill="none" stroke="#F4B400" stroke-width="2" stroke-opacity=".7"/>
+          </g>
+          <!-- Silhouettes en cercle -->
+          <g transform="translate(200,200)">
+            <g transform="rotate(0)"><use href="#person" transform="translate(0,-130)" fill="#F4B400" stroke="none"/></g>
+            <g transform="rotate(51.4)"><use href="#person" transform="translate(0,-130)" fill="rgba(255,255,255,.6)" stroke="none"/></g>
+            <g transform="rotate(102.8)"><use href="#person" transform="translate(0,-130)" fill="#F4B400" stroke="none"/></g>
+            <g transform="rotate(154.2)"><use href="#person" transform="translate(0,-130)" fill="rgba(255,255,255,.6)" stroke="none"/></g>
+            <g transform="rotate(205.6)"><use href="#person" transform="translate(0,-130)" fill="#F4B400" stroke="none"/></g>
+            <g transform="rotate(257)"><use href="#person" transform="translate(0,-130)" fill="rgba(255,255,255,.6)" stroke="none"/></g>
+            <g transform="rotate(308.4)"><use href="#person" transform="translate(0,-130)" fill="#F4B400" stroke="none"/></g>
+          </g>
+          <!-- Lignes reliant les silhouettes -->
+          <circle cx="200" cy="200" r="130" fill="none" stroke="#F4B400" stroke-width=".5" stroke-opacity=".15"/>
+        </svg>
+      </div>
+
     </div>
-    <div class="welcome-grid">
-      <img src="zz.jpeg" alt="Communauté de Bambilor" class="welcome-img" onerror="this.outerHTML='<div class=\'welcome-img-ph\'>ب</div>'">
-      <div class="welcome-content">
-        <span class="sec-label">Bienvenue</span>
-        <div class="lead-quote">« Entraidez-vous dans l'accomplissement des bonnes œuvres et de la piété. »</div>
-        <h3>Au service de la communauté de Bambilor</h3>
-        <div class="divider"></div>
-        <p><strong>AN'SAROUD DINE BAMBILOR</strong> est une association islamique fondée sur les valeurs d'unité, de fraternité et de service. Implantée au cœur de Bambilor, dans la région de Dakar, notre association rassemble des hommes, des femmes et des jeunes autour d'une mission commune.</p>
-        <p>Nous organisons des activités religieuses, éducatives et sociales tout au long de l'année : cours coraniques, conférences islamiques, aide aux familles démunies, et célébrations des grandes occasions spirituelles.</p>
-        <p>Notre vision est de contribuer à l'épanouissement moral et spirituel de chaque membre de la communauté, en cultivant la solidarité et le respect mutuel.</p>
-        <div class="divider"></div>
-        <div class="socials-row">
-          <a href="https://facebook.com" target="_blank" class="social-pill"><span class="social-dot" style="background:#1877F2"></span> Facebook</a>
-          <a href="https://instagram.com" target="_blank" class="social-pill"><span class="social-dot" style="background:#E1306C"></span> Instagram</a>
-          <a href="https://wa.me/221788626180" target="_blank" class="social-pill"><span class="social-dot" style="background:#25D366"></span> WhatsApp</a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span><em>Foi</em><span class="sep">✦</span><em>Solidarité</em><span class="sep">✦</span><em>Fraternité</em><span class="sep">✦</span><em>Service</em><span class="sep">✦</span><em>Intégrité</em><span class="sep">✦</span><em>Développement</em><span class="sep">✦</span></span>
+    <span><em>Foi</em><span class="sep">✦</span><em>Solidarité</em><span class="sep">✦</span><em>Fraternité</em><span class="sep">✦</span><em>Service</em><span class="sep">✦</span><em>Intégrité</em><span class="sep">✦</span><em>Développement</em><span class="sep">✦</span></span>
+  </div>
+</div>
+
+<!-- À PROPOS -->
+<section class="section" id="apropos">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-frame">
+          <img src="laga.jpeg" alt="Communauté Ansaroud Dine Bambilor" onerror="ph(this)" style="width:100%;height:100%;object-fit:cover;">
+          <div class="ph-fallback" style="display:none;">
+            <svg viewBox="0 0 100 100" style="width:40px;height:40px;color:#F4B400;"><use href="#i-khatim"/></svg>
+            <span>Ansaroud Dine</span>
+          </div>
+          <div class="about-frame-caption">
+            <div class="kufi">أنصار الدين</div>
+            <div class="sub">Bambilor · Depuis 3 ans au service de la communauté</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content reveal" data-delay="2">
+        <span class="eyebrow">Qui sommes-nous</span>
+        <h2 class="h-lg" style="margin-bottom:20px;">Une communauté unie par la <em class="accent">foi</em> et le service</h2>
+        <p class="lede" style="max-width:640px;">Ansaroud Dine Bambilor est une association islamique fondée sur les principes d'entraide, de piété et de service à la communauté, au cœur de Bambilor, dans le département de Rufisque.</p>
+
+        <div class="about-blocks">
+          <div class="about-block">
+            <div class="about-block-head"><span class="about-block-num">01</span><h3>Notre histoire</h3></div>
+            <p>Fondée par un groupe de fidèles déterminés à servir leur communauté, l'association a progressivement rassemblé hommes, femmes et jeunes de Bambilor autour de l'enseignement religieux et de l'entraide sociale.</p>
+          </div>
+          <div class="about-block">
+            <div class="about-block-head"><span class="about-block-num">02</span><h3>Notre mission</h3></div>
+            <p>Transmettre les sciences islamiques, accompagner chaque famille dans son épanouissement spirituel et social, et bâtir un cadre de solidarité durable à Bambilor.</p>
+          </div>
+          <div class="about-block">
+            <div class="about-block-head"><span class="about-block-num">03</span><h3>Notre vision</h3></div>
+            <p>Faire de Bambilor un modèle de solidarité islamique où nul n'est laissé en marge, et où la foi nourrit chaque action de développement communautaire.</p>
+          </div>
+          <div class="about-block">
+            <div class="about-block-head"><span class="about-block-num">04</span><h3>Nos objectifs</h3></div>
+            <p>Renforcer l'éducation religieuse, structurer l'aide sociale, encadrer la jeunesse et organiser des événements fédérateurs pour toute la communauté.</p>
+          </div>
+        </div>
+
+        <div class="values-row">
+          <span class="value-chip"><svg class="khatim-mark" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>Foi</span>
+          <span class="value-chip"><svg class="khatim-mark" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>Solidarité</span>
+          <span class="value-chip"><svg class="khatim-mark" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>Intégrité</span>
+          <span class="value-chip"><svg class="khatim-mark" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>Fraternité</span>
         </div>
       </div>
     </div>
   </div>
-  <div class="news-band">
-    <div class="container">
-      <div class="news-band-header">
-        <div><span class="sec-label">Vie de l'association</span><h2 class="sec-title" style="font-size:clamp(22px,5vw,32px); margin-bottom:0;">Actualités récentes</h2></div>
-        <a href="#" class="btn-primary" onclick="showSection('activites',event)" style="font-size:9px;">Voir toutes les activités</a>
+</section>
+
+<!-- NOS ACTIVITÉS -->
+<section class="section section--gray" id="activites">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Nos activités</span>
+        <h2 class="h-lg">Ce que nous faisons</h2>
       </div>
-      <div class="news-cards">
-        <div class="news-card"><span class="news-date">Mai 2025</span><div class="news-title">Grand Gamou de Bambilor</div><p class="news-excerpt">La communauté a célébré le Maouloud avec ferveur. Plus de 300 fidèles ont participé aux prières, aux chants religieux et aux repas collectifs organisés sur deux jours.</p></div>
-        <div class="news-card"><span class="news-date">Mars 2025</span><div class="news-title">Distribution de vivres — Ramadan</div><p class="news-excerpt">À l'occasion du mois béni de Ramadan, l'association a distribué des colis alimentaires à 45 familles vulnérables du quartier. Une action renouvelée chaque année.</p></div>
-        <div class="news-card"><span class="news-date">Janvier 2025</span><div class="news-title">Lancement des cours coraniques 2025</div><p class="news-excerpt">La nouvelle session des cours de mémorisation et de tafsir a démarré avec 60 enfants inscrits. Les cours sont dispensés chaque samedi et dimanche matin.</p></div>
+      <p class="lede">Six domaines d'engagement, du spirituel au social, portés toute l'année par nos membres bénévoles.</p>
+    </div>
+    <div class="activities-grid reveal">
+      <div class="activity-card">
+        <span class="activity-num">01</span>
+        <div class="activity-icon"><svg><use href="#i-book"/></svg></div>
+        <h3 class="activity-title">Enseignement du Coran</h3>
+        <p class="activity-desc">Mémorisation, tajwid et tafsir pour enfants et adultes, chaque semaine au sein de l'association.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-num">02</span>
+        <div class="activity-icon"><svg><use href="#i-mic"/></svg></div>
+        <h3 class="activity-title">Conférences islamiques</h3>
+        <p class="activity-desc">Rencontres animées par des savants et invités, ouvertes à toute la communauté de Bambilor.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-num">03</span>
+        <div class="activity-icon"><svg><use href="#i-heart"/></svg></div>
+        <h3 class="activity-title">Aide sociale</h3>
+        <p class="activity-desc">Soutien scolaire, visites aux aînés et malades, accompagnement des familles vulnérables.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-num">04</span>
+        <div class="activity-icon"><svg><use href="#i-basket"/></svg></div>
+        <h3 class="activity-title">Distribution de vivres</h3>
+        <p class="activity-desc">Distributions alimentaires régulières, renforcées durant le mois sacré de Ramadan.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-num">05</span>
+        <div class="activity-icon"><svg><use href="#i-star2"/></svg></div>
+        <h3 class="activity-title">Encadrement des jeunes</h3>
+        <p class="activity-desc">Éducation islamique, activités culturelles et orientation pour la jeunesse de Bambilor.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-num">06</span>
+        <div class="activity-icon"><svg><use href="#i-users"/></svg></div>
+        <h3 class="activity-title">Activités communautaires</h3>
+        <p class="activity-desc">Assemblées générales, initiatives de développement et rassemblements fédérateurs.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- À PROPOS -->
-<section id="apropos" class="section">
-  <div class="page-hero"><span class="sec-label">Notre histoire</span><h2>À propos de<br>notre association</h2><span class="page-hero-arabic">عن جمعيتنا</span><div class="page-hero-line"></div></div>
-  <div class="container">
-    <div class="about-lead">
-      <div>
-        <div class="big-quote">الوحدة والتضامن والدين</div>
-        <p class="big-quote-trans">« L'unité, la solidarité et la religion »</p>
-        <p class="about-text"><strong>AN'SAROUD DINE BAMBILOR</strong> est une organisation religieuse et sociale fondée sur les principes cardinaux de l'islam : l'entraide, la piété et le service à la communauté. Son nom, qui signifie « Les Partisans de la Religion à Bambilor », reflète son attachement profond à la foi et à son ancrage local.</p>
-        <p class="about-text">Ancrée dans la commune de Bambilor (département de Rufisque, Dakar), l'association rassemble des membres de tous âges autour de valeurs partagées : respect, fraternité islamique et quête spirituelle permanente.</p>
+<!-- RÉALISATIONS -->
+<section class="stats-section" id="realisations">
+  <div class="tex-diamond--dark" style="position:absolute;inset:0;" aria-hidden="true"></div>
+  <div class="container" style="position:relative;">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <svg class="stat-khatim" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>
+        <div class="stat-number"><span class="count-stat" data-target="200">0</span><span class="suffix">+</span></div>
+        <div class="stat-label">Membres actifs</div>
       </div>
-      <div>
-        <p class="about-text">Depuis sa création, l'association a accompagné des centaines de familles, organisé plus de cinquante événements religieux et éducatifs, et soutenu les membres les plus vulnérables de la communauté à travers des actions sociales concrètes.</p>
-        <p class="about-text" style="margin-bottom:28px;">Nous opérons en coordination avec les autorités religieuses locales et les familles maraboutiques, dans un esprit de respect et d'harmonie, en accord avec les valeurs de l'islam tel qu'il est pratiqué au Sénégal.</p>
-        <a href="#" class="btn-primary" onclick="showSection('contact',event)" style="text-decoration:none;">Nous rejoindre</a>
+      <div class="stat-item reveal" data-delay="1">
+        <svg class="stat-khatim" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>
+        <div class="stat-number"><span class="count-stat" data-target="120">0</span><span class="suffix">+</span></div>
+        <div class="stat-label">Familles aidées</div>
       </div>
-    </div>
-    <div class="timeline-section">
-      <span class="sec-label">Chronologie</span><h2 class="sec-title">Notre parcours</h2><div class="sec-rule"></div>
-      <div class="timeline">
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Fondation</div><div class="tl-title">Création de l'association</div><p class="tl-desc">Un groupe de fidèles de Bambilor se réunit pour fonder officiellement AN'SAROUD DINE, avec pour objectif de structurer les activités religieuses et sociales de la communauté.</p></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Année 2</div><div class="tl-title">Premier Grand Gamou</div><p class="tl-desc">Organisation du premier Gamou à grande échelle à Bambilor, réunissant plusieurs centaines de fidèles venus de tout le département de Rufisque. Cet événement devient une tradition annuelle.</p></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Année 3</div><div class="tl-title">Lancement des cours coraniques</div><p class="tl-desc">Ouverture de l'école coranique avec les premiers groupes d'enfants. Le programme inclut la mémorisation du Coran, la récitation (tajwid) et l'éducation islamique de base.</p></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Année 4</div><div class="tl-title">Programme de solidarité sociale</div><p class="tl-desc">Mise en place d'un programme structuré d'aide aux familles démunies : distributions alimentaires lors du Ramadan, soutien scolaire, et visites aux personnes âgées et malades.</p></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Aujourd'hui</div><div class="tl-title">Plus de 200 membres actifs</div><p class="tl-desc">L'association compte aujourd'hui plus de 200 membres actifs, des hommes, des femmes et des jeunes engagés dans la vie communautaire, spirituelle et sociale de Bambilor.</p></div>
+      <div class="stat-item reveal" data-delay="2">
+        <svg class="stat-khatim" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>
+        <div class="stat-number"><span class="count-stat" data-target="50">0</span><span class="suffix">+</span></div>
+        <div class="stat-label">Événements organisés</div>
       </div>
-    </div>
-    <span class="sec-label">Nos piliers</span><h2 class="sec-title">Valeurs & missions</h2><div class="sec-rule"></div>
-    <div class="values-grid">
-      <div class="value-card"><span class="value-icon">📖</span><div class="value-title">Enseignement religieux</div><p class="value-desc">Apprentissage du Coran et des sciences islamiques pour tous les âges, dans un cadre bienveillant. Cours de mémorisation, tafsir (exégèse), fiqh (jurisprudence) et hadith, assurés par des enseignants qualifiés.</p></div>
-      <div class="value-card"><span class="value-icon">🤝</span><div class="value-title">Solidarité sociale</div><p class="value-desc">Soutien aux familles dans le besoin, collectes de vivres, aide scolaire et actions caritatives tout au long de l'année. La Zakat et la Sadaqa sont au cœur de notre engagement communautaire.</p></div>
-      <div class="value-card"><span class="value-icon">🧒</span><div class="value-title">Encadrement des jeunes</div><p class="value-desc">Programmes spécifiques dédiés à la jeunesse : éducation islamique, activités culturelles et sportives, orientation professionnelle. Nous accompagnons chaque jeune vers un avenir ancré dans les valeurs de l'islam.</p></div>
-      <div class="value-card"><span class="value-icon">🕌</span><div class="value-title">Rites & célébrations</div><p class="value-desc">Organisation des grandes célébrations islamiques (Gamou, Magal, Tabaski, Tamkharit), des conférences et des rassemblements qui renforcent les liens fraternels au sein de la communauté.</p></div>
-    </div>
-    <div class="actions-list">
-      <div class="action-item"><span class="action-num">01</span><div class="action-detail"><strong>Conférences islamiques et religieuses</strong><span>Cycle mensuel de conférences animées par des érudits, des imams et des invités reconnus, sur des thèmes de foi, d'éthique, de famille et de société.</span></div></div>
-      <div class="action-item"><span class="action-num">02</span><div class="action-detail"><strong>Apprentissage et mémorisation du Coran</strong><span>Sessions hebdomadaires pour enfants et adultes. Niveaux débutant à avancé. Certificats remis aux élèves ayant mémorisé des sourates ou des chapitres entiers.</span></div></div>
-      <div class="action-item"><span class="action-num">03</span><div class="action-detail"><strong>Journées de solidarité et d'entraide</strong><span>Organisation de journées communautaires dédiées au bénévolat : nettoyage du quartier, aide aux personnes âgées, soutien aux familles endeuillées.</span></div></div>
-      <div class="action-item"><span class="action-num">04</span><div class="action-detail"><strong>Aide aux familles démunies</strong><span>Distribution de vivres, de vêtements et de fournitures scolaires. Collectes de fonds pour aider les membres de la communauté en difficulté, notamment pendant le Ramadan et les fêtes.</span></div></div>
-      <div class="action-item"><span class="action-num">05</span><div class="action-detail"><strong>Organisation d'événements islamiques</strong><span>Célébrations du Gamou (Maouloud), du Magal de Touba, de la Tabaski et du Nouvel An islamique, avec prières collectives, chants religieux et repas communautaires.</span></div></div>
-    </div>
-    <div style="margin-top:64px;">
-      <span class="sec-label">Organisation</span><h2 class="sec-title">Bureau & gouvernance</h2><div class="sec-rule"></div>
-      <p class="about-text" style="margin-bottom:0;">L'association est dirigée par un bureau élu démocratiquement par les membres lors de l'Assemblée Générale annuelle. Le bureau coordonne les activités, gère les finances et représente l'association auprès des autorités locales.</p>
-      <div class="gov-grid">
-        <div class="gov-card"><div class="gov-initials">PR</div><div class="gov-name">Président</div><div class="gov-role">Direction générale</div></div>
-        <div class="gov-card"><div class="gov-initials">SG</div><div class="gov-name">Secrétaire Général</div><div class="gov-role">Administration & communication</div></div>
-        <div class="gov-card"><div class="gov-initials">TR</div><div class="gov-name">Trésorier</div><div class="gov-role">Gestion financière & dons</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ACTIVITÉS -->
-<section id="activites" class="section">
-  <div class="page-hero"><span class="sec-label">Agenda</span><h2>Nos événements<br>& activités</h2><span class="page-hero-arabic">أنشطتنا وفعالياتنا</span><div class="page-hero-line"></div></div>
-  <div class="container">
-    <div class="events-grid">
-      <div class="event-card"><div class="event-card-top"><div class="event-arabic">مولود</div><span class="event-tag">Événement annuel</span><div class="event-name">Gamou — Maouloud</div><div class="event-date">Chaque année selon le calendrier lunaire</div></div><div class="event-body"><p class="event-desc">Le Gamou est la célébration de la naissance du Prophète Muhammad ﷺ. C'est l'événement phare de l'association, réunissant plusieurs centaines de fidèles pour des nuits de prières, de chants religieux (qasidat), et de recueillement spirituel. Repas collectifs offerts à tous les présents.</p><div class="event-meta"><span class="event-badge">Prières collectives</span><span class="event-badge">Chants religieux</span><span class="event-badge">Repas communautaire</span></div></div></div>
-      <div class="event-card"><div class="event-card-top"><div class="event-arabic">مغل</div><span class="event-tag">Événement annuel</span><div class="event-name">Magal de Touba</div><div class="event-date">Chaque année, 18 Safar (calendrier lunaire)</div></div><div class="event-body"><p class="event-desc">Commémoration du départ en exil au Gabon de Cheikh Ahmadou Bamba Mbacké, fondateur du Mouridisme. L'association organise un pèlerinage collectif à Touba et des célébrations locales à Bambilor : prières, discours religieux et manifestations de dévotion.</p><div class="event-meta"><span class="event-badge">Pèlerinage</span><span class="event-badge">Dévotion mouride</span><span class="event-badge">Conférence</span></div></div></div>
-      <div class="event-card"><div class="event-card-top"><div class="event-arabic">محاضرة</div><span class="event-tag">Mensuel</span><div class="event-name">Conférences islamiques</div><div class="event-date">Chaque mois, date annoncée par WhatsApp</div></div><div class="event-body"><p class="event-desc">Cycle mensuel de conférences animées par des érudits, des imams et des personnalités religieuses reconnues. Thèmes abordés : la famille en islam, la gestion de la zakat, les enjeux des jeunes musulmans, l'éducation islamique des enfants, etc.</p><div class="event-meta"><span class="event-badge">Ouvert à tous</span><span class="event-badge">Entrée libre</span><span class="event-badge">Questions-réponses</span></div></div></div>
-      <div class="event-card"><div class="event-card-top"><div class="event-arabic">تضامن</div><span class="event-tag">Actions sociales</span><div class="event-name">Journées de solidarité</div><div class="event-date">Ramadan, Tabaski & dates ponctuelles</div></div><div class="event-body"><p class="event-desc">Distribution de vivres (riz, huile, sucre, dattes), de vêtements et de fournitures scolaires. Visites aux personnes âgées et hospitalisées. Soutien aux familles endeuillées. Ces actions sont financées par les cotisations des membres et les dons collectés.</p><div class="event-meta"><span class="event-badge">Aide alimentaire</span><span class="event-badge">Soutien scolaire</span><span class="event-badge">Visites sociales</span></div></div></div>
-    </div>
-    <div class="hebdo-section">
-      <span class="sec-label">Activités régulières</span><h2 class="sec-title">Programme hebdomadaire</h2><div class="sec-rule"></div>
-      <div class="hebdo-table-wrap">
-      <table class="hebdo-table">
-        <thead><tr><th style="width:130px;">Jour</th><th>Activité</th><th style="width:160px;">Horaire</th><th>Public</th></tr></thead>
-        <tbody>
-          <tr><td><span class="day-tag">Samedi</span></td><td><div class="activity-name">Cours coraniques — enfants</div><div class="activity-detail">Mémorisation, tajwid (règles de récitation), éducation islamique de base</div></td><td>09h00 – 12h00</td><td>Enfants 6–14 ans</td></tr>
-          <tr><td><span class="day-tag">Dimanche</span></td><td><div class="activity-name">Cours coraniques — adultes</div><div class="activity-detail">Tafsir (exégèse), hadith, fiqh (jurisprudence islamique)</div></td><td>09h00 – 11h30</td><td>Adultes (hommes & femmes)</td></tr>
-          <tr><td><span class="day-tag">Vendredi</span></td><td><div class="activity-name">Prière du Vendredi — rappel</div><div class="activity-detail">Rappel religieux après la prière de Jumua, questions-réponses</div></td><td>Après Jumua</td><td>Tous les membres</td></tr>
-          <tr><td><span class="day-tag">Mensuel</span></td><td><div class="activity-name">Réunion du bureau</div><div class="activity-detail">Coordination des activités, gestion financière, projets en cours</div></td><td>Variable</td><td>Bureau & responsables</td></tr>
-        </tbody>
-      </table>
+      <div class="stat-item reveal" data-delay="3">
+        <svg class="stat-khatim" viewBox="0 0 100 100"><use href="#i-khatim"/></svg>
+        <div class="stat-number"><span class="count-stat" data-target="5">0</span><span class="suffix">+</span></div>
+        <div class="stat-label">Années d'existence</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- GALERIE -->
-<section id="galerie" class="section">
-  <div class="page-hero"><span class="sec-label">Galerie</span><h2>Photos &<br>souvenirs</h2><span class="page-hero-arabic">ذكريات مجتمعنا</span><div class="page-hero-line"></div></div>
+<section class="section" id="galerie">
   <div class="container">
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="cv.jpeg" alt="Événement communautaire" onerror="this.outerHTML='<div class=\'gallery-ph\'>١</div>'"><div class="gallery-overlay"><span>Communauté</span></div></div>
-      <div class="gallery-item"><img src="2.jpeg" alt="Activité islamique" onerror="this.outerHTML='<div class=\'gallery-ph\'>٢</div>'"><div class="gallery-overlay"><span>Activités</span></div></div>
-      <div class="gallery-item"><img src="ee.jpeg" alt="Solidarité" onerror="this.outerHTML='<div class=\'gallery-ph\'>٣</div>'"><div class="gallery-overlay"><span>Solidarité</span></div></div>
-      <div class="gallery-item"><img src="ff.jpeg" alt="Événement" onerror="this.outerHTML='<div class=\'gallery-ph\'>٤</div>'"><div class="gallery-overlay"><span>Événements</span></div></div>
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Galerie</span>
+        <h2 class="h-lg">Moments de communauté</h2>
+      </div>
+      <div class="gallery-filter">
+        <button class="gf-btn active" data-filter="all">Tout</button>
+        <button class="gf-btn" data-filter="religieux">Religieux</button>
+        <button class="gf-btn" data-filter="social">Social</button>
+        <button class="gf-btn" data-filter="jeunesse">Jeunesse</button>
+        <button class="gf-btn" data-filter="evenements">Événements</button>
+      </div>
     </div>
-    <div class="gallery-info">
-      <div class="ginfo-card"><div class="ginfo-year">50+</div><div class="ginfo-label">Événements photographiés</div></div>
-      <div class="ginfo-card"><div class="ginfo-year">5</div><div class="ginfo-label">Années d'archives</div></div>
-      <div class="ginfo-card"><div class="ginfo-year">300+</div><div class="ginfo-label">Personnes par événement (avg)</div></div>
+    <div class="masonry reveal" id="masonryGrid">
+      <div class="masonry-item" data-cat="evenements" data-full="galerie-1.jpg">
+        <img src="2.jpg" alt="Gamou annuel" onerror="ph(this)">
+        <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg viewBox="0 0 100 100" style="width:30px;height:30px;color:#F4B400;"><use href="#i-khatim"/></svg><span>Gamou annuel</span></div>
+        <div class="masonry-overlay"><span>Événements</span><strong>Gamou annuel</strong></div>
+      </div>
+      <div class="masonry-item" data-cat="religieux" data-full="galerie-2.jpg">
+        <img src="3.jpg" alt="Cours coranique" onerror="ph(this)">
+        <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg viewBox="0 0 100 100" style="width:30px;height:30px;color:#F4B400;"><use href="#i-khatim"/></svg><span>Cours coranique</span></div>
+        <div class="masonry-overlay"><span>Religieux</span><strong>Cours coranique</strong></div>
+      </div>
+      <div class="masonry-item" data-cat="social" data-full="galerie-3.jpg">
+        <img src="8.jpeg" alt="Distribution de vivres" onerror="ph(this)">
+        <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg viewBox="0 0 100 100" style="width:30px;height:30px;color:#F4B400;"><use href="#i-khatim"/></svg><span>Distribution</span></div>
+        <div class="masonry-overlay"><span>Solidarité</span><strong>Distribution de vivres</strong></div>
+      </div>
+      <div class="masonry-item" data-cat="jeunesse" data-full="galerie-4.jpg">
+        <img src="laga.jpeg" alt="Activité jeunesse" onerror="ph(this)">
+        <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg viewBox="0 0 100 100" style="width:30px;height:30px;color:#F4B400;"><use href="#i-khatim"/></svg><span>Jeunesse</span></div>
+        <div class="masonry-overlay"><span>Jeunesse</span><strong>Activité jeunesse</strong></div>
+      </div>
+      <div class="masonry-item" data-cat="religieux" data-full="galerie-5.jpg">
+        <img src="1.jpg" alt="Conférence islamique" onerror="ph(this)">
+        <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg viewBox="0 0 100 100" style="width:30px;height:30px;color:#F4B400;"><use href="#i-khatim"/></svg><span>Conférence</span></div>
+        <div class="masonry-overlay"><span>Religieux</span><strong>Conférence islamique</strong></div>
+      </div>
+      <div class="masonry-item" data-cat="evenements" data-full="galerie-6.jpg">
+        <img src="5.jpg" alt="Assemblée générale" onerror="ph(this)">
+        <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg viewBox="0 0 100 100" style="width:30px;height:30px;color:#F4B400;"><use href="#i-khatim"/></svg><span>Assemblée</span></div>
+        <div class="masonry-overlay"><span>Événements</span><strong>Assemblée générale</strong></div>
+      </div>
     </div>
-    <div style="margin-top:40px; padding:28px; background:var(--dark3); border-radius:var(--radius-lg); text-align:center;">
-      <p style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:300; color:rgba(255,255,255,0.65); margin-bottom:16px;">Partagez vos photos et vidéos de nos événements</p>
-      <p style="font-size:13px; color:rgba(255,255,255,0.35); margin-bottom:20px;">Rejoignez notre groupe WhatsApp ou envoyez vos médias directement au bureau pour enrichir notre galerie.</p>
-      <a href="https://wa.me/221788626180" target="_blank" class="btn-primary">Envoyer via WhatsApp</a>
+    <div style="margin-top:32px;text-align:center;" class="reveal">
+      <a href="https://wa.me/221788626180" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Partager vos photos via WhatsApp</a>
     </div>
   </div>
 </section>
 
-<!-- DONS -->
-<section id="dons" class="section">
-  <div class="page-hero"><span class="sec-label">Soutien</span><h2>Soutenez<br>nos projets</h2><span class="page-hero-arabic">ادعم مشاريعنا</span><div class="page-hero-line"></div></div>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Galerie agrandie">
+  <button class="lb-close" id="lbClose" aria-label="Fermer">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Précédent">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Suivant">›</button>
+</div>
+
+<!-- BUREAU EXÉCUTIF -->
+<section class="section section--gray" id="bureau">
   <div class="container">
-    <div class="donation-layout">
-      <div class="donation-left">
-        <span class="sec-label">Collecte en cours</span><h2 class="sec-title">Votre générosité compte</h2><div class="sec-rule"></div>
-        <div class="ayah-block"><div class="ayah-ar">مَنْ ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ أَضْعَافًا كَثِيرَةً</div><p class="ayah-fr">« Qui est celui qui prêtera à Allah un beau prêt ? Il le lui multipliera par de nombreuses fois. »</p><p class="ayah-ref">Coran, Sourate Al-Baqara (2:245)</p></div>
-        <p class="donation-text">Chaque contribution, petite ou grande, nous permet de poursuivre nos actions éducatives, sociales et religieuses au profit de toute la communauté de Bambilor. Vos dons sont intégralement destinés aux projets de l'association, gérés de façon transparente par notre trésorier.</p>
-        <div class="progress-section"><div class="progress-meta"><span class="progress-raised">250 000 FCFA</span><span class="progress-pct">52%</span></div><div class="progress-bar"><div class="progress-fill"></div></div><p class="progress-goal">Objectif 2025 : 480 000 FCFA — Financement des cours coraniques & aide Ramadan</p></div>
-        <div class="projects-list">
-          <div class="project-item"><div class="project-check">✓</div><div class="project-text"><strong>Cours coraniques — fournitures 2025</strong><span>Achat de tablettes, cahiers et livres pédagogiques pour les élèves de l'école coranique.</span></div></div>
-          <div class="project-item"><div class="project-check">✓</div><div class="project-text"><strong>Distribution Ramadan — 50 familles</strong><span>Colis alimentaires composés de riz, d'huile, de sucre, de dattes et de lait pour les familles vulnérables.</span></div></div>
-          <div class="project-item"><div class="project-check">◌</div><div class="project-text"><strong>Sonorisation du Gamou annuel</strong><span>Location ou achat de matériel audio pour les prochaines célébrations communautaires.</span></div></div>
-          <div class="project-item"><div class="project-check">◌</div><div class="project-text"><strong>Soutien scolaire — rentrée 2025</strong><span>Fournitures scolaires pour les enfants issus de familles défavorisées de la communauté.</span></div></div>
-        </div>
-        <a href="https://wa.me/221788626180" target="_blank" class="btn-primary">Faire un don via WhatsApp</a>
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Organisation</span>
+        <h2 class="h-lg">Le bureau exécutif</h2>
       </div>
-      <div class="donation-right">
-        <p style="font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:var(--text3);margin-bottom:18px;">Moyens de paiement</p>
-        <div class="methods-stack">
-          <div class="method-card"><div><div class="method-brand">Wave</div><div class="method-badge">Transfert mobile instantané</div></div><div class="method-num">78 862 61 80</div></div>
-          <div class="method-card"><div><div class="method-brand">Orange Money</div><div class="method-badge">Transfert mobile</div></div><div class="method-num">78 862 61 80</div></div>
+      <p class="lede">Élu démocratiquement en Assemblée Générale, le bureau coordonne l'ensemble de nos activités.</p>
+    </div>
+    <div class="bureau-grid">
+      <div class="bureau-card reveal">
+        <div class="bureau-photo">
+          <img src="t.jpeg" alt="Président" onerror="ph(this)" style="width:100%;height:100%;object-fit:cover;">
+          <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg><use href="#i-users"/></svg><span>Photo à venir</span></div>
         </div>
-        <p class="donation-note" style="margin-top:18px; margin-bottom:32px;">Pour tout don en espèces, veuillez contacter le trésorier directement par téléphone ou WhatsApp. Un reçu vous sera remis pour chaque don. La comptabilité de l'association est présentée lors de l'Assemblée Générale annuelle.</p>
-        <div style="background:var(--cream2); border-radius:var(--radius-lg); padding:26px; border:1px solid var(--cream3);">
-          <p style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--text3); margin-bottom:14px;">Rappel islamique</p>
-          <p style="font-family:'Amiri',serif; font-size:19px; color:var(--gold); line-height:1.7; text-align:right; margin-bottom:10px;">الصدقة تطفئ الخطيئة كما يطفئ الماء النار</p>
-          <p style="font-size:12.5px; color:var(--text2); font-style:italic; line-height:1.65;">« La Sadaqa (aumône volontaire) éteint le péché comme l'eau éteint le feu. »</p>
-          <p style="font-size:10px; color:var(--text3); margin-top:6px; letter-spacing:1.5px;">Hadith, rapporté par At-Tirmidhi</p>
+        <div class="bureau-name">Président</div>
+        <div class="bureau-role">Direction générale</div>
+      </div>
+      <div class="bureau-card reveal" data-delay="1">
+        <div class="bureau-photo">
+          <img src="a.jpg" alt="Vice-président" onerror="ph(this)" style="width:100%;height:100%;object-fit:cover;">
+          <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg><use href="#i-users"/></svg><span>Photo à venir</span></div>
+        </div>
+        <div class="bureau-name">Vice-président</div>
+        <div class="bureau-role">Coordination</div>
+      </div>
+      <div class="bureau-card reveal" data-delay="2">
+        <div class="bureau-photo">
+          <img src="sc.jpg" alt="Secrétaire Général" onerror="ph(this)" style="width:100%;height:100%;object-fit:cover;">
+          <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg><use href="#i-users"/></svg><span>Photo à venir</span></div>
+        </div>
+        <div class="bureau-name">Secrétaire Général</div>
+        <div class="bureau-role">Administration</div>
+      </div>
+      <div class="bureau-card reveal" data-delay="3">
+        <div class="bureau-photo">
+          <img src="ab.jpg" alt="Trésorier" onerror="ph(this)" style="width:100%;height:100%;object-fit:cover;">
+          <div class="ph-fallback" style="display:none;position:absolute;inset:0;"><svg><use href="#i-users"/></svg><span>Photo à venir</span></div>
+        </div>
+        <div class="bureau-name">Trésorier</div>
+        <div class="bureau-role">Gestion financière</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="section" id="temoignages">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px;" class="reveal">
+      <span class="eyebrow">Témoignages</span>
+      <h2 class="h-lg">Ce qu'en disent nos membres</h2>
+    </div>
+    <div class="testi-wrap reveal">
+      <button class="testi-arrow testi-prev" id="testiPrev" aria-label="Témoignage précédent">‹</button>
+      <button class="testi-arrow testi-next" id="testiNext" aria-label="Témoignage suivant">›</button>
+      <div class="testi-track-outer">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-slide">
+            <div class="testi-card">
+              <svg class="testi-quote-mark" viewBox="0 0 32 24"><use href="#i-quote"/></svg>
+              <p class="testi-text">Grâce aux cours coraniques, mes enfants ont appris à lire le Coran dans un cadre sérieux et bienveillant. Je suis profondément reconnaissant envers toute l'équipe.</p>
+              <div class="testi-author-name">Mamadou D.</div>
+              <div class="testi-author-role">Parent d'élève</div>
+            </div>
+          </div>
+          <div class="testi-slide">
+            <div class="testi-card">
+              <svg class="testi-quote-mark" viewBox="0 0 32 24"><use href="#i-quote"/></svg>
+              <p class="testi-text">L'aide reçue pendant le Ramadan a vraiment soulagé notre famille. Cette association incarne la vraie solidarité islamique au sens le plus noble.</p>
+              <div class="testi-author-name">Fatou S.</div>
+              <div class="testi-author-role">Bénéficiaire</div>
+            </div>
+          </div>
+          <div class="testi-slide">
+            <div class="testi-card">
+              <svg class="testi-quote-mark" viewBox="0 0 32 24"><use href="#i-quote"/></svg>
+              <p class="testi-text">Être membre actif ici m'a appris la rigueur, le service et la fraternité. Chaque Gamou renforce notre lien avec la communauté et avec notre foi.</p>
+              <div class="testi-author-name">Ibrahima N.</div>
+              <div class="testi-author-role">Membre actif</div>
+            </div>
+          </div>
+          <div class="testi-slide">
+            <div class="testi-card">
+              <svg class="testi-quote-mark" viewBox="0 0 32 24"><use href="#i-quote"/></svg>
+              <p class="testi-text">Un partenariat fluide et transparent. Leur engagement social à Bambilor est un exemple pour toute la région de Rufisque.</p>
+              <div class="testi-author-name">Aïssatou B.</div>
+              <div class="testi-author-role">Partenaire local</div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="testi-controls" id="testiDots"></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="page-hero"><span class="sec-label">Contact</span><h2>Nous<br>contacter</h2><span class="page-hero-arabic">تواصل معنا</span><div class="page-hero-line"></div></div>
+<section class="section section--gray" id="contact">
   <div class="container">
-    <div class="contact-layout">
+    <div class="section-head reveal">
       <div>
-        <p class="contact-intro">Vous souhaitez nous rejoindre, poser une question, faire un don ou contribuer à nos actions ? Notre bureau est disponible et à votre écoute. N'hésitez pas à nous contacter par l'un des canaux ci-dessous.</p>
-        <div class="contact-items">
-          <div class="contact-item"><span class="ci-label">Téléphone & WhatsApp</span><div class="ci-val"><a href="tel:+221788626180">+221 78 862 61 80</a></div><p class="ci-sub">Disponible en semaine et le week-end</p></div>
-          <div class="contact-item"><span class="ci-label">WhatsApp</span><div class="ci-val"><a href="https://wa.me/221788626180" target="_blank">Envoyer un message</a></div><p class="ci-sub">Réponse rapide — groupes d'information disponibles</p></div>
-          <div class="contact-item"><span class="ci-label">Facebook</span><div class="ci-val"><a href="https://facebook.com" target="_blank">Notre page Facebook</a></div><p class="ci-sub">Actualités, photos et annonces d'événements</p></div>
-          <div class="contact-item"><span class="ci-label">Localisation</span><div class="ci-val" style="font-size:18px; font-family:'Cormorant Garamond',sans-serif;">Bambilor, Sénégal</div><p class="ci-sub">Commune de Bambilor, Département de Rufisque, Région de Dakar</p></div>
-        </div>
-        <div class="join-band">
-          <h4>Comment nous rejoindre ?</h4>
-          <p>Devenir membre d'AN'SAROUD DINE BAMBILOR est simple et ouvert à tous les musulmans de bonne volonté.</p>
-          <div class="join-steps">
-            <div class="join-step"><div class="join-num">1</div>Contactez-nous par téléphone ou WhatsApp</div>
-            <div class="join-step"><div class="join-num">2</div>Participez à l'une de nos réunions ou activités</div>
-            <div class="join-step"><div class="join-num">3</div>Remplissez le formulaire d'adhésion auprès du secrétaire</div>
-            <div class="join-step"><div class="join-num">4</div>Acquittez la cotisation annuelle symbolique</div>
+        <span class="eyebrow">Contact</span>
+        <h2 class="h-lg">Nous contacter</h2>
+      </div>
+      <p class="lede">Question, don ou envie de nous rejoindre ? Notre bureau est à votre écoute.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-list">
+          <div class="contact-row">
+            <div class="contact-row-icon"><svg><use href="#i-phone"/></svg></div>
+            <div>
+              <div class="contact-row-label">Téléphone & WhatsApp</div>
+              <div class="contact-row-value"><a href="tel:+221788626180">+221 78 862 61 80</a></div>
+              <div class="contact-row-sub">Disponible en semaine et le week-end</div>
+            </div>
           </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><svg><use href="#i-pin"/></svg></div>
+            <div>
+              <div class="contact-row-label">Adresse</div>
+              <div class="contact-row-value">Bambilor, Sénégal</div>
+              <div class="contact-row-sub">Commune de Bambilor, Département de Rufisque, Région de Dakar</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><svg><use href="#i-mail"/></svg></div>
+            <div>
+              <div class="contact-row-label">Email</div>
+              <div class="contact-row-value"><a href="mailto:contact@ansarouddine-bambilor.sn">contact@ansarouddine-bambilor.sn</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-social-row">
+          <a href="https://wa.me/221788626180" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18"><use href="#i-wa"/></svg></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18"><use href="#i-fb"/></svg></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18"><use href="#i-ig"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg width="18" height="18"><use href="#i-yt"/></svg></a>
         </div>
       </div>
-      <div>
-        <div class="contact-map">
-          <div class="map-header"><div class="map-pin">📍</div><div><div class="map-title">Bambilor</div><div class="map-sub">Sénégal — Région de Dakar</div></div></div>
-          <div class="map-body">
-            <div class="map-info-row"><span class="map-info-key">Commune</span><span class="map-info-val">Bambilor</span></div>
-            <div class="map-info-row"><span class="map-info-key">Département</span><span class="map-info-val">Rufisque</span></div>
-            <div class="map-info-row"><span class="map-info-key">Région</span><span class="map-info-val">Dakar</span></div>
-            <div class="map-info-row"><span class="map-info-key">Pays</span><span class="map-info-val">Sénégal</span></div>
-            <div class="map-info-row"><span class="map-info-key">Zone</span><span class="map-info-val">Périphérie Est de Dakar</span></div>
+
+      <form class="form-card reveal" data-delay="2" id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="form-field"><label class="form-label" for="c-name">Nom complet</label><input type="text" id="c-name" name="name" required placeholder="Ex. Awa Diop"></div>
+          <div class="form-field"><label class="form-label" for="c-phone">Téléphone</label><input type="tel" id="c-phone" name="phone" required placeholder="+221 7X XXX XX XX"></div>
+          <div class="form-field">
+            <label class="form-label" for="c-subject">Sujet</label>
+            <select id="c-subject" name="subject">
+              <option>Devenir membre</option>
+              <option>Faire un don</option>
+              <option>Demande d'information</option>
+              <option>Partenariat</option>
+            </select>
           </div>
-          <span class="map-arabic-big">بمبيلور — السنغال</span>
+          <div class="form-field"><label class="form-label" for="c-email">Email (optionnel)</label><input type="email" id="c-email" name="email" placeholder="vous@exemple.com"></div>
+          <div class="form-field full"><label class="form-label" for="c-msg">Message</label><textarea id="c-msg" name="message" rows="4" placeholder="Écrivez votre message ici..." required></textarea></div>
         </div>
-        <div style="margin-top:20px; padding:26px; background:var(--cream2); border-radius:var(--radius-lg); border:1px solid var(--cream3);">
-          <p style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--text3); margin-bottom:12px;">Horaires des activités</p>
-          <div style="font-size:13.5px; color:var(--text2); line-height:2;">
-            <div style="display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;"><span>Cours coraniques (Samedi)</span><span style="color:var(--text3);">09h – 12h</span></div>
-            <div style="display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;"><span>Cours adultes (Dimanche)</span><span style="color:var(--text3);">09h – 11h30</span></div>
-            <div style="display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;"><span>Rappel du Vendredi</span><span style="color:var(--text3);">Après Jumua</span></div>
-            <div style="display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;"><span>Réunion mensuelle</span><span style="color:var(--text3);">Date variable</span></div>
-          </div>
+        <button type="submit" class="btn btn-black" style="margin-top:18px;">Envoyer le message</button>
+        <p style="font-size:12px;color:var(--ink-faint);margin-top:12px;">Vos informations sont utilisées uniquement pour traiter votre demande.</p>
+        <div class="form-success" id="formSuccess">
+          <svg class="khatim-mark" viewBox="0 0 100 100" style="color:var(--gold);"><use href="#i-khatim"/></svg>
+          <span>Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.</span>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div><span class="footer-col-title">AN'SAROUD DINE</span><div class="footer-arabic-big">أنصار الدين<br>بمبيلور</div><p class="footer-desc">Association islamique œuvrant pour l'unité, la solidarité et la promotion des valeurs de l'islam à Bambilor, Sénégal.</p></div>
-    <div><span class="footer-col-title">Navigation</span><ul class="footer-links"><li><a onclick="showSection('accueil',event)">Accueil</a></li><li><a onclick="showSection('apropos',event)">À propos</a></li><li><a onclick="showSection('activites',event)">Activités</a></li><li><a onclick="showSection('galerie',event)">Galerie</a></li><li><a onclick="showSection('dons',event)">Dons</a></li><li><a onclick="showSection('contact',event)">Contact</a></li></ul></div>
-    <div><span class="footer-col-title">Contact</span><p class="footer-contact-item"><a href="tel:+221788626180">+221 78 862 61 80</a></p><p class="footer-contact-item"><a href="https://wa.me/221788626180" target="_blank">WhatsApp</a></p><p class="footer-contact-item"><a href="https://facebook.com" target="_blank">Facebook</a></p><p class="footer-contact-item">Bambilor, Rufisque, Dakar — Sénégal</p></div>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-row">
+            <div class="footer-emblem"><svg width="23" height="23"><use href="#i-khatim"/></svg></div>
+            <div>
+              <div class="footer-brand-name">Ansaroud Dine</div>
+              <div class="footer-brand-tag">Bambilor · Sénégal</div>
+            </div>
+          </div>
+          <p class="footer-desc">Association islamique œuvrant pour l'unité, la solidarité et la promotion des valeurs de l'islam à Bambilor, Sénégal.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61557179482546" target="_blank" rel="noopener" aria-label="Facebook"><svg width="15" height="15"><use href="#i-fb"/></svg></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg width="15" height="15"><use href="#i-ig"/></svg></a>
+            <a href="https://wa.me/221788626180" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="15" height="15"><use href="#i-wa"/></svg></a>
+            <a href="https://www.youtube.com/@Senfirst" target="_blank" rel="noopener" aria-label="YouTube"><svg width="15" height="15"><use href="#i-yt"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <span class="footer-col-title">Navigation</span>
+          <ul class="footer-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#activites">Nos activités</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="footer-col-title">Association</span>
+          <ul class="footer-links">
+            <li><a href="#bureau">Bureau exécutif</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-coord">
+          <span class="footer-col-title">Coordonnées</span>
+          <p>
+            <a href="tel:+221788626180">+221 78 862 61 80</a><br>
+            Bambilor, Rufisque<br>
+            Dakar — Sénégal
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-quote">
+      <div class="kufi">خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</div>
+      <div class="fr">« Les meilleurs d'entre vous sont ceux qui sont les plus utiles aux autres. »</div>
+    </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 AN'SAROUD DINE BAMBILOR — Tous droits réservés</span>
-    <span class="footer-motto">Unité &nbsp;•&nbsp; Solidarité &nbsp;•&nbsp; Religion</span>
+    <span>© 2026 Ansaroud Dine Bambilor — Tous droits réservés</span>
+    <span class="footer-motto">Foi · Solidarité · Développement</span>
   </div>
 </footer>
 
+<!-- FAB -->
+<div class="fab-stack">
+  <button class="fab fab-top" id="fabTop" aria-label="Retour en haut">↑</button>
+  <a class="fab fab-wa" href="https://wa.me/221788626180" target="_blank" rel="noopener" aria-label="Contacter via WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" width="26" height="26"><use href="#i-wa"/></svg>
+  </a>
+</div>
+
 <script>
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('nav a');
-function showSection(id, e) {
-  if (e) e.preventDefault();
-  sections.forEach(s => s.classList.remove('active'));
-  navLinks.forEach(l => l.classList.remove('active-link'));
-  const target = document.getElementById(id);
-  if (target) target.classList.add('active');
-  navLinks.forEach(l => { if (l.getAttribute('onclick') && l.getAttribute('onclick').includes("'"+id+"'")) l.classList.add('active-link'); });
-  const nav = document.getElementById('main-nav');
-  window.scrollTo({ top: nav ? nav.offsetTop - 1 : 0, behavior:'smooth' });
+/* Header scroll shadow */
+const header = document.getElementById('mainHeader');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+
+/* Mobile nav */
+const burger = document.getElementById('burgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+document.getElementById('mobileClose').addEventListener('click', () => mobileNav.classList.remove('open'));
+burger.addEventListener('click', () => mobileNav.classList.add('open'));
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+/* Active nav link on scroll */
+const navLinks = document.querySelectorAll('.main-nav a');
+const navObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = '#' + e.target.id;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
+
+/* Reveal on scroll */
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); }
+  });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+/* Counter animation */
+function animateCount(el, target, dur = 1500) {
+  const start = performance.now();
+  const step = now => {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(eased * target);
+    if (p < 1) requestAnimationFrame(step); else el.textContent = target;
+  };
+  requestAnimationFrame(step);
 }
-const scrollBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => { scrollBtn.classList.toggle('visible', window.scrollY > 400); });
-scrollBtn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+/* Hero counters — fire immediately (already visible) */
+document.querySelectorAll('.hero .count').forEach(el => animateCount(el, +el.dataset.target));
+
+/* Stats section counters — fire on scroll */
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+  const statObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.count-stat').forEach(num => animateCount(num, +num.dataset.target));
+        statObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: .25 });
+  statObs.observe(statsSection);
+}
+
+/* Gallery filter */
+const gfBtns = document.querySelectorAll('.gf-btn');
+const galleryItems = document.querySelectorAll('.masonry-item');
+gfBtns.forEach(btn => btn.addEventListener('click', () => {
+  gfBtns.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const f = btn.dataset.filter;
+  galleryItems.forEach(it => { it.style.display = (f === 'all' || it.dataset.cat === f) ? '' : 'none'; });
+}));
+
+/* Lightbox */
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+let lbIdx = 0;
+const visItems = () => Array.from(galleryItems).filter(it => it.style.display !== 'none');
+function openLb(idx) {
+  const vis = visItems();
+  if (!vis.length) return;
+  lbIdx = ((idx % vis.length) + vis.length) % vis.length;
+  lbImg.src = vis[lbIdx].dataset.full || '';
+  lbImg.alt = vis[lbIdx].querySelector('img')?.alt || '';
+  lb.classList.add('open');
+}
+galleryItems.forEach((it, idx) => it.addEventListener('click', () => openLb(idx)));
+document.getElementById('lbClose').addEventListener('click', () => lb.classList.remove('open'));
+document.getElementById('lbPrev').addEventListener('click', () => openLb(lbIdx - 1));
+document.getElementById('lbNext').addEventListener('click', () => openLb(lbIdx + 1));
+lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') lb.classList.remove('open');
+  if (e.key === 'ArrowRight') openLb(lbIdx + 1);
+  if (e.key === 'ArrowLeft') openLb(lbIdx - 1);
+});
+
+/* Testimonials carousel */
+const testiTrack = document.getElementById('testiTrack');
+const testiSlides = document.querySelectorAll('.testi-slide');
+const testiDots = document.getElementById('testiDots');
+let testiIdx = 0, testiAuto;
+testiSlides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', 'Témoignage ' + (i + 1));
+  dot.addEventListener('click', () => { goToTesti(i); restartAuto(); });
+  testiDots.appendChild(dot);
+});
+function goToTesti(i) {
+  testiIdx = ((i % testiSlides.length) + testiSlides.length) % testiSlides.length;
+  testiTrack.style.transform = 'translateX(-' + (testiIdx * 100) + '%)';
+  testiDots.querySelectorAll('.testi-dot').forEach((d, di) => d.classList.toggle('active', di === testiIdx));
+}
+document.getElementById('testiPrev').addEventListener('click', () => { goToTesti(testiIdx - 1); restartAuto(); });
+document.getElementById('testiNext').addEventListener('click', () => { goToTesti(testiIdx + 1); restartAuto(); });
+function restartAuto() { clearInterval(testiAuto); testiAuto = setInterval(() => goToTesti(testiIdx + 1), 6000); }
+restartAuto();
+
+/* Contact form */
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('formSuccess').classList.add('show');
+  const btn = this.querySelector('[type=submit]');
+  if (btn) { btn.disabled = true; btn.textContent = 'Envoyé ✓'; }
+  setTimeout(() => this.reset(), 600);
+});
+
+/* Back to top */
+const fabTop = document.getElementById('fabTop');
+window.addEventListener('scroll', () => fabTop.classList.toggle('show', window.scrollY > 600), { passive: true });
+fabTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
-</body>
+</body>  
 </html>
